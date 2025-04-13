@@ -85,8 +85,21 @@ class Quote(Block):
                      result["quote"]["children"].extend(child_dict)
                 else:
                      result["quote"]["children"].append(child_dict)
+        
+        return result
+
+    def __str__(self) -> str:
+        """String representation of the Quote."""
+        # Create a summary of the text content
+        content_str = " ".join(text.content for text in self.text_content)
+        if len(content_str) > 37:
             content_str = content_str[:37] + "..."
         
+        # Add information about children if present
         child_str = f", {len(self.children)} children" if self.children else ""
+        
         return f"Quote({content_str}{child_str})"
 
+    def __repr__(self) -> str:
+        """Detailed representation of the Quote."""
+        return self.__str__()
