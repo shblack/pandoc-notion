@@ -92,10 +92,10 @@ class TextManager(Manager):
     
     @classmethod
     @debug_decorator
-    def convert_all(cls, elements: List[pf.Element], 
+    def create_text_elements(cls, elements: List[pf.Element], 
                    base_annotations: Optional[Annotations] = None) -> List[NotionInlineElement]:
         """
-        Convert a list of panflute elements to Notion inline elements using stream processing.
+        Create Notion text elements from a list of panflute elements using stream processing.
         
         This method processes elements as a continuous stream, only creating new elements
         when necessary (formatting changes or specialized element types).
@@ -108,7 +108,6 @@ class TextManager(Manager):
         Returns:
             A list of NotionInlineElement objects with properly inherited annotations
         """
-        # Initialize base annotations if not provided
         current_annotations = base_annotations.copy() if base_annotations else Annotations()
         
         # Setup for stream processing
@@ -195,10 +194,12 @@ class TextManager(Manager):
     
     @classmethod
     @debug_decorator
-    def convert(cls, elem: pf.Element, 
+    def _process_inline_element(cls, elem: pf.Element, 
                base_annotations: Optional[Annotations] = None) -> Union[NotionInlineElement, List[NotionInlineElement]]:
         """
-        Convert a single panflute element to a Notion inline element or list of elements.
+        Process a single panflute inline element to a Notion inline element or list of elements.
+        
+        This is an internal method used by create_text_blocks for processing individual elements.
         
         Args:
             elem: The element to convert
@@ -207,7 +208,6 @@ class TextManager(Manager):
         Returns:
             Either a single NotionInlineElement or a list of NotionInlineElements
         """
-        # Initialize base annotations if not provided
         current_annotations = base_annotations.copy() if base_annotations else Annotations()
         
         # Try to convert using registered handlers

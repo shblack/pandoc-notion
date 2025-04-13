@@ -188,7 +188,7 @@ class ListManager(Manager):
             # Handle Plain elements - these are the standard containers for text in list items in the panflute AST
             if isinstance(child, pf.Plain):
                 # Extract text content from the Plain element, preserving all formatting
-                texts = TextManager.convert_all(child.content)
+                texts = TextManager.create_text_elements(child.content)
                 list_item.add_texts(texts)
             # Handle nested bullet lists
             elif isinstance(child, pf.BulletList):

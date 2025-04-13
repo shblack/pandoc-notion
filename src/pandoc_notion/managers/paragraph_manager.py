@@ -41,7 +41,7 @@ class ParagraphManager(Manager):
         paragraph = Paragraph()
         
         # Use TextManager to convert all inline elements in the paragraph
-        texts = TextManager.convert_all(elem.content)
+        texts = TextManager.create_text_elements(elem.content)
         paragraph.add_texts(texts)
         
         # Convert to Notion API format and return as a single-item list

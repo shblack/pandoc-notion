@@ -55,13 +55,13 @@ class QuoteManager(Manager):
             
             # First paragraph becomes the Quote block content
             first_para = paragraphs[0]
-            texts = TextManager.convert_all(first_para.content)
+            texts = TextManager.create_text_elements(first_para.content)
             quote.add_texts(texts)
             
             # Any additional paragraphs become nested child Paragraph blocks
             for para in paragraphs[1:]:
                 paragraph = Paragraph()
-                texts = TextManager.convert_all(para.content)
+                texts = TextManager.create_text_elements(para.content)
                 paragraph.add_texts(texts)
                 quote.add_child(paragraph)
         

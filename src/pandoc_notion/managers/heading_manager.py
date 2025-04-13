@@ -42,7 +42,7 @@ class HeadingManager(Manager):
         heading = Heading(level)
         
         # Use TextManager to convert all inline elements in the heading
-        texts = TextManager.convert_all(elem.content)
+        texts = TextManager.create_text_elements(elem.content)
         heading.add_texts(texts)
         
         # Convert to Notion API format and return as a single-item list
