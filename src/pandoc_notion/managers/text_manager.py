@@ -11,6 +11,7 @@ from ..models.text import (
 )
 from ..utils.debug import debug_decorator
 from .base import Manager
+from .equation_manager import EquationManager
 
 
 class TextManager(Manager):
@@ -18,7 +19,7 @@ class TextManager(Manager):
     Manager for handling inline text elements and converting them to Notion inline elements.
     
     This implementation uses the NotionInlineElement abstraction to handle various inline 
-    element types (text, equations, code, mentions) with a unified approach.
+    element types (text, inline equations, code, mentions) with a unified approach.
     """
     
     @classmethod
@@ -37,20 +38,52 @@ class TextManager(Manager):
         if isinstance(elem, (pf.Emph, pf.Strong)):
             return True
             
+        # Include inline math elements
+        if isinstance(elem, pf.Math) and elem.format == 'InlineMath':
+            return True
+            
         # Check if we have a registered handler for this element type
         if InlineElementConverter.convert(elem) is not None:
             return True
             
         return False
+    
+    @classmethod
+    @debug_decorator
+    def convert(cls, elem: Union[pf.Element, List[pf.Element]]) -> List[NotionInlineElement]:
+        """
+        Convert a panflute element or list of elements to Notion inline element objects.
+        
+        Args:
+            elem: A panflute element or list of elements
+            
+        Returns:
+            A list of Notion inline element objects
+        """
+        # If we got a list, process each element and collect results
+        if isinstance(elem, list):
+            # Create text elements using our internal model
+            notion_elements = cls.create_text_elements(elem)
+                
+            # Merge consecutive text elements with same formatting
+            merged_elements = cls.merge_consecutive_elements(notion_elements)
+            
+            return merged_elements
+        else:
+            # Single element conversion - return result as a list
+            result = []
+            cls._process_stream([elem], Annotations(), result)
+            return result
 
     @classmethod
     def _is_content_token(cls, elem: pf.Element) -> bool:
         """
         Determine if an element is a content token (directly contains text).
         
-        Content tokens: Str, Space, SoftBreak, LineBreak
+        Content tokens: Str, Space, SoftBreak, LineBreak, Math(InlineMath)
         """
-        return isinstance(elem, (pf.Str, pf.Space, pf.SoftBreak, pf.LineBreak))
+        return isinstance(elem, (pf.Str, pf.Space, pf.SoftBreak, pf.LineBreak)) or \
+               (isinstance(elem, pf.Math) and elem.format == 'InlineMath')
     
     @classmethod
     def _is_formatting_token(cls, elem: pf.Element) -> bool:
@@ -70,6 +103,9 @@ class TextManager(Manager):
             return " "
         elif isinstance(elem, (pf.SoftBreak, pf.LineBreak)):
             return "\n"
+        elif isinstance(elem, pf.Math) and elem.format == 'InlineMath':
+            # Use EquationManager's conversion logic for consistency
+            return EquationManager._convert_latex_to_katex(elem.text)
         raise ValueError(f"Not a content token: {type(elem).__name__}")
     
     @classmethod
@@ -160,6 +196,21 @@ class TextManager(Manager):
                 # Add the converted element
                 result_elements.append(element)
                 continue
+            
+            # Handle inline math specially
+            if isinstance(elem, pf.Math) and elem.format == 'InlineMath':
+                # Flush any accumulated text
+                if current_text:
+                    text_obj = Text(current_text, annotations=current_annotations.copy())
+                    result_elements.append(text_obj)
+                    current_text = ""
+                
+                # Create equation text with equation annotation
+                equation_content = cls._get_content_for_token(elem)
+                equation_annotations = current_annotations.copy()
+                equation_annotations.set_equation(True)
+                result_elements.append(Text(equation_content, annotations=equation_annotations))
+                continue
                 
             # Handle content tokens (regular text)
             if cls._is_content_token(elem):
@@ -214,6 +265,13 @@ class TextManager(Manager):
         element = InlineElementConverter.convert(elem, current_annotations.copy())
         if element:
             return element
+        
+        # Handle inline math elements
+        elif isinstance(elem, pf.Math) and elem.format == 'InlineMath':
+            equation_content = cls._get_content_for_token(elem)
+            equation_annotations = current_annotations.copy()
+            equation_annotations.set_equation(True)
+            return Text(equation_content, annotations=equation_annotations)
             
         # Content tokens get a direct conversion
         elif cls._is_content_token(elem):
@@ -259,15 +317,12 @@ class TextManager(Manager):
         Returns:
             A list of dictionaries in Notion API format representing rich_text blocks
         """
-        # Create text elements using our internal model
-        notion_elements = cls.create_text_elements(elements)
-            
-        # Merge consecutive text elements with same formatting
-        merged_elements = cls.merge_consecutive_elements(notion_elements)
+        # Get NotionInlineElement objects using convert
+        inline_elements = cls.convert(elements)
         
         # Convert the internal NotionInlineElement objects to Notion API format
         api_blocks = []
-        for element in merged_elements:
+        for element in inline_elements:
             api_blocks.append(element.to_dict())
             
         return api_blocks

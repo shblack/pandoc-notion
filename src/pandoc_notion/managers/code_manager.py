@@ -1,4 +1,4 @@
-from typing import Dict, Any, Optional
+from typing import Dict, Any, List, Optional
 
 import panflute as pf
 
@@ -107,12 +107,7 @@ class CodeManager(Manager):
     }
     
     @classmethod
-    def can_convert(cls, elem: pf.Element) -> bool:
-        """Check if the element is a code block that can be converted."""
-        return isinstance(elem, pf.CodeBlock)
-    
-    @classmethod
-    def to_dict(cls, elem: pf.Element) -> Code:
+    def convert(cls, elem: pf.Element) -> List[Code]:
         """
         Convert a panflute code block element to a Notion Code object.
         
@@ -120,7 +115,7 @@ class CodeManager(Manager):
             elem: A panflute CodeBlock element
             
         Returns:
-            A Notion Code object
+            A list containing a single Notion Code object
         """
         if not isinstance(elem, pf.CodeBlock):
             raise ValueError(f"Expected CodeBlock element, got {type(elem).__name__}")
@@ -130,6 +125,27 @@ class CodeManager(Manager):
         
         # Get language and map it to Notion's language identifier
         language = cls._map_language(elem.classes[0] if elem.classes else None)
+        
+        # Check for caption/filename in attributes
+        caption = elem.attributes.get("caption") or elem.attributes.get("filename")
+        
+        # Create the Code object
+        return [Code(code_content, language, caption)]
+    
+    @classmethod
+    def to_dict(cls, elem: pf.Element) -> List[Dict[str, Any]]:
+        """
+        Convert a panflute code block element to a Notion API dictionary.
+        
+        Args:
+            elem: A panflute CodeBlock element
+            
+        Returns:
+            A list containing a single Notion API code block dictionary
+        """
+        # Convert to Code objects, then convert each to dictionary
+        code_blocks = cls.convert(elem)
+        return [code_block.to_dict() for code_block in code_blocks]
         
         # Check for caption/filename in attributes
         caption = elem.attributes.get("caption") or elem.attributes.get("filename")

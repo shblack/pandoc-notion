@@ -4,6 +4,7 @@ import panflute as pf
 
 from ..models.list import List, ListItem, create_bulleted_list, create_numbered_list, create_todo_list, create_todo_item
 from ..models.text import Text
+from ..utils.debug import debug_decorator
 from .base import Manager
 from .text_manager import TextManager
 from .paragraph_manager import ParagraphManager
@@ -19,11 +20,35 @@ class ListManager(Manager):
     """
     
     @classmethod
+    @debug_decorator
     def can_convert(cls, elem: pf.Element) -> bool:
         """Check if the element is a list that can be converted."""
         return isinstance(elem, (pf.BulletList, pf.OrderedList))
     
     @classmethod
+    @debug_decorator
+    def convert(cls, elem: pf.Element) -> PyList[List]:
+        """
+        Convert a panflute list element to Notion List objects.
+        
+        In Notion's data model, each list item is represented as a separate block.
+        This method returns a list of List objects, one for each list item.
+        
+        Args:
+            elem: A panflute BulletList or OrderedList element
+            
+        Returns:
+            A list of Notion List objects
+        """
+        if isinstance(elem, pf.BulletList):
+            return cls._convert_bullet_list(elem)
+        elif isinstance(elem, pf.OrderedList):
+            return cls._convert_ordered_list(elem)
+        else:
+            raise ValueError(f"Expected BulletList or OrderedList element, got {type(elem).__name__}")
+    
+    @classmethod
+    @debug_decorator
     def to_dict(cls, elem: pf.Element) -> PyList[Dict[str, Any]]:
         """
         Convert a panflute list element to Notion API-level blocks.
@@ -36,18 +61,15 @@ class ListManager(Manager):
         Returns:
             A list of Notion API-level blocks
         """
-        if isinstance(elem, pf.BulletList):
-            list_objects = cls._convert_bullet_list(elem)
-        elif isinstance(elem, pf.OrderedList):
-            list_objects = cls._convert_ordered_list(elem)
-        else:
-            raise ValueError(f"Expected BulletList or OrderedList element, got {type(elem).__name__}")
+        # Get List objects using convert
+        list_objects = cls.convert(elem)
             
         # Convert List objects to API-level dictionaries
         api_blocks = []
         for list_obj in list_objects:
             api_blocks.extend(list_obj.to_dict())
         return api_blocks
+
     @classmethod
     def _convert_bullet_list(cls, elem: pf.BulletList) -> PyList[List]:
         """
@@ -73,6 +95,7 @@ class ListManager(Manager):
             api_blocks.append(single_item_list)
         
         return api_blocks
+
     @classmethod
     def _convert_ordered_list(cls, elem: pf.OrderedList) -> PyList[List]:
         """
@@ -99,6 +122,7 @@ class ListManager(Manager):
             api_blocks.append(single_item_list)
         
         return api_blocks
+
     @classmethod
     def _is_checkbox(cls, text: str) -> bool:
         """
@@ -203,6 +227,7 @@ class ListManager(Manager):
                     list_item.add_child(nested_list)
                                 
         return list_item
+
     @classmethod
     def create_bulleted_list_from_texts(cls, texts: PyList[str]) -> List:
         """

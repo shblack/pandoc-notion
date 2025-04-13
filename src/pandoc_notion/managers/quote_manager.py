@@ -1,14 +1,14 @@
-from typing import List
+from typing import List, Dict, Any
 
 import panflute as pf
 
 from ..models.quote import Quote
 from ..models.text import Text
 from ..models.paragraph import Paragraph
+from ..utils.debug import debug_decorator
 from .base import Manager
 from .text_manager import TextManager
 from .paragraph_manager import ParagraphManager
-from ..utils.debug import debug_decorator
 
 
 class QuoteManager(Manager):
@@ -16,28 +16,32 @@ class QuoteManager(Manager):
     Manager for handling block quote elements and converting them to Notion Quote blocks.
     
     Handles panflute BlockQuote elements, including nested quotes with proper formatting.
+    In Notion's structure, a blockquote is represented as:
+    - First paragraph → Quote block content
+    - Additional paragraphs → Nested child Paragraph blocks
     """
     
     @classmethod
-    @debug_decorator(filename="quote_manager.py", funcname="can_convert")
+    @debug_decorator
     def can_convert(cls, elem: pf.Element) -> bool:
         """Check if the element is a block quote that can be converted."""
         return isinstance(elem, pf.BlockQuote)
+    
     @classmethod
-    @debug_decorator(filename="quote_manager.py", funcname="to_dict")
-    def to_dict(cls, elem: pf.Element) -> List[Dict[str, Any]]:
+    @debug_decorator
+    def convert(cls, elem: pf.Element) -> List[Quote]:
         """
-        Convert a panflute block quote element to a Notion API Quote block.
+        Convert a panflute block quote element to a Notion Quote block object.
 
         In Notion's structure, a blockquote is represented as:
-        - First paragraph -> Quote block content
-        - Additional paragraphs -> Nested child Paragraph blocks
+        - First paragraph → Quote block content
+        - Additional paragraphs → Nested child Paragraph blocks
 
         Args:
             elem: A panflute BlockQuote element
 
         Returns:
-            A list containing a single dictionary representing the Notion API Quote block,
+            A list containing a single Quote object,
             potentially with nested child paragraph blocks.
         """
         if not isinstance(elem, pf.BlockQuote):
@@ -53,7 +57,7 @@ class QuoteManager(Manager):
 
             if not paragraphs:
                 # Return empty quote block if no content
-                return [quote.to_dict()]
+                return [quote]
 
             # First paragraph becomes the Quote block content
             first_para = paragraphs[0]
@@ -67,10 +71,28 @@ class QuoteManager(Manager):
                 paragraph.add_texts(texts)
                 quote.add_child(paragraph)
 
-        # Convert the Quote object to its API dictionary representation and wrap in a list
-        return [quote.to_dict()]
+        # Return the Quote object wrapped in a list
+        return [quote]
+    
     @classmethod
-    @debug_decorator(filename="quote_manager.py", funcname="create_quote")
+    @debug_decorator
+    def to_dict(cls, elem: pf.Element) -> List[Dict[str, Any]]:
+        """
+        Convert a panflute block quote element to a Notion API Quote block.
+
+        Args:
+            elem: A panflute BlockQuote element
+
+        Returns:
+            A list containing a single dictionary representing the Notion API Quote block,
+            potentially with nested child paragraph blocks.
+        """
+        # Convert to Quote objects, then convert each to dictionary
+        quotes = cls.convert(elem)
+        return [quote.to_dict() for quote in quotes]
+    
+    @classmethod
+    @debug_decorator
     def create_quote(cls, text: str) -> Quote:
         """
         Create a quote from plain text.
@@ -86,7 +108,7 @@ class QuoteManager(Manager):
         return quote
     
     @classmethod
-    @debug_decorator(filename="quote_manager.py", funcname="create_quote_from_paragraph")
+    @debug_decorator
     def create_quote_from_paragraph(cls, paragraph: Paragraph) -> Quote:
         """
         Create a quote from a Paragraph object.
@@ -100,3 +122,18 @@ class QuoteManager(Manager):
         quote = Quote()
         quote.add_texts(paragraph.text_content)
         return quote
+    
+    @classmethod
+    def create_quote_to_dict(cls, text: str) -> Dict[str, Any]:
+        """
+        Create a quote dictionary from plain text.
+        
+        Args:
+            text: Plain text content for the quote
+            
+        Returns:
+            A dictionary representing the Notion API Quote block
+        """
+        quote = cls.create_quote(text)
+        return quote.to_dict()
+

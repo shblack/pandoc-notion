@@ -1,4 +1,4 @@
-from typing import List, Any
+from typing import List, Dict, Any
 
 import panflute as pf
 
@@ -24,15 +24,15 @@ class ParagraphManager(Manager):
     
     @classmethod
     @debug_decorator
-    def to_dict(cls, elem: pf.Element) -> list[dict[str, Any]]:
+    def convert(cls, elem: pf.Element) -> List[Paragraph]:
         """
-        Convert a panflute paragraph element to a Notion API paragraph block.
+        Convert a panflute paragraph element to a Notion Paragraph block object.
         
         Args:
             elem: A panflute Para element
             
         Returns:
-            A list containing a single paragraph block dictionary in Notion API format
+            A list containing a single Paragraph block object
         """
         if not isinstance(elem, pf.Para):
             raise ValueError(f"Expected Para element, got {type(elem).__name__}")
@@ -44,12 +44,27 @@ class ParagraphManager(Manager):
         texts = TextManager.create_text_elements(elem.content)
         paragraph.add_texts(texts)
         
-        # Convert to Notion API format and return as a single-item list
-        return [paragraph.to_dict()]
+        # Return as a single-item list
+        return [paragraph]
     
     @classmethod
     @debug_decorator
-    def convert_plain_text(cls, text: str) -> list[dict[str, Any]]:
+    def to_dict(cls, elem: pf.Element) -> List[Dict[str, Any]]:
+        """
+        Convert a panflute paragraph element to a Notion API paragraph block.
+        
+        Args:
+            elem: A panflute Para element
+            
+        Returns:
+            A list containing a single paragraph block dictionary in Notion API format
+        """
+        # Convert to Paragraph objects, then convert each to dictionary
+        paragraphs = cls.convert(elem)
+        return [paragraph.to_dict() for paragraph in paragraphs]
+    
+    @classmethod
+    def convert_plain_text(cls, text: str) -> List[Paragraph]:
         """
         Create a paragraph from plain text.
         
@@ -57,8 +72,24 @@ class ParagraphManager(Manager):
             text: Plain text content
             
         Returns:
-            A list containing a single paragraph block dictionary in Notion API format
+            A list containing a single Paragraph block object
         """
         paragraph = Paragraph()
         paragraph.add_text(Text(text))
-        return [paragraph.to_dict()]
+        return [paragraph]
+    
+    @classmethod
+    @debug_decorator
+    def convert_plain_text_to_dict(cls, text: str) -> List[Dict[str, Any]]:
+        """
+        Create a paragraph dictionary from plain text.
+        
+        Args:
+            text: Plain text content
+            
+        Returns:
+            A list containing a single paragraph block dictionary in Notion API format
+        """
+        paragraphs = cls.convert_plain_text(text)
+        return [paragraph.to_dict() for paragraph in paragraphs]
+

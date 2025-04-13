@@ -1,17 +1,17 @@
-from typing import Any, Union, Dict, List
+from typing import Any, Dict, List, Optional
 
 import panflute as pf
 
-from ..models.equation import Equation, InlineEquation
-from ..models.text import Text
+from ..models.equation import Equation
+from ..utils.debug import debug_decorator
 from .base import Manager
 
 
 class EquationManager(Manager):
     """
-    Manager for handling equation elements and converting them to Notion Equation blocks.
+    Manager for handling block-level equation elements and converting them to Notion Equation blocks.
     
-    Handles both display equations (block-level) and inline equations.
+    Only handles display math equations (block-level). Inline equations are handled by TextManager.
     """
     
     # Map for LaTeX to KaTeX conversions if needed
@@ -22,28 +22,27 @@ class EquationManager(Manager):
     }
     
     @classmethod
+    @debug_decorator
     def can_convert(cls, elem: pf.Element) -> bool:
-        """Check if the element is a math element that can be converted."""
-        return isinstance(elem, pf.Math)
+        """Check if the element is a display math element that can be converted."""
+        return isinstance(elem, pf.Math) and elem.format == 'DisplayMath'
     
     @classmethod
-    def to_dict(cls, elem: pf.Element) -> List[Dict[str, Any]]:
+    @debug_decorator
+    def convert(cls, elem: pf.Element) -> List[Equation]:
         """
-        Convert a panflute math element to a Notion API-level block dictionary.
+        Convert a panflute display math element to a Notion Equation block object.
 
-        Handles both display equations (block-level) and inline equations.
-        Inline equations are returned as a special dictionary format compatible
-        with the TextManager's rich text handling.
+        Only handles display equations (block-level).
 
         Args:
-            elem: A panflute Math element
+            elem: A panflute Math element with format 'DisplayMath'
 
         Returns:
-            A list containing a single dictionary representing the Notion API block
-            for display math or a dictionary for inline math rich text.
+            A list containing a single Notion Equation object
         """
-        if not isinstance(elem, pf.Math):
-            raise ValueError(f"Expected Math element, got {type(elem).__name__}")
+        if not isinstance(elem, pf.Math) or elem.format != 'DisplayMath':
+            raise ValueError(f"Expected Math element with DisplayMath format, got {type(elem).__name__} with format {getattr(elem, 'format', 'unknown')}")
 
         # Extract the math expression
         expression = elem.text
@@ -54,26 +53,40 @@ class EquationManager(Manager):
         # Extract equation number if present
         equation_number = cls._extract_equation_number(expression)
 
-        # Check if it's a display equation or an inline equation
-        if elem.format == 'DisplayMath':
-            # It's a display equation (block)
-            # Convert the Equation object to its API dictionary representation
-            return [Equation(expression, equation_number).to_dict()]
-        else:
-            # It's an inline equation, represented as a special dict
-            # Wrap the dictionary in a list
-            return [InlineEquation.create_text(expression)]
+        # Create and return the Equation object
+        return [Equation(expression, equation_number)]
+    
+    @classmethod
+    @debug_decorator
+    def to_dict(cls, elem: pf.Element) -> List[Dict[str, Any]]:
+        """
+        Convert a panflute display math element to a Notion API-level block dictionary.
+
+        Only handles display equations (block-level).
+
+        Args:
+            elem: A panflute Math element with format 'DisplayMath'
+
+        Returns:
+            A list containing a single dictionary representing the Notion API block for display math
+        """
+        # Convert to Equation objects, then convert each to dictionary
+        equations = cls.convert(elem)
+        return [equation.to_dict() for equation in equations]
     
     @classmethod
     def _convert_latex_to_katex(cls, expression: str) -> str:
         """
-        Convert LaTeX expression to KaTeX syntax where needed.
+        Convert LaTeX expressions to KaTeX equivalent.
+        
+        Notion uses KaTeX for rendering equations, which has slightly different
+        syntax than LaTeX in some cases. This method applies necessary conversions.
         
         Args:
             expression: LaTeX expression
             
         Returns:
-            Equivalent KaTeX expression
+            Converted expression compatible with KaTeX
         """
         result = expression
         
@@ -84,7 +97,7 @@ class EquationManager(Manager):
         return result
     
     @classmethod
-    def _extract_equation_number(cls, expression: str) -> Union[str, None]:
+    def _extract_equation_number(cls, expression: str) -> Optional[str]:
         """
         Extract equation number from LaTeX expression if present.
         
@@ -114,7 +127,7 @@ class EquationManager(Manager):
         return None
     
     @classmethod
-    def create_block_equation(cls, expression: str, equation_number: str = None) -> Equation:
+    def create_block_equation(cls, expression: str, equation_number: Optional[str] = None) -> Equation:
         """
         Create a block equation from a LaTeX expression.
         
@@ -128,18 +141,4 @@ class EquationManager(Manager):
         # Apply any LaTeX to KaTeX conversions
         expression = cls._convert_latex_to_katex(expression)
         return Equation(expression, equation_number)
-    
-    @classmethod
-    def create_inline_equation(cls, expression: str) -> Dict[str, Any]:
-        """
-        Create an inline equation from a LaTeX expression.
-        
-        Args:
-            expression: LaTeX expression
-            
-        Returns:
-            A dictionary with the Notion API format for inline equations
-        """
-        # Apply any LaTeX to KaTeX conversions
-        expression = cls._convert_latex_to_katex(expression)
-        return InlineEquation.create_text(expression)
+
