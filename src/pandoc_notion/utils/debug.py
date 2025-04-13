@@ -33,7 +33,7 @@ class LogLevel(enum.Enum):
 
 # Global log level, default to INFO unless debug environment variable is set
 _current_log_level = (
-    LogLevel.DEBUG if os.environ.get('PANDOC_NOTION_DEBUG', '').lower() in ('1', 'true', 'yes', 'on') 
+    LogLevel.DEBUG if os.environ.get('DEBUG_MODE', '').lower() in ('1', 'true', 'yes', 'on') 
     else LogLevel.INFO
 )
 
@@ -159,3 +159,4 @@ def debug_decorator(func: F = None, filename: str = None, funcname: str = None, 
 # Initialize logger with current level
 set_log_level(_current_log_level)
 logger.debug(f"Debug logging initialized at level {_current_log_level.name}")
+logger.debug(f"Set DEBUG_MODE=1 environment variable to enable debug logging")
