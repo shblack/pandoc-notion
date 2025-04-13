@@ -7,8 +7,9 @@ Notion blocks, leveraging the existing Pandoc-based conversion pipeline.
 
 import json
 import os
-from typing import Dict, Any, List, Optional, Union
+from typing import Dict, Any, List, Optional, Union, Callable
 from pathlib import Path
+import warnings
 
 import panflute as pf
 
@@ -50,8 +51,21 @@ class MarkdownConverter:
                 self.config.set(key, value)
         
         self.filter = NotionFilter(config=self.config, registry=self.registry)
+        
+        # Initialize handler dictionary for direct element conversion
+        self.element_handlers = {
+            pf.Para: self._convert_paragraph,
+            pf.Header: self._convert_header,
+            pf.BulletList: self._convert_bullet_list,
+            pf.OrderedList: self._convert_ordered_list,
+            pf.CodeBlock: self._convert_code_block,
+            pf.BlockQuote: self._convert_block_quote,
+            pf.Image: self._convert_image,
+            pf.Table: self._convert_table,
+            pf.HorizontalRule: self._convert_horizontal_rule,
+        }
     
-    def convert(self, markdown_text: str) -> List[Block]:
+    def convert_blocks(self, markdown_text: str) -> List[Block]:
         """
         Convert Markdown text to a list of Notion blocks.
         
@@ -69,6 +83,23 @@ class MarkdownConverter:
         
         # Extract blocks from the converted document
         return self._process_blocks(result)
+
+    def convert(self, markdown_text: str) -> List[Block]:
+        """
+        Deprecated alias for convert_blocks(). Use convert_blocks() instead.
+        
+        Args:
+            markdown_text: A string containing Markdown-formatted text
+            
+        Returns:
+            A list of Notion block objects ready for use with the Notion API
+        """
+        warnings.warn(
+            "The convert() method is deprecated. Use convert_blocks() instead.",
+            DeprecationWarning,
+            stacklevel=2
+        )
+        return self.convert_blocks(markdown_text)
     
     def convert_file(self, file_path: Union[str, Path]) -> List[Block]:
         """
@@ -87,7 +118,7 @@ class MarkdownConverter:
         with open(path, 'r', encoding='utf-8') as f:
             markdown_text = f.read()
         
-        return self.convert(markdown_text)
+        return self.convert_blocks(markdown_text)
     
     def convert_to_dict(self, markdown_text: str) -> List[Dict[str, Any]]:
         """
@@ -99,7 +130,7 @@ class MarkdownConverter:
         Returns:
             A list of dictionaries in the format required by the Notion API
         """
-        blocks = self.convert(markdown_text)
+        blocks = self.convert_blocks(markdown_text)
         return self._to_api_format(blocks)
     
     def _parse_markdown(self, markdown_text: str) -> pf.Doc:
@@ -158,7 +189,60 @@ class MarkdownConverter:
                             serialized.append(block_dict)
         
         return serialized
-
+    
+    # Direct element conversion methods
+    def _convert_element(self, elem: pf.Element) -> Block:
+        """
+        Convert a panflute element to a Notion block using the handler pattern.
+        
+        Args:
+            elem: A panflute element
+            
+        Returns:
+            A Notion block object or None if no handler is available
+        """
+        handler = self.element_handlers.get(type(elem))
+        if handler:
+            return handler(elem)
+        else:
+            # Default to using the filter's conversion
+            return self.filter.action(elem)
+    
+    def _convert_paragraph(self, elem: pf.Para) -> Block:
+        """Convert a paragraph element to a Notion paragraph block."""
+        return self.filter.registry.get_manager_for_element(elem).convert(elem)
+    
+    def _convert_header(self, elem: pf.Header) -> Block:
+        """Convert a header element to a Notion heading block."""
+        return self.filter.registry.get_manager_for_element(elem).convert(elem)
+    
+    def _convert_bullet_list(self, elem: pf.BulletList) -> Block:
+        """Convert a bullet list element to Notion bulleted list blocks."""
+        return self.filter.registry.get_manager_for_element(elem).convert(elem)
+    
+    def _convert_ordered_list(self, elem: pf.OrderedList) -> Block:
+        """Convert an ordered list element to Notion numbered list blocks."""
+        return self.filter.registry.get_manager_for_element(elem).convert(elem)
+    
+    def _convert_code_block(self, elem: pf.CodeBlock) -> Block:
+        """Convert a code block element to a Notion code block."""
+        return self.filter.registry.get_manager_for_element(elem).convert(elem)
+    
+    def _convert_block_quote(self, elem: pf.BlockQuote) -> Block:
+        """Convert a block quote element to a Notion quote block."""
+        return self.filter.registry.get_manager_for_element(elem).convert(elem)
+    
+    def _convert_image(self, elem: pf.Image) -> Block:
+        """Convert an image element to a Notion image block."""
+        return self.filter.registry.get_manager_for_element(elem).convert(elem)
+    
+    def _convert_table(self, elem: pf.Table) -> Block:
+        """Convert a table element to a Notion table block."""
+        return self.filter.registry.get_manager_for_element(elem).convert(elem)
+    
+    def _convert_horizontal_rule(self, elem: pf.HorizontalRule) -> Block:
+        """Convert a horizontal rule element to a Notion divider block."""
+        return self.filter.registry.get_manager_for_element(elem).convert(elem)
 
 def markdown_to_notion(markdown_text: str) -> List[Block]:
     """
@@ -171,7 +255,7 @@ def markdown_to_notion(markdown_text: str) -> List[Block]:
         A list of Notion block objects
     """
     converter = MarkdownConverter()
-    return converter.convert(markdown_text)
+    return converter.convert_blocks(markdown_text)
 
 
 def markdown_file_to_notion(file_path: Union[str, Path]) -> List[Block]:
