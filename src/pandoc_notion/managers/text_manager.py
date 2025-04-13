@@ -245,3 +245,31 @@ class TextManager(Manager):
         """
         return merge_consecutive_texts(elements)
 
+    @classmethod
+    @debug_decorator
+    def convert(cls, elements: List[pf.Element]) -> List[Dict[str, Any]]:
+        """
+        Convert a list of panflute elements to Notion API-compatible rich_text blocks.
+        
+        This method implements the public API contract for TextManager, ensuring all
+        text elements are returned in the format expected by the Notion API.
+        
+        Args:
+            elements: A list of panflute elements to convert
+            
+        Returns:
+            A list of dictionaries in Notion API format representing rich_text blocks
+        """
+        # Create text elements using our internal model
+        notion_elements = cls.create_text_elements(elements)
+            
+        # Merge consecutive text elements with same formatting
+        merged_elements = cls.merge_consecutive_elements(notion_elements)
+        
+        # Convert the internal NotionInlineElement objects to Notion API format
+        api_blocks = []
+        for element in merged_elements:
+            api_blocks.append(element.to_dict())
+            
+        return api_blocks
+
