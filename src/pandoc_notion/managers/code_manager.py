@@ -134,8 +134,7 @@ class CodeManager(Manager):
         # Check for caption/filename in attributes
         caption = elem.attributes.get("caption") or elem.attributes.get("filename")
         # Create the internal Code object and immediately convert it to its API dictionary representation.
-        return Code(code_content, language, caption).to_dict()
-        return Code(code_content, language, caption)
+        return [Code(code_content, language, caption).to_dict()]
     
     @classmethod
     def _map_language(cls, language: Optional[str]) -> str:
@@ -172,4 +171,3 @@ class CodeManager(Manager):
         """
         mapped_language = cls._map_language(language)
         return Code(code, mapped_language, caption)
-
