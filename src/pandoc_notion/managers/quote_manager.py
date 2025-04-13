@@ -8,7 +8,7 @@ from ..models.paragraph import Paragraph
 from .base import Manager
 from .text_manager import TextManager
 from .paragraph_manager import ParagraphManager
-from ..utils.debug import debug, debug_conversion
+from ..utils.debug import debug_decorator
 
 
 class QuoteManager(Manager):
@@ -19,12 +19,12 @@ class QuoteManager(Manager):
     """
     
     @classmethod
-    @debug_conversion
+    @debug_decorator(filename="quote_manager.py", funcname="can_convert")
     def can_convert(cls, elem: pf.Element) -> bool:
         """Check if the element is a block quote that can be converted."""
         return isinstance(elem, pf.BlockQuote)
     @classmethod
-    @debug
+    @debug_decorator(filename="quote_manager.py", funcname="convert")
     def convert(cls, elem: pf.Element) -> Quote:
         """
         Convert a panflute block quote element to a Notion Quote block.
@@ -67,7 +67,7 @@ class QuoteManager(Manager):
         
         return quote
     @classmethod
-    @debug
+    @debug_decorator(filename="quote_manager.py", funcname="create_quote")
     def create_quote(cls, text: str) -> Quote:
         """
         Create a quote from plain text.
@@ -83,7 +83,7 @@ class QuoteManager(Manager):
         return quote
     
     @classmethod
-    @debug
+    @debug_decorator(filename="quote_manager.py", funcname="create_quote_from_paragraph")
     def create_quote_from_paragraph(cls, paragraph: Paragraph) -> Quote:
         """
         Create a quote from a Paragraph object.
