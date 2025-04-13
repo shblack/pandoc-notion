@@ -73,21 +73,18 @@ class Quote(Block):
             # Notion does support nested blocks within quotes as of the latest API
             result["has_children"] = True
             
-            # Add serialized children
-            result["children"] = []
+            # Add serialized children under the "quote" key
+            result["quote"]["children"] = [] 
             for child in self.children:
+                # Assume child is always a Block object now
                 child_dict = child.to_dict()
+                
+                # Handle managers that return lists (like ListManager)
+                # Their to_dict() should return a list of block dicts
                 if isinstance(child_dict, list):
-                    result["children"].extend(child_dict)
+                     result["quote"]["children"].extend(child_dict)
                 else:
-                    result["children"].append(child_dict)
-        
-        return result
-    
-    def __str__(self) -> str:
-        """String representation of the quote for debugging."""
-        content_str = " ".join(text.content for text in self.text_content)
-        if len(content_str) > 40:
+                     result["quote"]["children"].append(child_dict)
             content_str = content_str[:37] + "..."
         
         child_str = f", {len(self.children)} children" if self.children else ""
