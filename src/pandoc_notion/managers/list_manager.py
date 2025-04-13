@@ -24,15 +24,18 @@ class ListManager(Manager):
         return isinstance(elem, (pf.BulletList, pf.OrderedList))
     
     @classmethod
-    def convert(cls, elem: pf.Element) -> List:
+    def convert(cls, elem: pf.Element) -> PyList[List]:
         """
-        Convert a panflute list element to a Notion List object.
+        Convert a panflute list element to Notion List objects at the API level.
+        
+        In the Notion API, each list item is a separate block. This method
+        creates a separate List object for each list item in the input.
         
         Args:
             elem: A panflute BulletList or OrderedList element
             
         Returns:
-            A Notion List object
+            A list of Notion List objects, one for each list item
         """
         if isinstance(elem, pf.BulletList):
             return cls._convert_bullet_list(elem)
@@ -42,9 +45,10 @@ class ListManager(Manager):
             raise ValueError(f"Expected BulletList or OrderedList element, got {type(elem).__name__}")
     
     @classmethod
-    def _convert_bullet_list(cls, elem: pf.BulletList) -> List:
+    @classmethod
+    def _convert_bullet_list(cls, elem: pf.BulletList) -> PyList[List]:
         """
-        Convert a panflute BulletList to a Notion bulleted list.
+        Convert a panflute BulletList to a list of Notion bulleted list blocks.
         
         Note: Individual items in the list may be identified as todo items
         if they contain checkbox characters.
@@ -53,39 +57,46 @@ class ListManager(Manager):
             elem: A panflute BulletList element
             
         Returns:
-            A Notion List object with bulleted type
+            A list of Notion List objects, one for each list item
         """
-        bullet_list = create_bulleted_list()
+        api_blocks = []
         
         for item in elem.content:
+            # Convert the list item
             bullet_item = cls._convert_list_item(item, "bulleted")
-            bullet_list.add_item(bullet_item)
+            
+            # Create a List with just this item
+            single_item_list = create_bulleted_list([bullet_item])
+            api_blocks.append(single_item_list)
         
-        return bullet_list
-    
+        return api_blocks
     @classmethod
-    def _convert_ordered_list(cls, elem: pf.OrderedList) -> List:
+    @classmethod
+    def _convert_ordered_list(cls, elem: pf.OrderedList) -> PyList[List]:
         """
-        Convert a panflute OrderedList to a Notion numbered list.
+        Convert a panflute OrderedList to a list of Notion numbered list blocks.
         
         Args:
             elem: A panflute OrderedList element
             
         Returns:
-            A Notion List object with numbered type
+            A list of Notion List objects, one for each list item
         """
-        numbered_list = create_numbered_list()
+        api_blocks = []
         
         # Handle list attributes if needed (start number, etc.)
         # As of now, Notion doesn't support custom numbering for lists
         # so we ignore start, style, and delimiter attributes
         
         for item in elem.content:
+            # Convert the list item
             numbered_item = cls._convert_list_item(item, "numbered")
-            numbered_list.add_item(numbered_item)
+            
+            # Create a List with just this item
+            single_item_list = create_numbered_list([numbered_item])
+            api_blocks.append(single_item_list)
         
-        return numbered_list
-    
+        return api_blocks
     @classmethod
     def _is_checkbox(cls, text: str) -> bool:
         """
