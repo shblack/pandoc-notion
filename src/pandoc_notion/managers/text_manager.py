@@ -30,7 +30,7 @@ class TextManager(Manager):
             return False
         
         # Include basic text elements
-        if isinstance(elem, (pf.Str, pf.SoftBreak, pf.LineBreak, pf.Space)):
+        if isinstance(elem, (pf.Str, pf.SoftBreak, pf.LineBreak, pf.Space, pf.Link)):
             return True
             
         # Include formatting elements
