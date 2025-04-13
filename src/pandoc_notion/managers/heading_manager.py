@@ -21,15 +21,15 @@ class HeadingManager(Manager):
         return isinstance(elem, pf.Header)
     
     @classmethod
-    def convert(cls, elem: pf.Element) -> Heading:
+    def convert(cls, elem: pf.Element) -> list[dict[str, Any]]:
         """
-        Convert a panflute header element to a Notion Heading object.
+        Convert a panflute header element to a Notion API heading block.
         
         Args:
             elem: A panflute Header element
             
         Returns:
-            A Notion Heading object
+            A list containing a single heading block dictionary in Notion API format
         """
         if not isinstance(elem, pf.Header):
             raise ValueError(f"Expected Header element, got {type(elem).__name__}")
@@ -45,10 +45,11 @@ class HeadingManager(Manager):
         texts = TextManager.convert_all(elem.content)
         heading.add_texts(texts)
         
-        return heading
+        # Convert to Notion API format and return as a single-item list
+        return [heading.to_dict()]
     
     @classmethod
-    def convert_plain_text(cls, text: str, level: int = 1) -> Heading:
+    def convert_plain_text(cls, text: str, level: int = 1) -> list[dict[str, Any]]:
         """
         Create a heading from plain text.
         
@@ -57,11 +58,10 @@ class HeadingManager(Manager):
             level: Heading level (1, 2, or 3)
             
         Returns:
-            A Notion Heading object
+            A list containing a single heading block dictionary in Notion API format
         """
         from ..models.text import Text
         
         heading = Heading(level)
         heading.add_text(Text(text))
-        return heading
-
+        return [heading.to_dict()]
