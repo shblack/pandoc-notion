@@ -24,15 +24,15 @@ class ParagraphManager(Manager):
     
     @classmethod
     @debug_decorator
-    def convert(cls, elem: pf.Element) -> Paragraph:
+    def convert(cls, elem: pf.Element) -> list[dict[str, Any]]:
         """
-        Convert a panflute paragraph element to a Notion Paragraph object.
+        Convert a panflute paragraph element to a Notion API paragraph block.
         
         Args:
             elem: A panflute Para element
             
         Returns:
-            A Notion Paragraph object
+            A list containing a single paragraph block dictionary in Notion API format
         """
         if not isinstance(elem, pf.Para):
             raise ValueError(f"Expected Para element, got {type(elem).__name__}")
@@ -44,11 +44,12 @@ class ParagraphManager(Manager):
         texts = TextManager.convert_all(elem.content)
         paragraph.add_texts(texts)
         
-        return paragraph
+        # Convert to Notion API format and return as a single-item list
+        return [paragraph.to_dict()]
     
     @classmethod
     @debug_decorator
-    def convert_plain_text(cls, text: str) -> Paragraph:
+    def convert_plain_text(cls, text: str) -> list[dict[str, Any]]:
         """
         Create a paragraph from plain text.
         
@@ -56,9 +57,8 @@ class ParagraphManager(Manager):
             text: Plain text content
             
         Returns:
-            A Notion Paragraph object
+            A list containing a single paragraph block dictionary in Notion API format
         """
         paragraph = Paragraph()
         paragraph.add_text(Text(text))
-        return paragraph
-
+        return [paragraph.to_dict()]
