@@ -133,8 +133,8 @@ class CodeManager(Manager):
         
         # Check for caption/filename in attributes
         caption = elem.attributes.get("caption") or elem.attributes.get("filename")
-        
-        # Create and return the code block
+        # Create the internal Code object and immediately convert it to its API dictionary representation.
+        return Code(code_content, language, caption).to_dict()
         return Code(code_content, language, caption)
     
     @classmethod

@@ -19,7 +19,6 @@ class ListManager(Manager):
     """
     
     @classmethod
-    @classmethod
     def can_convert(cls, elem: pf.Element) -> bool:
         """Check if the element is a list that can be converted."""
         return isinstance(elem, (pf.BulletList, pf.OrderedList))
