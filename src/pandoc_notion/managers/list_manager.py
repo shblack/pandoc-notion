@@ -19,32 +19,37 @@ class ListManager(Manager):
     """
     
     @classmethod
+    @classmethod
     def can_convert(cls, elem: pf.Element) -> bool:
         """Check if the element is a list that can be converted."""
         return isinstance(elem, (pf.BulletList, pf.OrderedList))
     
     @classmethod
-    def convert(cls, elem: pf.Element) -> PyList[List]:
+    def convert(cls, elem: pf.Element) -> PyList[Dict[str, Any]]:
         """
-        Convert a panflute list element to Notion List objects at the API level.
+        Convert a panflute list element to Notion API-level blocks.
         
         In the Notion API, each list item is a separate block. This method
-        creates a separate List object for each list item in the input.
+        returns a list of API-level dictionaries representing list items.
         
         Args:
             elem: A panflute BulletList or OrderedList element
             
         Returns:
-            A list of Notion List objects, one for each list item
+            A list of Notion API-level blocks
         """
         if isinstance(elem, pf.BulletList):
-            return cls._convert_bullet_list(elem)
+            list_objects = cls._convert_bullet_list(elem)
         elif isinstance(elem, pf.OrderedList):
-            return cls._convert_ordered_list(elem)
+            list_objects = cls._convert_ordered_list(elem)
         else:
             raise ValueError(f"Expected BulletList or OrderedList element, got {type(elem).__name__}")
-    
-    @classmethod
+            
+        # Convert List objects to API-level dictionaries
+        api_blocks = []
+        for list_obj in list_objects:
+            api_blocks.extend(list_obj.to_dict())
+        return api_blocks
     @classmethod
     def _convert_bullet_list(cls, elem: pf.BulletList) -> PyList[List]:
         """
@@ -70,7 +75,6 @@ class ListManager(Manager):
             api_blocks.append(single_item_list)
         
         return api_blocks
-    @classmethod
     @classmethod
     def _convert_ordered_list(cls, elem: pf.OrderedList) -> PyList[List]:
         """
@@ -190,13 +194,15 @@ class ListManager(Manager):
             # Handle nested bullet lists
             elif isinstance(child, pf.BulletList):
                 # Process nested bullet list
-                nested_list = cls._convert_bullet_list(child)
-                list_item.add_child(nested_list)
+                nested_lists = cls._convert_bullet_list(child)
+                for nested_list in nested_lists:
+                    list_item.add_child(nested_list)
             # Handle nested ordered lists
             elif isinstance(child, pf.OrderedList):
                 # Process nested ordered list
-                nested_list = cls._convert_ordered_list(child)
-                list_item.add_child(nested_list)
+                nested_lists = cls._convert_ordered_list(child)
+                for nested_list in nested_lists:
+                    list_item.add_child(nested_list)
                                 
         return list_item
     @classmethod

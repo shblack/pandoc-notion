@@ -202,7 +202,8 @@ class List(Block):
                  # item.to_dict() should have already returned serialized children correctly
                  # The list should contain Notion block dictionaries
                 item_dict["has_children"] = True
-                item_dict["children"] = child_blocks_data # Use the already processed children list
+                # Move children inside the block type object instead of at root level
+                item_dict[notion_item_type]["children"] = child_blocks_data # Use the already processed children list
 
 
             result.append(item_dict)

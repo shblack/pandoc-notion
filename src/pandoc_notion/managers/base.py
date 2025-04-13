@@ -30,15 +30,19 @@ class Manager(ABC):
     
     @classmethod
     @abstractmethod
-    def convert(cls, elem: pf.Element) -> Any:
+    def convert(cls, elem: pf.Element) -> List[Dict[str, Any]]:
         """
-        Convert a panflute element to a Notion object.
+        Convert a panflute element to Notion API-level blocks.
+        
+        This public method must return objects at the Notion API abstraction level,
+        where each block (including list items) is represented at the API level.
+        Always returns a list, even if it contains only a single block.
         
         Args:
             elem: A panflute element
             
         Returns:
-            A Notion object (Block, Text, etc.)
+            A list of Notion API blocks (List[Dict[str, Any]])
         """
         pass
     
