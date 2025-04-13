@@ -247,10 +247,9 @@ class TextManager(Manager):
 
     @classmethod
     @debug_decorator
-    def convert(cls, elements: List[pf.Element]) -> List[Dict[str, Any]]:
+    def to_dict(cls, elements: List[pf.Element]) -> List[Dict[str, Any]]:
         """
         Convert a list of panflute elements to Notion API-compatible rich_text blocks.
-        
         This method implements the public API contract for TextManager, ensuring all
         text elements are returned in the format expected by the Notion API.
         

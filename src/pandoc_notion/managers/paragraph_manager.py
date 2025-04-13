@@ -24,7 +24,7 @@ class ParagraphManager(Manager):
     
     @classmethod
     @debug_decorator
-    def convert(cls, elem: pf.Element) -> list[dict[str, Any]]:
+    def to_dict(cls, elem: pf.Element) -> list[dict[str, Any]]:
         """
         Convert a panflute paragraph element to a Notion API paragraph block.
         

@@ -112,7 +112,7 @@ class CodeManager(Manager):
         return isinstance(elem, pf.CodeBlock)
     
     @classmethod
-    def convert(cls, elem: pf.Element) -> Code:
+    def to_dict(cls, elem: pf.Element) -> Code:
         """
         Convert a panflute code block element to a Notion Code object.
         

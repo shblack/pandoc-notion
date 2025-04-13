@@ -24,48 +24,51 @@ class QuoteManager(Manager):
         """Check if the element is a block quote that can be converted."""
         return isinstance(elem, pf.BlockQuote)
     @classmethod
-    @debug_decorator(filename="quote_manager.py", funcname="convert")
-    def convert(cls, elem: pf.Element) -> Quote:
+    @debug_decorator(filename="quote_manager.py", funcname="to_dict")
+    def to_dict(cls, elem: pf.Element) -> List[Dict[str, Any]]:
         """
-        Convert a panflute block quote element to a Notion Quote block.
-        
+        Convert a panflute block quote element to a Notion API Quote block.
+
         In Notion's structure, a blockquote is represented as:
         - First paragraph -> Quote block content
         - Additional paragraphs -> Nested child Paragraph blocks
-        
+
         Args:
             elem: A panflute BlockQuote element
-            
+
         Returns:
-            A Quote object with nested child paragraphs if any
+            A list containing a single dictionary representing the Notion API Quote block,
+            potentially with nested child paragraph blocks.
         """
         if not isinstance(elem, pf.BlockQuote):
             raise ValueError(f"Expected BlockQuote element, got {type(elem).__name__}")
-        
+
         # Create a new quote
         quote = Quote()
-        
+
         # Process all paragraphs in the quote
         if elem.content:
             # Get all paragraphs
             paragraphs = [p for p in elem.content if isinstance(p, pf.Para) and p.content]
-            
+
             if not paragraphs:
-                return quote
-            
+                # Return empty quote block if no content
+                return [quote.to_dict()]
+
             # First paragraph becomes the Quote block content
             first_para = paragraphs[0]
             texts = TextManager.create_text_elements(first_para.content)
             quote.add_texts(texts)
-            
+
             # Any additional paragraphs become nested child Paragraph blocks
             for para in paragraphs[1:]:
                 paragraph = Paragraph()
                 texts = TextManager.create_text_elements(para.content)
                 paragraph.add_texts(texts)
                 quote.add_child(paragraph)
-        
-        return quote
+
+        # Convert the Quote object to its API dictionary representation and wrap in a list
+        return [quote.to_dict()]
     @classmethod
     @debug_decorator(filename="quote_manager.py", funcname="create_quote")
     def create_quote(cls, text: str) -> Quote:

@@ -21,7 +21,7 @@ class HeadingManager(Manager):
         return isinstance(elem, pf.Header)
     
     @classmethod
-    def convert(cls, elem: pf.Element) -> list[dict[str, Any]]:
+    def to_dict(cls, elem: pf.Element) -> list[dict[str, Any]]:
         """
         Convert a panflute header element to a Notion API heading block.
         

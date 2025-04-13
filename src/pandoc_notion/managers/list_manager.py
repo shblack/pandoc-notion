@@ -24,10 +24,9 @@ class ListManager(Manager):
         return isinstance(elem, (pf.BulletList, pf.OrderedList))
     
     @classmethod
-    def convert(cls, elem: pf.Element) -> PyList[Dict[str, Any]]:
+    def to_dict(cls, elem: pf.Element) -> PyList[Dict[str, Any]]:
         """
         Convert a panflute list element to Notion API-level blocks.
-        
         In the Notion API, each list item is a separate block. This method
         returns a list of API-level dictionaries representing list items.
         

@@ -27,35 +27,42 @@ class EquationManager(Manager):
         return isinstance(elem, pf.Math)
     
     @classmethod
-    def convert(cls, elem: pf.Element) -> Union[Equation, Dict[str, Any]]:
+    def to_dict(cls, elem: pf.Element) -> List[Dict[str, Any]]:
         """
-        Convert a panflute math element to a Notion Equation object or equation dictionary.
-        
+        Convert a panflute math element to a Notion API-level block dictionary.
+
+        Handles both display equations (block-level) and inline equations.
+        Inline equations are returned as a special dictionary format compatible
+        with the TextManager's rich text handling.
+
         Args:
             elem: A panflute Math element
-            
+
         Returns:
-            A Notion Equation object for display math or equation dictionary for inline math
+            A list containing a single dictionary representing the Notion API block
+            for display math or a dictionary for inline math rich text.
         """
         if not isinstance(elem, pf.Math):
             raise ValueError(f"Expected Math element, got {type(elem).__name__}")
-        
+
         # Extract the math expression
         expression = elem.text
-        
+
         # Apply any necessary LaTeX to KaTeX conversions
         expression = cls._convert_latex_to_katex(expression)
-        
+
         # Extract equation number if present
         equation_number = cls._extract_equation_number(expression)
-        
+
         # Check if it's a display equation or an inline equation
         if elem.format == 'DisplayMath':
             # It's a display equation (block)
-            return Equation(expression, equation_number)
+            # Convert the Equation object to its API dictionary representation
+            return [Equation(expression, equation_number).to_dict()]
         else:
-            # It's an inline equation
-            return InlineEquation.create_text(expression)
+            # It's an inline equation, represented as a special dict
+            # Wrap the dictionary in a list
+            return [InlineEquation.create_text(expression)]
     
     @classmethod
     def _convert_latex_to_katex(cls, expression: str) -> str:

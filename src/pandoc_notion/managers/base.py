@@ -30,7 +30,7 @@ class Manager(ABC):
     
     @classmethod
     @abstractmethod
-    def convert(cls, elem: pf.Element) -> List[Dict[str, Any]]:
+    def to_dict(cls, elem: pf.Element) -> List[Dict[str, Any]]:
         """
         Convert a panflute element to Notion API-level blocks.
         
