@@ -147,7 +147,7 @@ class MarkdownConverter:
         Returns:
             A panflute document
         """
-        return pf.convert_text(markdown_text, standalone=True)
+        return pf.convert_text(markdown_text, standalone=True, input_format='markdown-smart')
     
     @debug_decorator(filename="markdown_converter.py", funcname="_process_blocks")
     def _process_blocks(self, result: Dict[str, Any]) -> List[Block]:
