@@ -13,7 +13,7 @@ class NotionInlineElement(ABC):
     Interface for all elements that can appear in a Notion rich text array.
     
     This is the base class for all inline elements used in Notion blocks,
-    such as regular text, equations, code, mentions, etc.
+    such as regular text, equations, and code.
     """
     
     @abstractmethod
@@ -93,41 +93,9 @@ class CodeElement(NotionInlineElement):
     
     def __str__(self) -> str:
         """String representation of the code for debugging."""
-        return f"Code('{self.text}')"
-
-
-@dataclass
-class MentionElement(NotionInlineElement):
-    """
-    Represents a mention in a Notion rich text array.
-    
-    Mentions can reference pages, databases, users, dates, or external resources.
-    """
-    mention_type: str  # page, database, user, date, etc.
-    mention_data: Dict[str, Any]
-    annotations: Annotations = field(default_factory=Annotations)
-    plain_text: str = ""
-    
-    def get_content(self) -> str:
-        """Get the text content of this element."""
-        return self.plain_text
-    
-    def to_dict(self) -> Dict[str, Any]:
-        """Convert to Notion API dictionary format."""
-        return {
-            "type": "mention",
-            "mention": {
-                self.mention_type: self.mention_data
-            },
-            "annotations": self.annotations.to_dict(),
-            "plain_text": self.plain_text
-        }
-    
     def __str__(self) -> str:
-        """String representation of the mention for debugging."""
-        return f"Mention({self.mention_type}, {self.plain_text})"
-
-
+        """String representation of the code for debugging."""
+        return f"Code('{self.text}')"
 def merge_consecutive_texts(elements: List[NotionInlineElement]) -> List[NotionInlineElement]:
     """
     Merge consecutive Text objects with identical annotations and link status.
