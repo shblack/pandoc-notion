@@ -2,7 +2,7 @@ from typing import List, Optional, Union, Tuple, Dict, Any
 
 import panflute as pf
 
-from ..models.text import (
+from .text_manager_inline import (
     NotionInlineElement, 
     Text,
     Annotations,
@@ -11,7 +11,6 @@ from ..models.text import (
 )
 from ..utils.debug import debug_decorator
 from .base import Manager
-from .equation_manager import EquationManager
 
 
 class TextManager(Manager):
@@ -23,82 +22,65 @@ class TextManager(Manager):
     """
     
     @classmethod
-    @debug_decorator
-    def can_convert(cls, elem: pf.Element) -> bool:
-        """Check if the element is an inline element that can be converted."""
-        # Explicitly avoid handling block-level elements
-        if isinstance(elem, (pf.BlockQuote, pf.Para, pf.Header)):
-            return False
-        
-        # Include basic text elements
-        if isinstance(elem, (pf.Str, pf.SoftBreak, pf.LineBreak, pf.Space, pf.Link)):
-            return True
-            
-        # Include formatting elements
-        if isinstance(elem, (pf.Emph, pf.Strong)):
-            return True
-            
-        # Include inline math elements
-        if isinstance(elem, pf.Math) and elem.format == 'InlineMath':
-            return True
-            
-        # Check if we have a registered handler for this element type
-        if InlineElementConverter.convert(elem) is not None:
-            return True
-            
-        return False
-    
-    @classmethod
-    @debug_decorator
-    def convert(cls, elem: Union[pf.Element, List[pf.Element]]) -> List[NotionInlineElement]:
-        """
-        Convert a panflute element or list of elements to Notion inline element objects.
-        
-        Args:
-            elem: A panflute element or list of elements
-            
-        Returns:
-            A list of Notion inline element objects
-        """
-        # If we got a list, process each element and collect results
-        if isinstance(elem, list):
-            # Create text elements using our internal model
-            notion_elements = cls.create_text_elements(elem)
-                
-            # Merge consecutive text elements with same formatting
-            merged_elements = cls.merge_consecutive_elements(notion_elements)
-            
-            return merged_elements
-        else:
-            # Single element conversion - return result as a list
-            result = []
-            cls._process_stream([elem], Annotations(), result)
-            return result
-
-    @classmethod
     def _is_content_token(cls, elem: pf.Element) -> bool:
         """
         Determine if an element is a content token (directly contains text).
+            # Handle math (both inline and display) with the registered converter
+            if isinstance(elem, pf.Math):
+                # Flush any accumulated text
+                if current_text:
+                    text_obj = Text(current_text, annotations=current_annotations.copy())
+                    result_elements.append(text_obj)
+                    current_text = ""
+                
+                # Get the math element from the converter registry
+                math_element = InlineElementConverter.convert(elem, current_annotations)
+                if math_element:
+                    result_elements.append(math_element)
+                continue
+d_annotations) for child in elem.content]
+            
+            # Merge consecutive Text elements and return the first one
+            # This assumes Strong only contains one piece of content
+            merged = merge_consecutive_texts(child_elements)
+            if merged and len(merged) == 1:
+                return merged[0]
+            
+            # If we can't merge to single text, return the first child (best effort)
+            return child_elements[0] if child_elements else Text("", current_annotations)
+            
+        elif isinstance(elem, pf.Emph):
+            child_annotations = current_annotations.copy()
+            child_annotations.set_italic(True)
+            
+            # Convert children with updated annotations
+            child_elements = [cls.convert_element(child, child_annotations) for child in elem.content]
+            
+            # Merge consecutive Text elements and return the first one
+            merged = merge_consecutive_texts(child_elements)
+            if merged and len(merged) == 1:
+                return merged[0]
+            
+            # If we can't merge to single text, return the first child (best effort)
+            return child_elements[0] if child_elements else Text("", current_annotations)
         
-        Content tokens: Str, Space, SoftBreak, LineBreak, Math(InlineMath)
-        """
-        return isinstance(elem, (pf.Str, pf.Space, pf.SoftBreak, pf.LineBreak)) or \
-               (isinstance(elem, pf.Math) and elem.format == 'InlineMath')
-    
-    @classmethod
-    def _is_formatting_token(cls, elem: pf.Element) -> bool:
-        """
-        Determine if an element is a formatting token (modifies text appearance).
-        
-        Formatting tokens: Emph, Strong
-        """
-        return isinstance(elem, (pf.Emph, pf.Strong))
-    
-    @classmethod
-    def _get_content_for_token(cls, elem: pf.Element) -> str:
-        """Extract the text content from a content token."""
-        if isinstance(elem, pf.Str):
-            return elem.text
+        # Handle basic text elements directly
+        elif isinstance(elem, pf.Str):
+            return Text(elem.text, annotations=current_annotations.copy())
+            
+        elif isinstance(elem, pf.Space):
+            return Text(" ", annotations=current_annotations.copy())
+            
+        elif isinstance(elem, (pf.SoftBreak, pf.LineBreak)):
+            return Text("\n", annotations=current_annotations.copy())
+            
+        # Try using a registered converter for this element type
+        converter_result = InlineElementConverter.convert(elem, current_annotations)
+        if converter_result is not None:
+            return converter_result
+            
+        # If we can't handle it, return empty text
+        return Text("", annotations=current_annotations.copy())
         elif isinstance(elem, pf.Space):
             return " "
         elif isinstance(elem, (pf.SoftBreak, pf.LineBreak)):
