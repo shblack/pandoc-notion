@@ -5,9 +5,13 @@ import panflute as pf
 from .text_manager_inline import (
     NotionInlineElement, 
     Text,
+    EquationElement,
+    CodeElement,
+    MentionElement,
     Annotations,
     InlineElementConverter,
-    merge_consecutive_texts
+    merge_consecutive_texts,
+    convert_math_element
 )
 from ..utils.debug import debug_decorator
 from .base import Manager
@@ -25,69 +29,58 @@ class TextManager(Manager):
     def _is_content_token(cls, elem: pf.Element) -> bool:
         """
         Determine if an element is a content token (directly contains text).
-            # Handle math (both inline and display) with the registered converter
-            if isinstance(elem, pf.Math):
-                # Flush any accumulated text
-                if current_text:
-                    text_obj = Text(current_text, annotations=current_annotations.copy())
-                    result_elements.append(text_obj)
-                    current_text = ""
-                
-                # Get the math element from the converter registry
-                math_element = InlineElementConverter.convert(elem, current_annotations)
-                if math_element:
-                    result_elements.append(math_element)
-                continue
-d_annotations) for child in elem.content]
-            
-            # Merge consecutive Text elements and return the first one
-            # This assumes Strong only contains one piece of content
-            merged = merge_consecutive_texts(child_elements)
-            if merged and len(merged) == 1:
-                return merged[0]
-            
-            # If we can't merge to single text, return the first child (best effort)
-            return child_elements[0] if child_elements else Text("", current_annotations)
-            
-        elif isinstance(elem, pf.Emph):
-            child_annotations = current_annotations.copy()
-            child_annotations.set_italic(True)
-            
-            # Convert children with updated annotations
-            child_elements = [cls.convert_element(child, child_annotations) for child in elem.content]
-            
-            # Merge consecutive Text elements and return the first one
-            merged = merge_consecutive_texts(child_elements)
-            if merged and len(merged) == 1:
-                return merged[0]
-            
-            # If we can't merge to single text, return the first child (best effort)
-            return child_elements[0] if child_elements else Text("", current_annotations)
         
-        # Handle basic text elements directly
-        elif isinstance(elem, pf.Str):
-            return Text(elem.text, annotations=current_annotations.copy())
+        Content tokens are elements that can be directly converted to text without
+        processing their children.
+        
+        Args:
+            elem: The element to check
             
-        elif isinstance(elem, pf.Space):
-            return Text(" ", annotations=current_annotations.copy())
+        Returns:
+            True if the element is a content token, False otherwise
+        """
+        return isinstance(elem, (pf.Str, pf.Space, pf.SoftBreak, pf.LineBreak, pf.Math))
+    
+    @classmethod
+    def _is_formatting_token(cls, elem: pf.Element) -> bool:
+        """
+        Determine if an element is a formatting token (applies formatting to its content).
+        
+        Formatting tokens are elements that apply formatting to their children but don't
+        directly contain text themselves.
+        
+        Args:
+            elem: The element to check
             
-        elif isinstance(elem, (pf.SoftBreak, pf.LineBreak)):
-            return Text("\n", annotations=current_annotations.copy())
+        Returns:
+            True if the element is a formatting token, False otherwise
+        """
+        return isinstance(elem, (pf.Emph, pf.Strong))
+    
+    @classmethod
+    def _get_content_for_token(cls, elem: pf.Element) -> str:
+        """
+        Extract the plain text content from a content token.
+        
+        Args:
+            elem: The element to extract content from (must be a content token)
             
-        # Try using a registered converter for this element type
-        converter_result = InlineElementConverter.convert(elem, current_annotations)
-        if converter_result is not None:
-            return converter_result
+        Returns:
+            The plain text content of the element
             
-        # If we can't handle it, return empty text
-        return Text("", annotations=current_annotations.copy())
+        Raises:
+            ValueError: If the element is not a content token
+        """
+        if isinstance(elem, pf.Str):
+            return elem.text
         elif isinstance(elem, pf.Space):
             return " "
         elif isinstance(elem, (pf.SoftBreak, pf.LineBreak)):
             return "\n"
-        elif isinstance(elem, pf.Math) and elem.format == 'InlineMath':
-            # Use EquationManager's conversion logic for consistency
-            return EquationManager._convert_latex_to_katex(elem.text)
+        elif isinstance(elem, pf.Math):
+            # Delegate math handling to the converter
+            return elem.text
+        
         raise ValueError(f"Not a content token: {type(elem).__name__}")
     
     @classmethod
@@ -107,6 +100,44 @@ d_annotations) for child in elem.content]
             formatting_changed = new_annotations.set_bold(True)
             
         return new_annotations, formatting_changed
+    
+    @classmethod
+    def can_convert(cls, elem: pf.Element) -> bool:
+        """
+        Check if this manager can convert the given element.
+        
+        Args:
+            elem: The element to check
+            
+        Returns:
+            True if this manager can convert the element, False otherwise
+        """
+        # Can convert content tokens, formatting tokens, and elements with registered converters
+        return (
+            cls._is_content_token(elem) or 
+            cls._is_formatting_token(elem) or
+            type(elem) in InlineElementConverter._handlers
+        )
+    
+    @classmethod
+    @debug_decorator
+    def convert(cls, elements: List[pf.Element]) -> List[NotionInlineElement]:
+        """
+        Convert a list of panflute elements to Notion inline elements.
+        
+        This is the main public API method for converting elements.
+        
+        Args:
+            elements: A list of panflute elements to convert
+            
+        Returns:
+            A list of NotionInlineElement objects
+        """
+        # Convert the elements to Notion inline elements
+        result_elements = cls.create_text_elements(elements)
+        
+        # Merge consecutive text elements with identical formatting
+        return cls.merge_consecutive_elements(result_elements)
     
     @classmethod
     @debug_decorator
@@ -166,7 +197,7 @@ d_annotations) for child in elem.content]
                     current_text = ""
                 continue
                 
-            # Try to convert using registered handlers
+            # Try to convert using registered handlers from InlineElementConverter
             element = InlineElementConverter.convert(elem, current_annotations.copy())
             if element:
                 # Flush any accumulated text
@@ -177,21 +208,6 @@ d_annotations) for child in elem.content]
                 
                 # Add the converted element
                 result_elements.append(element)
-                continue
-            
-            # Handle inline math specially
-            if isinstance(elem, pf.Math) and elem.format == 'InlineMath':
-                # Flush any accumulated text
-                if current_text:
-                    text_obj = Text(current_text, annotations=current_annotations.copy())
-                    result_elements.append(text_obj)
-                    current_text = ""
-                
-                # Create equation text with equation annotation
-                equation_content = cls._get_content_for_token(elem)
-                equation_annotations = current_annotations.copy()
-                equation_annotations.set_equation(True)
-                result_elements.append(Text(equation_content, annotations=equation_annotations))
                 continue
                 
             # Handle content tokens (regular text)
@@ -224,53 +240,6 @@ d_annotations) for child in elem.content]
         if current_text:
             text_obj = Text(current_text, annotations=current_annotations.copy())
             result_elements.append(text_obj)
-    
-    @classmethod
-    @debug_decorator
-    def _process_inline_element(cls, elem: pf.Element, 
-               base_annotations: Optional[Annotations] = None) -> Union[NotionInlineElement, List[NotionInlineElement]]:
-        """
-        Process a single panflute inline element to a Notion inline element or list of elements.
-        
-        This is an internal method used by create_text_blocks for processing individual elements.
-        
-        Args:
-            elem: The element to convert
-            base_annotations: Annotations from parent elements to be inherited.
-            
-        Returns:
-            Either a single NotionInlineElement or a list of NotionInlineElements
-        """
-        current_annotations = base_annotations.copy() if base_annotations else Annotations()
-        
-        # Try to convert using registered handlers
-        element = InlineElementConverter.convert(elem, current_annotations.copy())
-        if element:
-            return element
-        
-        # Handle inline math elements
-        elif isinstance(elem, pf.Math) and elem.format == 'InlineMath':
-            equation_content = cls._get_content_for_token(elem)
-            equation_annotations = current_annotations.copy()
-            equation_annotations.set_equation(True)
-            return Text(equation_content, annotations=equation_annotations)
-            
-        # Content tokens get a direct conversion
-        elif cls._is_content_token(elem):
-            content = cls._get_content_for_token(elem)
-            return Text(content, annotations=current_annotations)
-            
-        # Formatting tokens process their children
-        elif cls._is_formatting_token(elem):
-            result_elements = []
-            new_annotations, _ = cls._apply_formatting(elem, current_annotations)
-            
-            # Process children with new annotations
-            cls._process_stream(elem.content, new_annotations, result_elements)
-            return result_elements
-            
-        else:
-            raise ValueError(f"TextManager cannot convert element of type {type(elem).__name__}")
     
     @classmethod
     def merge_consecutive_elements(cls, elements: List[NotionInlineElement]) -> List[NotionInlineElement]:
