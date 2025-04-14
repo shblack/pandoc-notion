@@ -7,7 +7,6 @@ from pandoc_notion.managers.text_manager import TextManager
 from pandoc_notion.managers.paragraph_manager import ParagraphManager
 from pandoc_notion.managers.heading_manager import HeadingManager
 from pandoc_notion.managers.code_manager import CodeManager
-from pandoc_notion.managers.equation_manager import EquationManager
 from pandoc_notion.managers.list_manager import ListManager
 from pandoc_notion.managers.quote_manager import QuoteManager
 from pandoc_notion.managers.registry_mixin import set_registry
@@ -53,7 +52,6 @@ class ManagerRegistry:
         self.register_manager(QuoteManager)  # Handle quotes before other elements
         self.register_manager(HeadingManager)
         self.register_manager(CodeManager)
-        self.register_manager(EquationManager)
         self.register_manager(ListManager)
         
         # Text and inline elements
