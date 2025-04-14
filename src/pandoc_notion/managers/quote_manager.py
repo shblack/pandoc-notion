@@ -4,21 +4,16 @@ import panflute as pf
 
 from ..models.quote import Quote
 from ..models.text import Text
-from ..models.paragraph import Paragraph
 from ..utils.debug import debug_decorator
 from .base import Manager
-from .text_manager import TextManager
-from .paragraph_manager import ParagraphManager
+from .registry_mixin import RegistryMixin
 
-
-class QuoteManager(Manager):
+class QuoteManager(Manager, RegistryMixin):
     """
     Manager for handling block quote elements and converting them to Notion Quote blocks.
     
     Handles panflute BlockQuote elements, including nested quotes with proper formatting.
-    In Notion's structure, a blockquote is represented as:
-    - First paragraph → Quote block content
-    - Additional paragraphs → Nested child Paragraph blocks
+    In Notion's structure, a blockquote can contain rich text and nested child blocks.
     """
     
     @classmethod
@@ -33,16 +28,16 @@ class QuoteManager(Manager):
         """
         Convert a panflute block quote element to a Notion Quote block object.
 
-        In Notion's structure, a blockquote is represented as:
-        - First paragraph → Quote block content
-        - Additional paragraphs → Nested child Paragraph blocks
+        In Notion's structure:
+        - First paragraph becomes the quote's rich text content
+        - All other elements become nested child blocks
 
         Args:
             elem: A panflute BlockQuote element
 
         Returns:
             A list containing a single Quote object,
-            potentially with nested child paragraph blocks.
+            potentially with nested child blocks.
         """
         if not isinstance(elem, pf.BlockQuote):
             raise ValueError(f"Expected BlockQuote element, got {type(elem).__name__}")
@@ -50,28 +45,36 @@ class QuoteManager(Manager):
         # Create a new quote
         quote = Quote()
 
-        # Process all paragraphs in the quote
+        # Handle empty blockquote
+        if not elem.content:
+            return [quote]
+        
+        # Get the first element to use as quote text
         if elem.content:
-            # Get all paragraphs
-            paragraphs = [p for p in elem.content if isinstance(p, pf.Para) and p.content]
+            first_elem = elem.content[0]
+            # Convert the first element using the registry system
+            converted_blocks = cls.convert_with_manager(first_elem)
+            
+            # If we got valid blocks back and the first one has text_content,
+            # use it for the quote's text content
+            if converted_blocks and hasattr(converted_blocks[0], 'text_content'):
+                quote.add_texts(converted_blocks[0].text_content)
 
-            if not paragraphs:
-                # Return empty quote block if no content
-                return [quote]
+        # Process the rest of the elements as children
+        for content in elem.content[1:]:
+            if isinstance(content, pf.BlockQuote):
+                # Special handling for nested blockquotes
+                nested_quotes = cls.convert(content)
+                for nested_quote in nested_quotes:
+                    quote.add_child(nested_quote)
+            else:
+                # Use the registry to find the appropriate manager
+                blocks = cls.convert_with_manager(content)
+                
+                # Add all converted blocks as children
+                for block in blocks:
+                    quote.add_child(block)
 
-            # First paragraph becomes the Quote block content
-            first_para = paragraphs[0]
-            texts = TextManager.create_text_elements(first_para.content)
-            quote.add_texts(texts)
-
-            # Any additional paragraphs become nested child Paragraph blocks
-            for para in paragraphs[1:]:
-                paragraph = Paragraph()
-                texts = TextManager.create_text_elements(para.content)
-                paragraph.add_texts(texts)
-                quote.add_child(paragraph)
-
-        # Return the Quote object wrapped in a list
         return [quote]
     
     @classmethod
@@ -85,7 +88,7 @@ class QuoteManager(Manager):
 
         Returns:
             A list containing a single dictionary representing the Notion API Quote block,
-            potentially with nested child paragraph blocks.
+            potentially with nested child blocks.
         """
         # Convert to Quote objects, then convert each to dictionary
         quotes = cls.convert(elem)
@@ -109,18 +112,19 @@ class QuoteManager(Manager):
     
     @classmethod
     @debug_decorator
-    def create_quote_from_paragraph(cls, paragraph: Paragraph) -> Quote:
+    def create_quote_from_block(cls, block) -> Quote:
         """
-        Create a quote from a Paragraph object.
+        Create a quote from any block object that has text_content.
         
         Args:
-            paragraph: A Paragraph object to convert to a quote
+            block: A block object with text_content attribute
             
         Returns:
             A Notion Quote object
         """
         quote = Quote()
-        quote.add_texts(paragraph.text_content)
+        if hasattr(block, 'text_content'):
+            quote.add_texts(block.text_content)
         return quote
     
     @classmethod

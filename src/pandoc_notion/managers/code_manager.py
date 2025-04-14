@@ -4,6 +4,7 @@ import panflute as pf
 
 from ..models.code import Code
 from .base import Manager
+from ..utils.debug import debug_decorator
 
 
 class CodeManager(Manager):
@@ -105,6 +106,12 @@ class CodeManager(Manager):
         "text": "plain text",
         "txt": "plain text"
     }
+    
+    @classmethod
+    @debug_decorator
+    def can_convert(cls, elem: pf.Element) -> bool:
+        """Check if the element is a code block that can be converted."""
+        return isinstance(elem, pf.CodeBlock)
     
     @classmethod
     def convert(cls, elem: pf.Element) -> List[Code]:

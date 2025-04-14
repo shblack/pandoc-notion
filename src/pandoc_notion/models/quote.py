@@ -91,7 +91,7 @@ class Quote(Block):
     def __str__(self) -> str:
         """String representation of the Quote."""
         # Create a summary of the text content
-        content_str = " ".join(text.content for text in self.text_content)
+        content_str = " ".join(text.get_content() for text in self.text_content)
         if len(content_str) > 37:
             content_str = content_str[:37] + "..."
         

@@ -10,6 +10,7 @@ from pandoc_notion.managers.code_manager import CodeManager
 from pandoc_notion.managers.equation_manager import EquationManager
 from pandoc_notion.managers.list_manager import ListManager
 from pandoc_notion.managers.quote_manager import QuoteManager
+from pandoc_notion.managers.registry_mixin import set_registry
 
 
 class ManagerRegistry:
@@ -30,9 +31,12 @@ class ManagerRegistry:
         self.managers = managers or []
         
         # Register default managers if none provided
+        # Register default managers if none provided
         if not self.managers:
             self.register_default_managers()
-    
+        
+        # Set this registry instance for all managers to use via the mixin
+        set_registry(self)
     def register_manager(self, manager_class: Type[Manager]) -> None:
         """
         Register a manager class with the registry.

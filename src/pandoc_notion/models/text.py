@@ -13,6 +13,11 @@ class NotionInlineElement(ABC):
     """
     
     @abstractmethod
+    def get_content(self) -> str:
+        """Get the text content of this element."""
+        pass
+    
+    @abstractmethod
     def to_dict(self) -> Dict[str, Any]:
         """Convert to Notion API dictionary format."""
         pass
@@ -142,6 +147,10 @@ class Text(NotionInlineElement):
     annotations: Annotations = field(default_factory=Annotations)
     link: Optional[str] = None
     
+    def get_content(self) -> str:
+        """Get the text content of this element."""
+        return self.content
+    
     def to_dict(self) -> Dict[str, Any]:
         """Convert Text to a dictionary representation for Notion API."""
         result = {
@@ -175,6 +184,10 @@ class EquationElement(NotionInlineElement):
     """
     expression: str
     annotations: Annotations = field(default_factory=Annotations)
+    
+    def get_content(self) -> str:
+        """Get the text content of this element."""
+        return self.expression
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert to Notion API dictionary format."""
@@ -210,6 +223,10 @@ class CodeElement(NotionInlineElement):
         """Ensure code annotation is set."""
         self.annotations.set_code(True)
     
+    def get_content(self) -> str:
+        """Get the text content of this element."""
+        return self.text
+    
     def to_dict(self) -> Dict[str, Any]:
         """Convert to Notion API dictionary format."""
         return {
@@ -237,6 +254,10 @@ class MentionElement(NotionInlineElement):
     mention_data: Dict[str, Any]
     annotations: Annotations = field(default_factory=Annotations)
     plain_text: str = ""
+    
+    def get_content(self) -> str:
+        """Get the text content of this element."""
+        return self.plain_text
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert to Notion API dictionary format."""
