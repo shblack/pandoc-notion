@@ -55,7 +55,7 @@ class TextManager(Manager):
         Returns:
             True if the element is a formatting token, False otherwise
         """
-        return isinstance(elem, (pf.Emph, pf.Strong))
+        return isinstance(elem, (pf.Emph, pf.Strong, pf.Strikeout))
     
     @classmethod
     def _get_content_for_token(cls, elem: pf.Element) -> str:
@@ -98,6 +98,8 @@ class TextManager(Manager):
             formatting_changed = new_annotations.set_italic(True)
         elif isinstance(elem, pf.Strong):
             formatting_changed = new_annotations.set_bold(True)
+        elif isinstance(elem, pf.Strikeout):
+            formatting_changed = new_annotations.set_strikethrough(True)
             
         return new_annotations, formatting_changed
     
