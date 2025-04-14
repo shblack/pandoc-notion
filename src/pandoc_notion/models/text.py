@@ -352,26 +352,7 @@ InlineElementConverter.register(pf.Code, convert_code_element)
 InlineElementConverter.register(pf.Math, convert_math_element)
 
 
-def convert_link_element(elem: pf.Link, annotations: Optional[Annotations] = None) -> Text:
-    """
-    Convert a Pandoc Link element to a Text with link.
-    
-    Args:
-        elem: The Pandoc Link element to convert
-        annotations: Optional annotations to apply
-        
-    Returns:
-        A Text instance with link set
-    """
-    if annotations is None:
-        annotations = Annotations()
-    # Get the text content from the link's children
-    text_content = "".join(str(child.text) for child in elem.content if isinstance(child, pf.Str))
-    return Text(text_content, annotations.copy(), link=elem.url)
-
-
-# Register the link handler
-InlineElementConverter.register(pf.Link, convert_link_element)
+# Links are now handled directly by TextManager as formatting tokens
 
 def merge_consecutive_texts(texts: List[NotionInlineElement]) -> List[NotionInlineElement]:
     """

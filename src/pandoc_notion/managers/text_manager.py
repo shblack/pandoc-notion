@@ -1,16 +1,21 @@
-from typing import List, Optional, Union, Tuple, Dict, Any
+"""
+Manage conversion of text elements to Notion format.
+
+This module provides the TextManager class for converting Pandoc inline elements
+to Notion's rich text format, handling formatting, links, and special elements.
+"""
+
+from typing import List, Optional, Tuple, Dict, Any, Set
 
 import panflute as pf
 
 from .text_manager_inline import (
     NotionInlineElement, 
     Text,
-    EquationElement,
-    CodeElement,
-    MentionElement,
     Annotations,
     InlineElementConverter,
     merge_consecutive_texts,
+    convert_code_element,
     convert_math_element
 )
 from ..utils.debug import debug_decorator
@@ -39,7 +44,7 @@ class TextManager(Manager):
         Returns:
             True if the element is a content token, False otherwise
         """
-        return isinstance(elem, (pf.Str, pf.Space, pf.SoftBreak, pf.LineBreak, pf.Math))
+        return isinstance(elem, (pf.Str, pf.Space, pf.SoftBreak, pf.LineBreak))
     
     @classmethod
     def _is_formatting_token(cls, elem: pf.Element) -> bool:
@@ -55,7 +60,7 @@ class TextManager(Manager):
         Returns:
             True if the element is a formatting token, False otherwise
         """
-        return isinstance(elem, (pf.Emph, pf.Strong, pf.Strikeout))
+        return isinstance(elem, (pf.Emph, pf.Strong, pf.Strikeout, pf.Link))
     
     @classmethod
     def _get_content_for_token(cls, elem: pf.Element) -> str:
@@ -77,31 +82,35 @@ class TextManager(Manager):
             return " "
         elif isinstance(elem, (pf.SoftBreak, pf.LineBreak)):
             return "\n"
-        elif isinstance(elem, pf.Math):
-            # Delegate math handling to the converter
-            return elem.text
         
         raise ValueError(f"Not a content token: {type(elem).__name__}")
     
     @classmethod
-    def _apply_formatting(cls, elem: pf.Element, current_annotations: Annotations) -> Tuple[Annotations, bool]:
+    def _apply_formatting(cls, elem: pf.Element, current_annotations: Annotations) -> Tuple[Annotations, Optional[str]]:
         """
         Apply formatting from a formatting token to the current annotations.
         
+        Args:
+            elem: The formatting element to apply
+            current_annotations: The current state of annotations
+            
         Returns:
-            Tuple of (updated annotations, formatting_changed)
+            Tuple of (updated annotations, link_url or None)
         """
         new_annotations = current_annotations.copy()
-        formatting_changed = False
+        link_url = None
         
         if isinstance(elem, pf.Emph):
-            formatting_changed = new_annotations.set_italic(True)
+            new_annotations.set_italic(True)
         elif isinstance(elem, pf.Strong):
-            formatting_changed = new_annotations.set_bold(True)
+            new_annotations.set_bold(True)
         elif isinstance(elem, pf.Strikeout):
-            formatting_changed = new_annotations.set_strikethrough(True)
+            new_annotations.set_strikethrough(True)
+        elif isinstance(elem, pf.Link):
+            # For links, just capture the URL - they're treated as formatting
+            link_url = elem.url
             
-        return new_annotations, formatting_changed
+        return new_annotations, link_url
     
     @classmethod
     def can_convert(cls, elem: pf.Element) -> bool:
@@ -142,7 +151,6 @@ class TextManager(Manager):
         return cls.merge_consecutive_elements(result_elements)
     
     @classmethod
-    @debug_decorator
     def create_text_elements(cls, elements: List[pf.Element], 
                    base_annotations: Optional[Annotations] = None) -> List[NotionInlineElement]:
         """
@@ -164,9 +172,10 @@ class TextManager(Manager):
         # Setup for stream processing
         result_elements = []
         current_text = ""
+        current_link = None
         
         # Process all elements in a flattened stream
-        cls._process_stream(elements, current_annotations, result_elements, current_text)
+        cls._process_stream(elements, current_annotations, result_elements, current_text, current_link)
         
         return result_elements
     
@@ -176,7 +185,8 @@ class TextManager(Manager):
         elements: List[pf.Element], 
         current_annotations: Annotations, 
         result_elements: List[NotionInlineElement], 
-        current_text: str = ""
+        current_text: str = "",
+        current_link: Optional[str] = None
     ) -> None:
         """
         Process a stream of elements, accumulating text with the same formatting
@@ -189,12 +199,13 @@ class TextManager(Manager):
             current_annotations: Current formatting state
             result_elements: List to store resulting NotionInlineElement objects (modified in-place)
             current_text: Accumulated text with current formatting
+            current_link: URL if processing link content, None otherwise
         """
         for elem in elements:
             if not cls.can_convert(elem):
                 # Flush any accumulated text before skipping
                 if current_text:
-                    text_obj = Text(current_text, annotations=current_annotations.copy())
+                    text_obj = Text(current_text, annotations=current_annotations.copy(), link=current_link)
                     result_elements.append(text_obj)
                     current_text = ""
                 continue
@@ -204,26 +215,39 @@ class TextManager(Manager):
             if element:
                 # Flush any accumulated text
                 if current_text:
-                    text_obj = Text(current_text, annotations=current_annotations.copy())
+                    text_obj = Text(current_text, annotations=current_annotations.copy(), link=current_link)
                     result_elements.append(text_obj)
                     current_text = ""
                 
                 # Add the converted element
                 result_elements.append(element)
                 continue
-                
+            
             # Handle content tokens (regular text)
             if cls._is_content_token(elem):
                 current_text += cls._get_content_for_token(elem)
                 
-            # Handle formatting tokens (bold, italic, etc.)
+            # Handle formatting tokens (bold, italic, link, etc.)
             elif cls._is_formatting_token(elem):
-                # Apply the formatting and check if it changed
-                new_annotations, formatting_changed = cls._apply_formatting(elem, current_annotations)
+                # Apply the formatting
+                new_annotations, link_url = cls._apply_formatting(elem, current_annotations)
+                
+                # Use the current link if no new link is provided (we're in a nested formatting)
+                if link_url is None:
+                    link_url = current_link
+                    
+                # Determine if formatting changed
+                formatting_changed = (
+                    new_annotations.bold != current_annotations.bold or
+                    new_annotations.italic != current_annotations.italic or
+                    new_annotations.strikethrough != current_annotations.strikethrough or
+                    new_annotations.code != current_annotations.code or
+                    link_url != current_link
+                )
                 
                 # Flush any accumulated text if formatting changed
                 if formatting_changed and current_text:
-                    text_obj = Text(current_text, annotations=current_annotations.copy())
+                    text_obj = Text(current_text, annotations=current_annotations.copy(), link=current_link)
                     result_elements.append(text_obj)
                     current_text = ""
                 
@@ -232,7 +256,8 @@ class TextManager(Manager):
                     elem.content, 
                     new_annotations, 
                     result_elements, 
-                    current_text if not formatting_changed else ""
+                    current_text if not formatting_changed else "",
+                    link_url
                 )
                 
                 # Reset current_text since it was either flushed or passed to recursive call
@@ -240,7 +265,7 @@ class TextManager(Manager):
         
         # Flush any remaining accumulated text
         if current_text:
-            text_obj = Text(current_text, annotations=current_annotations.copy())
+            text_obj = Text(current_text, annotations=current_annotations.copy(), link=current_link)
             result_elements.append(text_obj)
     
     @classmethod
@@ -261,6 +286,7 @@ class TextManager(Manager):
     def to_dict(cls, elements: List[pf.Element]) -> List[Dict[str, Any]]:
         """
         Convert a list of panflute elements to Notion API-compatible rich_text blocks.
+        
         This method implements the public API contract for TextManager, ensuring all
         text elements are returned in the format expected by the Notion API.
         

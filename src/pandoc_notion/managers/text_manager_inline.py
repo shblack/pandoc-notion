@@ -145,7 +145,6 @@ def merge_consecutive_texts(elements: List[NotionInlineElement]) -> List[NotionI
         return []
     
     result = []
-    current = None
     
     for element in elements:
         if not isinstance(element, Text):
@@ -159,7 +158,8 @@ def merge_consecutive_texts(elements: List[NotionInlineElement]) -> List[NotionI
             current = element
         elif (isinstance(current, Text) and 
               current.annotations.__dict__ == element.annotations.__dict__ and
-              current.link == element.link):
+              ((current.link is None and element.link is None) or
+               (current.link is not None and element.link is not None and current.link == element.link))):
             current.content += element.content
         else:
             result.append(current)
@@ -247,26 +247,9 @@ def convert_math_element(elem: pf.Math, annotations: Optional[Annotations] = Non
     return EquationElement(expression, annotations.copy())
 
 
-def convert_link_element(elem: pf.Link, annotations: Optional[Annotations] = None) -> Text:
-    """
-    Convert a Pandoc Link element to a Text with link.
-    
-    Args:
-        elem: The Pandoc Link element to convert
-        annotations: Optional annotations to apply
-        
-    Returns:
-        A Text instance with link set
-    """
-    if annotations is None:
-        annotations = Annotations()
-    # Get the text content from the link's children
-    text_content = "".join(str(child.text) for child in elem.content if isinstance(child, pf.Str))
-    return Text(text_content, annotations.copy(), link=elem.url)
-
-
 # Register handlers for standard element types
+# Register only the specialized element handlers
 InlineElementConverter.register(pf.Code, convert_code_element)
 InlineElementConverter.register(pf.Math, convert_math_element)
-InlineElementConverter.register(pf.Link, convert_link_element)
+# Links are handled as formatting tokens, not through InlineElementConverter
 
