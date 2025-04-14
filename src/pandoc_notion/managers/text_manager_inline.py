@@ -211,40 +211,6 @@ class InlineElementConverter:
         return None
 
 
-def clean_latex_expression(expression: str) -> str:
-    """Clean up LaTeX expression for Notion's KaTeX rendering."""
-    # Remove common LaTeX environment delimiters if present
-    expr = expression.strip()
-    
-    # Handle equation environments
-    if expr.startswith(r'\begin{equation}') and expr.endswith(r'\end{equation}'):
-        expr = expr[len(r'\begin{equation}'):-len(r'\end{equation}')].strip()
-    elif expr.startswith(r'\begin{align}') and expr.endswith(r'\end{align}'):
-        expr = expr[len(r'\begin{align}'):-len(r'\end{align}')].strip()
-    elif expr.startswith(r'\begin{aligned}') and expr.endswith(r'\end{aligned}'):
-        expr = expr[len(r'\begin{aligned}'):-len(r'\end{aligned}')].strip()
-    elif expr.startswith(r'\begin{gather}') and expr.endswith(r'\end{gather}'):
-        expr = expr[len(r'\begin{gather}'):-len(r'\end{gather}')].strip()
-    
-    # Remove \label{} commands as KaTeX doesn't support them
-    if r'\label{' in expr:
-        parts = expr.split(r'\label{')
-        expr = parts[0]
-        for part in parts[1:]:
-            if '}' in part:
-                expr += part.split('}', 1)[1]
-    
-    # Convert LaTeX commands to KaTeX-compatible versions
-    latex_to_katex = {
-        r'\eqref': r'\ref',  # KaTeX doesn't support \eqref
-    }
-    
-    for latex_cmd, katex_cmd in latex_to_katex.items():
-        expr = expr.replace(latex_cmd, katex_cmd)
-    
-    return expr
-
-
 def convert_code_element(elem: pf.Code, annotations: Optional[Annotations] = None) -> CodeElement:
     """
     Convert a Pandoc Code element to a CodeElement.
@@ -265,6 +231,9 @@ def convert_math_element(elem: pf.Math, annotations: Optional[Annotations] = Non
     """
     Convert a Pandoc Math element to an EquationElement.
     
+    This function creates a Notion equation element from a Pandoc Math element.
+    The Math element's text is already in appropriate LaTeX format from Pandoc.
+    
     Args:
         elem: The Pandoc Math element to convert
         annotations: Annotations to apply
@@ -274,7 +243,7 @@ def convert_math_element(elem: pf.Math, annotations: Optional[Annotations] = Non
     """
     if annotations is None:
         annotations = Annotations()
-    expression = clean_latex_expression(elem.text)
+    expression = elem.text
     return EquationElement(expression, annotations.copy())
 
 
