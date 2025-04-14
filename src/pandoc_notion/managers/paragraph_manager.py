@@ -41,15 +41,11 @@ class ParagraphManager(Manager, RegistryMixin):
         # Create a new paragraph
         paragraph = Paragraph()
         
-        # Process each element in the paragraph using the registry
-        for inline_elem in elem.content:
-            converted = cls.convert_with_manager(inline_elem)
-            if converted:
-                for block in converted:
-                    # Handle blocks that provide text elements
-                    if hasattr(block, 'to_text_element'):
-                        paragraph.add_text(block.to_text_element())
-        
+        # Convert all inline elements together using TextManager directly
+        # This ensures all elements are processed as a batch
+        text_elements = TextManager.create_text_elements(list(elem.content))
+        for text_element in text_elements:
+            paragraph.add_text(text_element)
         return [paragraph]
     
     @classmethod
