@@ -17,7 +17,7 @@ from typing import Dict, List, Any, Optional, Union
 
 import panflute as pf
 import pypandoc
-from utils.debug import debug_func
+from debug import debug_trace
 
 from pandoc_notion.registry import ManagerRegistry
 
@@ -39,7 +39,7 @@ class Filter:
         logger.debug("Initializing Filter")
         self.registry = ManagerRegistry()  # Initialize with default managers
     
-    @debug_func()
+    @debug_trace()
     def convert_string(self, text: str, format: str = "markdown") -> Dict[str, Any]:
         """
         Convert a string to Notion blocks.
@@ -55,7 +55,7 @@ class Filter:
         doc = self._string_to_doc(text, format)
         return self.to_notion_dict(doc)
 
-    @debug_func()
+    @debug_trace()
     def _string_to_doc(self, text: str, format: str = "markdown") -> pf.Doc:
         """
         Convert a string to a panflute Doc.
@@ -105,7 +105,7 @@ class Filter:
             logger.debug("Error details:", exc_info=True)
             raise
     
-    @debug_func()
+    @debug_trace()
     def to_notion_dict(self, doc: pf.Doc) -> Dict[str, Any]:
         """
         Convert a panflute Doc to a Notion blocks dictionary.
@@ -121,7 +121,7 @@ class Filter:
         logger.debug(f"Generated {len(blocks)} blocks")
         return {"children": blocks}
     
-    @debug_func()
+    @debug_trace()
     def to_notion_blocks(self, doc: pf.Doc) -> List[Dict[str, Any]]:
         """
         Convert a panflute Doc to a list of Notion blocks.
@@ -138,7 +138,7 @@ class Filter:
         return blocks
 
 
-@debug_func()
+@debug_trace()
 def convert_markdown_to_notion(markdown: str) -> Dict[str, Any]:
     """
     Convert markdown text to Notion blocks.
@@ -154,7 +154,7 @@ def convert_markdown_to_notion(markdown: str) -> Dict[str, Any]:
     return filter.convert_string(markdown)
 
 
-@debug_func()
+@debug_trace()
 def filter_markdown_to_notion(markdown: str) -> Dict[str, Any]:
     """
     Convert markdown to Notion blocks (alias for convert_markdown_to_notion).
