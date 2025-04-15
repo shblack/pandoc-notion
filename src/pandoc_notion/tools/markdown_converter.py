@@ -13,10 +13,19 @@ import warnings
 
 import panflute as pf
 
-from pandoc_notion.utils.debug import debug_decorator
 from pandoc_notion.registry import ManagerRegistry
 from pandoc_notion.filter import NotionFilter, NotionConfig
 from pandoc_notion.models.base import Block
+
+# Import debug_trace for detailed diagnostics
+try:
+    from pandoc_notion.debug import debug_trace
+except ImportError:
+    # Fallback decorator that does nothing if debug module not found
+    def debug_trace(*args, **kwargs):
+        def decorator(func):
+            return func
+        return decorator if kwargs or not args else decorator(args[0])
 
 
 class MarkdownConverter:
@@ -66,7 +75,7 @@ class MarkdownConverter:
             pf.HorizontalRule: self._convert_horizontal_rule,
         }
     
-    @debug_decorator(filename="markdown_converter.py", funcname="convert_blocks")
+    @debug_trace()
     def convert_blocks(self, markdown_text: str) -> List[Block]:
         """
         Convert Markdown text to a list of Notion blocks.
@@ -103,7 +112,7 @@ class MarkdownConverter:
         )
         return self.convert_blocks(markdown_text)
     
-    @debug_decorator(filename="markdown_converter.py", funcname="convert_file")
+    @debug_trace()
     def convert_file(self, file_path: Union[str, Path]) -> List[Block]:
         """
         Convert Markdown from a file to a list of Notion blocks.
@@ -136,7 +145,7 @@ class MarkdownConverter:
         blocks = self.convert_blocks(markdown_text)
         return self._to_api_format(blocks)
     
-    @debug_decorator(filename="markdown_converter.py", funcname="_parse_markdown")
+    @debug_trace()
     def _parse_markdown(self, markdown_text: str) -> pf.Doc:
         """
         Parse markdown text to Pandoc AST.
@@ -149,7 +158,7 @@ class MarkdownConverter:
         """
         return pf.convert_text(markdown_text, standalone=True, input_format='markdown-smart')
     
-    @debug_decorator(filename="markdown_converter.py", funcname="_process_blocks")
+    @debug_trace()
     def _process_blocks(self, result: Dict[str, Any]) -> List[Block]:
         """
         Process the converted document to extract block objects.
@@ -196,7 +205,7 @@ class MarkdownConverter:
         return serialized
     
     # Direct element conversion methods
-    @debug_decorator(filename="markdown_converter.py", funcname="_convert_element")
+    @debug_trace()
     def _convert_element(self, elem: pf.Element) -> Block:
         """
         Convert a panflute element to a Notion block using the handler pattern.
@@ -214,22 +223,22 @@ class MarkdownConverter:
             # Default to using the filter's conversion
             return self.filter.action(elem)
     
-    @debug_decorator(filename="markdown_converter.py", funcname="_convert_paragraph")
+    @debug_trace()
     def _convert_paragraph(self, elem: pf.Para) -> Block:
         """Convert a paragraph element to a Notion paragraph block."""
         return self.filter.registry.get_manager_for_element(elem).convert(elem)
     
-    @debug_decorator(filename="markdown_converter.py", funcname="_convert_header")
+    @debug_trace()
     def _convert_header(self, elem: pf.Header) -> Block:
         """Convert a header element to a Notion heading block."""
         return self.filter.registry.get_manager_for_element(elem).convert(elem)
     
-    @debug_decorator(filename="markdown_converter.py", funcname="_convert_bullet_list")
+    @debug_trace()
     def _convert_bullet_list(self, elem: pf.BulletList) -> Block:
         """Convert a bullet list element to Notion bulleted list blocks."""
         return self.filter.registry.get_manager_for_element(elem).convert(elem)
     
-    @debug_decorator(filename="markdown_converter.py", funcname="_convert_ordered_list")
+    @debug_trace()
     def _convert_ordered_list(self, elem: pf.OrderedList) -> Block:
         """Convert an ordered list element to Notion numbered list blocks."""
         return self.filter.registry.get_manager_for_element(elem).convert(elem)
