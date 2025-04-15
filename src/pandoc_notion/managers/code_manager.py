@@ -4,7 +4,17 @@ import panflute as pf
 
 from ..models.code import Code
 from .base import Manager
-from ..utils.debug import debug_decorator
+# Removed old debug import: from ..utils.debug import debug_decorator
+
+# Import debug_trace for detailed diagnostics
+try:
+    from pandoc_notion.debug import debug_trace
+except ImportError:
+    # Fallback decorator that does nothing if debug module not found
+    def debug_trace(*args, **kwargs):
+        def decorator(func):
+            return func
+        return decorator if kwargs or not args else decorator(args[0])
 
 
 class CodeManager(Manager):
@@ -108,12 +118,13 @@ class CodeManager(Manager):
     }
     
     @classmethod
-    @debug_decorator
+    # Removed @debug_decorator
     def can_convert(cls, elem: pf.Element) -> bool:
         """Check if the element is a code block that can be converted."""
         return isinstance(elem, pf.CodeBlock)
     
     @classmethod
+    @debug_trace()
     def convert(cls, elem: pf.Element) -> List[Code]:
         """
         Convert a panflute code block element to a Notion Code object.
@@ -140,6 +151,7 @@ class CodeManager(Manager):
         return [Code(code_content, language, caption)]
     
     @classmethod
+    @debug_trace()
     def to_dict(cls, elem: pf.Element) -> List[Dict[str, Any]]:
         """
         Convert a panflute code block element to a Notion API dictionary.
@@ -154,10 +166,11 @@ class CodeManager(Manager):
         code_blocks = cls.convert(elem)
         return [code_block.to_dict() for code_block in code_blocks]
         
-        # Check for caption/filename in attributes
-        caption = elem.attributes.get("caption") or elem.attributes.get("filename")
-        # Create the internal Code object and immediately convert it to its API dictionary representation.
-        return [Code(code_content, language, caption).to_dict()]
+        # Note: The lines below were duplicated/unreachable in the original file and have been removed
+        # # Check for caption/filename in attributes
+        # caption = elem.attributes.get("caption") or elem.attributes.get("filename")
+        # # Create the internal Code object and immediately convert it to its API dictionary representation.
+        # return [Code(code_content, language, caption).to_dict()]
     
     @classmethod
     def _map_language(cls, language: Optional[str]) -> str:
@@ -194,3 +207,4 @@ class CodeManager(Manager):
         """
         mapped_language = cls._map_language(language)
         return Code(code, mapped_language, caption)
+

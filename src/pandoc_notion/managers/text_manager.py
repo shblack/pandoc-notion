@@ -18,8 +18,18 @@ from .text_manager_inline import (
     convert_code_element,
     convert_math_element
 )
-from ..utils.debug import debug_decorator
+# Removed incorrect import: from ..utils.debug import debug_decorator
 from .base import Manager
+
+# Import debug_trace for detailed diagnostics
+try:
+    from pandoc_notion.debug import debug_trace
+except ImportError:
+    # Fallback decorator that does nothing if debug module not found
+    def debug_trace(*args, **kwargs):
+        def decorator(func):
+            return func
+        return decorator if kwargs or not args else decorator(args[0])
 
 
 class TextManager(Manager):
@@ -131,7 +141,8 @@ class TextManager(Manager):
         )
     
     @classmethod
-    @debug_decorator
+    # Removed @debug_decorator
+    @debug_trace()
     def convert(cls, elements: List[pf.Element]) -> List[NotionInlineElement]:
         """
         Convert a list of panflute elements to Notion inline elements.
@@ -151,6 +162,7 @@ class TextManager(Manager):
         return cls.merge_consecutive_elements(result_elements)
     
     @classmethod
+    @debug_trace()
     def create_text_elements(cls, elements: List[pf.Element], 
                    base_annotations: Optional[Annotations] = None) -> List[NotionInlineElement]:
         """
@@ -207,7 +219,7 @@ class TextManager(Manager):
                 if current_text:
                     text_obj = Text(current_text, annotations=current_annotations.copy(), link=current_link)
                     result_elements.append(text_obj)
-                    current_text = ""
+                    current_text = "" # Reset after flushing
                 continue
                 
             # Try to convert using registered handlers from InlineElementConverter
@@ -217,7 +229,7 @@ class TextManager(Manager):
                 if current_text:
                     text_obj = Text(current_text, annotations=current_annotations.copy(), link=current_link)
                     result_elements.append(text_obj)
-                    current_text = ""
+                    current_text = "" # Reset after flushing
                 
                 # Add the converted element
                 result_elements.append(element)
@@ -236,12 +248,9 @@ class TextManager(Manager):
                 if link_url is None:
                     link_url = current_link
                     
-                # Determine if formatting changed
+                # Determine if formatting changed (including link)
                 formatting_changed = (
-                    new_annotations.bold != current_annotations.bold or
-                    new_annotations.italic != current_annotations.italic or
-                    new_annotations.strikethrough != current_annotations.strikethrough or
-                    new_annotations.code != current_annotations.code or
+                    new_annotations.to_dict() != current_annotations.to_dict() or
                     link_url != current_link
                 )
                 
@@ -249,21 +258,21 @@ class TextManager(Manager):
                 if formatting_changed and current_text:
                     text_obj = Text(current_text, annotations=current_annotations.copy(), link=current_link)
                     result_elements.append(text_obj)
-                    current_text = ""
+                    current_text = "" # Reset after flushing
                 
                 # Process children with the new formatting state
                 cls._process_stream(
                     elem.content, 
                     new_annotations, 
                     result_elements, 
-                    current_text if not formatting_changed else "",
+                    "" if formatting_changed else current_text, # Pass empty string if flushed
                     link_url
                 )
                 
-                # Reset current_text since it was either flushed or passed to recursive call
-                current_text = ""
+                # Reset current_text after recursive call returns, as it's handled within that call
+                current_text = "" 
         
-        # Flush any remaining accumulated text
+        # Flush any remaining accumulated text at the end of the stream
         if current_text:
             text_obj = Text(current_text, annotations=current_annotations.copy(), link=current_link)
             result_elements.append(text_obj)
@@ -282,7 +291,8 @@ class TextManager(Manager):
         return merge_consecutive_texts(elements)
 
     @classmethod
-    @debug_decorator
+    # Removed @debug_decorator
+    @debug_trace()
     def to_dict(cls, elements: List[pf.Element]) -> List[Dict[str, Any]]:
         """
         Convert a list of panflute elements to Notion API-compatible rich_text blocks.

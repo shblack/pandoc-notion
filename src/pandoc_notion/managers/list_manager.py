@@ -4,10 +4,20 @@ import panflute as pf
 
 from ..models.list import List, ListItem, create_bulleted_list, create_numbered_list, create_todo_list, create_todo_item
 from ..models.text import Text
-from ..utils.debug import debug_decorator
+# Removed old debug import: from ..utils.debug import debug_decorator
 from .base import Manager
 from .text_manager import TextManager
 from .paragraph_manager import ParagraphManager
+
+# Import debug_trace for detailed diagnostics
+try:
+    from pandoc_notion.debug import debug_trace
+except ImportError:
+    # Fallback decorator that does nothing if debug module not found
+    def debug_trace(*args, **kwargs):
+        def decorator(func):
+            return func
+        return decorator if kwargs or not args else decorator(args[0])
 
 
 class ListManager(Manager):
@@ -20,35 +30,37 @@ class ListManager(Manager):
     """
     
     @classmethod
-    @debug_decorator
+    # Removed @debug_decorator
     def can_convert(cls, elem: pf.Element) -> bool:
         """Check if the element is a list that can be converted."""
         return isinstance(elem, (pf.BulletList, pf.OrderedList))
     
     @classmethod
-    @debug_decorator
-    def convert(cls, elem: pf.Element) -> List:
+    # Removed @debug_decorator
+    @debug_trace()
+    def convert(cls, elem: pf.Element) -> PyList[List]:
         """
-        Convert a panflute list element to a single Notion List object.
+        Convert a panflute list element to a list containing a single Notion List object.
 
         This method processes all list items within the given panflute list
-        and returns a single Notion List container holding all converted items.
+        and returns a list containing a single Notion List container holding all converted items.
 
         Args:
             elem: A panflute BulletList or OrderedList element
             
         Returns:
-            A single Notion List object
+            A list containing a single Notion List object
         """
         if isinstance(elem, pf.BulletList):
-            return cls._convert_bullet_list(elem)
+            return [cls._convert_bullet_list(elem)]
         elif isinstance(elem, pf.OrderedList):
-            return cls._convert_ordered_list(elem)
+            return [cls._convert_ordered_list(elem)]
         else:
             raise ValueError(f"Expected BulletList or OrderedList element, got {type(elem).__name__}")
     
     @classmethod
-    @debug_decorator
+    # Removed @debug_decorator
+    @debug_trace()
     def to_dict(cls, elem: pf.Element) -> PyList[Dict[str, Any]]:
         """
         Convert a panflute list element to Notion API-level blocks.
@@ -62,13 +74,18 @@ class ListManager(Manager):
             A list of Notion API-level blocks
         """
         # Get the single List object using convert
-        list_obj = cls.convert(elem)
+        # convert() now returns a list, so take the first element
+        list_objs = cls.convert(elem)
+        if not list_objs:
+            return [] # Should not happen if can_convert passed, but handle defensively
+        list_obj = list_objs[0]
             
         # Convert the List object to API-level dictionaries
         # The List.to_dict() method returns the flat list of item blocks.
         return list_obj.to_dict()
 
     @classmethod
+    @debug_trace()
     def _convert_bullet_list(cls, elem: pf.BulletList) -> List:
         """
         Convert a panflute BulletList to a single Notion List object.
@@ -93,6 +110,7 @@ class ListManager(Manager):
         return create_bulleted_list(notion_items)
 
     @classmethod
+    @debug_trace()
     def _convert_ordered_list(cls, elem: pf.OrderedList) -> List:
         """
         Convert a panflute OrderedList to a single Notion List object.
@@ -162,6 +180,7 @@ class ListManager(Manager):
         return text
     
     @classmethod
+    @debug_trace()
     def _convert_list_item(cls, elem: pf.ListItem, parent_type: str = "bulleted") -> ListItem:
         """
         Convert a panflute ListItem to a Notion ListItem.
@@ -194,8 +213,10 @@ class ListManager(Manager):
                     is_checked = cls._is_checked_checkbox(first_str.text)
                     # Modify the first Str to remove the checkbox
                     first_str.text = cls._strip_checkbox(first_str.text)
-                    # Remove the Space element that follows the checkbox character
-                    first_plain.content.pop(1)
+                    # Remove the Space element that follows the checkbox character if it exists
+                    if len(first_plain.content) > 1 and isinstance(first_plain.content[1], pf.Space):
+                        first_plain.content.pop(1)
+
         # Create list item with the appropriate type
         item_type = "todo" if is_todo_item else parent_type
         list_item = ListItem(item_type=item_type, checked=is_checked)
@@ -210,13 +231,15 @@ class ListManager(Manager):
             # Handle nested bullet lists
             elif isinstance(child, pf.BulletList):
                 # Process nested bullet list
-                nested_list_obj = cls._convert_bullet_list(child)
-                list_item.add_child(nested_list_obj) # Add the single container
+                nested_list_obj_list = cls.convert(child) # convert returns a list
+                if nested_list_obj_list:
+                    list_item.add_child(nested_list_obj_list[0]) # Add the single container
             # Handle nested ordered lists
             elif isinstance(child, pf.OrderedList):
                 # Process nested ordered list
-                nested_list_obj = cls._convert_ordered_list(child)
-                list_item.add_child(nested_list_obj) # Add the single container
+                nested_list_obj_list = cls.convert(child) # convert returns a list
+                if nested_list_obj_list:
+                    list_item.add_child(nested_list_obj_list[0]) # Add the single container
 
         return list_item
 

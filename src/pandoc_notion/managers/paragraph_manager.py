@@ -4,10 +4,20 @@ import panflute as pf
 
 from ..models.paragraph import Paragraph
 from ..models.text import Text
-from ..utils.debug import debug_decorator
+# Removed old debug import: from ..utils.debug import debug_decorator
 from .base import Manager
 from .text_manager import TextManager
 from .registry_mixin import RegistryMixin
+
+# Import debug_trace for detailed diagnostics
+try:
+    from pandoc_notion.debug import debug_trace
+except ImportError:
+    # Fallback decorator that does nothing if debug module not found
+    def debug_trace(*args, **kwargs):
+        def decorator(func):
+            return func
+        return decorator if kwargs or not args else decorator(args[0])
 
 
 class ParagraphManager(Manager, RegistryMixin):
@@ -18,13 +28,14 @@ class ParagraphManager(Manager, RegistryMixin):
     """
     
     @classmethod
-    @debug_decorator
+    # Removed @debug_decorator
     def can_convert(cls, elem: pf.Element) -> bool:
         """Check if the element is a paragraph that can be converted."""
         return isinstance(elem, pf.Para)
     
     @classmethod
-    @debug_decorator
+    # Removed @debug_decorator
+    @debug_trace()
     def convert(cls, elem: pf.Element) -> List[Paragraph]:
         """
         Convert a panflute paragraph element to a Notion Paragraph block object.
@@ -49,7 +60,8 @@ class ParagraphManager(Manager, RegistryMixin):
         return [paragraph]
     
     @classmethod
-    @debug_decorator
+    # Removed @debug_decorator
+    @debug_trace()
     def to_dict(cls, elem: pf.Element) -> List[Dict[str, Any]]:
         """
         Convert a panflute paragraph element to a Notion API paragraph block.
@@ -80,7 +92,7 @@ class ParagraphManager(Manager, RegistryMixin):
         return [paragraph]
     
     @classmethod
-    @debug_decorator
+    # Removed @debug_decorator
     def convert_plain_text_to_dict(cls, text: str) -> List[Dict[str, Any]]:
         """
         Create a paragraph dictionary from plain text.

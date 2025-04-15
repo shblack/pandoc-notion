@@ -4,9 +4,19 @@ import panflute as pf
 
 from ..models.heading import Heading
 from ..models.text import Text
-from ..utils.debug import debug_decorator
+# Removed old debug import: from ..utils.debug import debug_decorator
 from .base import Manager
 from .text_manager import TextManager
+
+# Import debug_trace for detailed diagnostics
+try:
+    from pandoc_notion.debug import debug_trace
+except ImportError:
+    # Fallback decorator that does nothing if debug module not found
+    def debug_trace(*args, **kwargs):
+        def decorator(func):
+            return func
+        return decorator if kwargs or not args else decorator(args[0])
 
 
 class HeadingManager(Manager):
@@ -18,13 +28,14 @@ class HeadingManager(Manager):
     """
     
     @classmethod
-    @debug_decorator
+    # Removed @debug_decorator
     def can_convert(cls, elem: pf.Element) -> bool:
         """Check if the element is a header that can be converted."""
         return isinstance(elem, pf.Header)
     
     @classmethod
-    @debug_decorator
+    # Removed @debug_decorator
+    @debug_trace()
     def convert(cls, elem: pf.Element) -> List[Heading]:
         """
         Convert a panflute header element to a Notion Heading block object.
@@ -46,14 +57,15 @@ class HeadingManager(Manager):
         heading = Heading(level)
         
         # Use TextManager to convert all inline elements in the heading
-        texts = TextManager.create_text_elements(elem.content)
+        texts = TextManager.create_text_elements(list(elem.content))
         heading.add_texts(texts)
         
         # Return as a single-item list
         return [heading]
     
     @classmethod
-    @debug_decorator
+    # Removed @debug_decorator
+    @debug_trace()
     def to_dict(cls, elem: pf.Element) -> List[Dict[str, Any]]:
         """
         Convert a panflute header element to a Notion API heading block.
