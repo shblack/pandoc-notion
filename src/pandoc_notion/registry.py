@@ -1,4 +1,5 @@
 from typing import List, Type, Optional, Dict, Any, Union
+import logging
 
 import panflute as pf
 
@@ -124,9 +125,7 @@ class ManagerRegistry:
                         result.append(converted)
             except Exception as e:
                 # Log the error but continue processing other elements
-                import logging
                 logging.error(f"Error converting element {type(elem).__name__}: {str(e)}")
-        
         return result
         
     def convert_elements_to_dicts(self, elements: List[pf.Element]) -> List[Dict[str, Any]]:
@@ -163,11 +162,9 @@ class ManagerRegistry:
                         elif isinstance(model, dict):
                             blocks.append(model)
                         else:
-                            import logging
                             logging.warning(f"Could not convert {type(model)} to dictionary")
                             
             except Exception as e:
-                import logging
                 logging.error(f"Error converting element {type(elem).__name__}: {str(e)}")
         
         return blocks

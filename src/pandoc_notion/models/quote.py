@@ -1,7 +1,7 @@
 from typing import List, Dict, Any, Optional
 
-from .base import Block
-from .text import Text, merge_consecutive_texts
+from pandoc_notion.models.base import Block
+from pandoc_notion.models.text import Text, merge_consecutive_texts
 
 
 class Quote(Block):

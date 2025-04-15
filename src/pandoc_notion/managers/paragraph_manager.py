@@ -2,16 +2,15 @@ from typing import List, Dict, Any
 
 import panflute as pf
 
-from ..models.paragraph import Paragraph
-from ..models.text import Text
-# Removed old debug import: from ..utils.debug import debug_decorator
-from .base import Manager
-from .text_manager import TextManager
-from .registry_mixin import RegistryMixin
+from pandoc_notion.models.paragraph import Paragraph
+from pandoc_notion.models.text import Text
+from pandoc_notion.managers.base import Manager
+from pandoc_notion.managers.text_manager import TextManager
+from pandoc_notion.managers.registry_mixin import RegistryMixin
 
 # Import debug_trace for detailed diagnostics
 try:
-    from pandoc_notion.debug import debug_trace
+    from debug import debug_trace
 except ImportError:
     # Fallback decorator that does nothing if debug module not found
     def debug_trace(*args, **kwargs):

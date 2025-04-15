@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 from abc import ABC, abstractmethod
 import panflute as pf
 
-from ..models.text import Annotations, Text
+from pandoc_notion.models.text import Annotations, Text
 
 
 class NotionInlineElement(ABC):
@@ -91,8 +91,6 @@ class CodeElement(NotionInlineElement):
             "plain_text": self.text
         }
     
-    def __str__(self) -> str:
-        """String representation of the code for debugging."""
     def __str__(self) -> str:
         """String representation of the code for debugging."""
         return f"Code('{self.text}')"

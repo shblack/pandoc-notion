@@ -2,16 +2,15 @@ from typing import List as PyList, Union, Dict, Any, Optional, Type
 
 import panflute as pf
 
-from ..models.list import List, ListItem, create_bulleted_list, create_numbered_list, create_todo_list, create_todo_item
-from ..models.text import Text
-# Removed old debug import: from ..utils.debug import debug_decorator
-from .base import Manager
-from .text_manager import TextManager
-from .paragraph_manager import ParagraphManager
+from pandoc_notion.models.list import List, ListItem, create_bulleted_list, create_numbered_list, create_todo_list, create_todo_item
+from pandoc_notion.models.text import Text
+from pandoc_notion.managers.base import Manager
+from pandoc_notion.managers.text_manager import TextManager
+from pandoc_notion.managers.paragraph_manager import ParagraphManager
 
 # Import debug_trace for detailed diagnostics
 try:
-    from pandoc_notion.debug import debug_trace
+    from debug import debug_trace
 except ImportError:
     # Fallback decorator that does nothing if debug module not found
     def debug_trace(*args, **kwargs):

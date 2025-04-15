@@ -9,7 +9,7 @@ from typing import List, Optional, Tuple, Dict, Any, Set
 
 import panflute as pf
 
-from .text_manager_inline import (
+from pandoc_notion.managers.text_manager_inline import (
     NotionInlineElement, 
     Text,
     Annotations,
@@ -19,11 +19,11 @@ from .text_manager_inline import (
     convert_math_element
 )
 # Removed incorrect import: from ..utils.debug import debug_decorator
-from .base import Manager
+from pandoc_notion.managers.base import Manager
 
 # Import debug_trace for detailed diagnostics
 try:
-    from pandoc_notion.debug import debug_trace
+    from debug import debug_trace
 except ImportError:
     # Fallback decorator that does nothing if debug module not found
     def debug_trace(*args, **kwargs):

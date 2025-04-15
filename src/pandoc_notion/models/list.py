@@ -1,7 +1,7 @@
 from typing import List as PyList, Dict, Any, Optional, Union, Literal
 
-from .base import Block
-from .text import Text, merge_consecutive_texts
+from pandoc_notion.models.base import Block
+from pandoc_notion.models.text import Text, merge_consecutive_texts
 
 
 class ListItem:
@@ -283,8 +283,6 @@ def create_list_item_from_text(
     Returns:
         A ListItem object
     """
-    from .text import Text
-
     item = ListItem(item_type=item_type, checked=checked)
     item.add_text(Text(text))
     return item

@@ -2,13 +2,12 @@ from typing import Dict, Any, List, Optional
 
 import panflute as pf
 
-from ..models.code import Code
-from .base import Manager
-# Removed old debug import: from ..utils.debug import debug_decorator
+from pandoc_notion.models.code import Code
+from pandoc_notion.managers.base import Manager
 
 # Import debug_trace for detailed diagnostics
 try:
-    from pandoc_notion.debug import debug_trace
+    from debug import debug_trace
 except ImportError:
     # Fallback decorator that does nothing if debug module not found
     def debug_trace(*args, **kwargs):

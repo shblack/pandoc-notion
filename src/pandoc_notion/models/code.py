@@ -1,7 +1,7 @@
 from typing import List, Dict, Any, Optional
 
-from .base import Block
-
+from pandoc_notion.models.base import Block
+from pandoc_notion.models.text import Text
 
 class Code(Block):
     """
@@ -29,8 +29,6 @@ class Code(Block):
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert the code block to a Notion API dictionary representation."""
-        from .text import Text
-        
         # Create code content as Text object
         code_text = Text(self.code)
         

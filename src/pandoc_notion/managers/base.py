@@ -3,7 +3,7 @@ from typing import Any, Dict, List, Optional, Type, TypeVar
 
 import panflute as pf
 
-from ..models.base import Block
+from pandoc_notion.models.base import Block
 
 T = TypeVar('T')
 
