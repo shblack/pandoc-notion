@@ -1,0 +1,515 @@
+{
+  "children": [
+    {
+      "object": "block",
+      "type": "heading_1",
+      "heading_1": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Project Launch Checklist"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Project Launch Checklist"
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Frontend Tasks"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Frontend Tasks"
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "type": "to_do",
+      "to_do": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Complete homepage redesign"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Complete homepage redesign"
+          }
+        ],
+        "color": "default",
+        "checked": true
+      }
+    },
+    {
+      "object": "block",
+      "type": "to_do",
+      "to_do": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Implement responsive layouts"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Implement responsive layouts"
+          }
+        ],
+        "color": "default",
+        "checked": true
+      }
+    },
+    {
+      "object": "block",
+      "type": "to_do",
+      "to_do": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Fix cross-browser compatibility issues"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Fix cross-browser compatibility issues"
+          }
+        ],
+        "color": "default",
+        "checked": false
+      },
+      "has_children": true,
+      "children": [
+        {
+          "object": "block",
+          "type": "to_do",
+          "to_do": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Chrome and Firefox"
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Chrome and Firefox"
+              }
+            ],
+            "color": "default",
+            "checked": true
+          }
+        },
+        {
+          "object": "block",
+          "type": "to_do",
+          "to_do": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Safari"
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Safari"
+              }
+            ],
+            "color": "default",
+            "checked": false
+          }
+        },
+        {
+          "object": "block",
+          "type": "to_do",
+          "to_do": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Edge"
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Edge"
+              }
+            ],
+            "color": "default",
+            "checked": false
+          }
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "type": "to_do",
+      "to_do": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Optimize"
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Optimize"
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " performance"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " performance"
+          }
+        ],
+        "color": "default",
+        "checked": false
+      },
+      "has_children": true,
+      "children": [
+        {
+          "object": "block",
+          "type": "to_do",
+          "to_do": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Image compression"
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Image compression"
+              }
+            ],
+            "color": "default",
+            "checked": true
+          }
+        },
+        {
+          "object": "block",
+          "type": "to_do",
+          "to_do": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Code splitting"
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Code splitting"
+              }
+            ],
+            "color": "default",
+            "checked": false
+          }
+        },
+        {
+          "object": "block",
+          "type": "to_do",
+          "to_do": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Bundle size reduction"
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Bundle size reduction"
+              }
+            ],
+            "color": "default",
+            "checked": false
+          }
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Backend Tasks"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Backend Tasks"
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "type": "to_do",
+      "to_do": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Set up cloud infrastructure"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Set up cloud infrastructure"
+          }
+        ],
+        "color": "default",
+        "checked": true
+      }
+    },
+    {
+      "object": "block",
+      "type": "to_do",
+      "to_do": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Configure database backups"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Configure database backups"
+          }
+        ],
+        "color": "default",
+        "checked": true
+      }
+    },
+    {
+      "object": "block",
+      "type": "to_do",
+      "to_do": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Complete API documentation"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Complete API documentation"
+          }
+        ],
+        "color": "default",
+        "checked": false
+      }
+    },
+    {
+      "object": "block",
+      "type": "to_do",
+      "to_do": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Security"
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Security"
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " audit"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " audit"
+          }
+        ],
+        "color": "default",
+        "checked": false
+      },
+      "has_children": true,
+      "children": [
+        {
+          "object": "block",
+          "type": "to_do",
+          "to_do": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Authentication review"
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Authentication review"
+              }
+            ],
+            "color": "default",
+            "checked": true
+          }
+        },
+        {
+          "object": "block",
+          "type": "to_do",
+          "to_do": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Penetration testing"
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Penetration testing"
+              }
+            ],
+            "color": "default",
+            "checked": false
+          }
+        }
+      ]
+    }
+  ]
+}

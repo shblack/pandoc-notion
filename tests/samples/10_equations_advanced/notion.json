@@ -1,0 +1,694 @@
+{
+  "object": "page",
+  "id": "a62dfaf1-8e5d-408e-9c37-7740063284aa",
+  "created_time": "2025-04-11T11:32:00.000Z",
+  "last_edited_time": "2025-04-11T11:41:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+  },
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "page_id",
+    "page_id": "1d2ecda2-e122-805e-b820-e23dba9e47f5"
+  },
+  "archived": false,
+  "in_trash": false,
+  "properties": {
+    "title": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "10_equations_advanced",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "10_equations_advanced",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://www.notion.so/10_equations_advanced-a62dfaf18e5d408e9c377740063284aa",
+  "public_url": null,
+  "request_id": "1f3853fb-af11-48b3-98e1-7cf90e775d59",
+  "blocks": [
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8147-8a55-fa8d59c2e191",
+      "parent": {
+        "type": "page_id",
+        "page_id": "a62dfaf1-8e5d-408e-9c37-7740063284aa"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_1",
+      "heading_1": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Advanced Mathematical Equations",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Advanced Mathematical Equations",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81af-ba1f-dacdfb57b712",
+      "parent": {
+        "type": "page_id",
+        "page_id": "a62dfaf1-8e5d-408e-9c37-7740063284aa"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Calculus Formulas",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Calculus Formulas",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8181-9ac3-d57dc819dae6",
+      "parent": {
+        "type": "page_id",
+        "page_id": "a62dfaf1-8e5d-408e-9c37-7740063284aa"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:39:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "The ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "The ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "power rule",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "power rule",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " for derivatives: ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " for derivatives: ",
+            "href": null
+          },
+          {
+            "type": "equation",
+            "equation": {
+              "expression": "\\frac{d}{dx}[x^n] = nx^{n-1}"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "\\frac{d}{dx}[x^n] = nx^{n-1}",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8160-8b20-dba0f0fe7665",
+      "parent": {
+        "type": "page_id",
+        "page_id": "a62dfaf1-8e5d-408e-9c37-7740063284aa"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:40:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Integration by parts",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Integration by parts",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " formula: ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " formula: ",
+            "href": null
+          },
+          {
+            "type": "equation",
+            "equation": {
+              "expression": "∫u(x)v′(x)dx = u(x)v(x) − ∫v(x)u′(x)dx"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "∫u(x)v′(x)dx = u(x)v(x) − ∫v(x)u′(x)dx",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81a7-9f67-d3581dd5affd",
+      "parent": {
+        "type": "page_id",
+        "page_id": "a62dfaf1-8e5d-408e-9c37-7740063284aa"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Statistics",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Statistics",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-810b-9732-df5134ffff4d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "a62dfaf1-8e5d-408e-9c37-7740063284aa"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:41:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "The ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "The ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "normal distribution",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "normal distribution",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " function: ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " function: ",
+            "href": null
+          },
+          {
+            "type": "equation",
+            "equation": {
+              "expression": "f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}}e^{-\\frac{1}{2}(\\frac{x-\\mu}{\\sigma})^2}"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}}e^{-\\frac{1}{2}(\\frac{x-\\mu}{\\sigma})^2}",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-816b-92bd-e458e21c6476",
+      "parent": {
+        "type": "page_id",
+        "page_id": "a62dfaf1-8e5d-408e-9c37-7740063284aa"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Physics Equations",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Physics Equations",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81a8-b3cb-e988ce4a0a34",
+      "parent": {
+        "type": "page_id",
+        "page_id": "a62dfaf1-8e5d-408e-9c37-7740063284aa"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:41:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Einstein’s",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Einstein’s",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " famous equation: ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " famous equation: ",
+            "href": null
+          },
+          {
+            "type": "equation",
+            "equation": {
+              "expression": "E = mc^2"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "E = mc^2",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " ",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81b1-b0df-fdb4ebc8eac7",
+      "parent": {
+        "type": "page_id",
+        "page_id": "a62dfaf1-8e5d-408e-9c37-7740063284aa"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:41:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Maxwell’s",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Maxwell’s",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " equation in differential form: ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " equation in differential form: ",
+            "href": null
+          },
+          {
+            "type": "equation",
+            "equation": {
+              "expression": "\\nabla \\times \\vec{E} = -\\frac{\\partial \\vec{B}}{\\partial t}"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "\\nabla \\times \\vec{E} = -\\frac{\\partial \\vec{B}}{\\partial t}",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8023-9db6-dfaf727bbb15",
+      "parent": {
+        "type": "page_id",
+        "page_id": "a62dfaf1-8e5d-408e-9c37-7740063284aa"
+      },
+      "created_time": "2025-04-11T11:41:00.000Z",
+      "last_edited_time": "2025-04-11T11:41:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    }
+  ]
+}

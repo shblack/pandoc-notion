@@ -1,0 +1,182 @@
+ast:
+- t: Header
+  c:
+  - 1
+  - - basic-mathematical-equations
+    - []
+    - []
+  - - t: Str
+      c: Basic
+    - t: Space
+    - t: Str
+      c: Mathematical
+    - t: Space
+    - t: Str
+      c: Equations
+- t: Header
+  c:
+  - 2
+  - - simple-arithmetic
+    - []
+    - []
+  - - t: Str
+      c: Simple
+    - t: Space
+    - t: Str
+      c: Arithmetic
+- t: Para
+  c:
+  - t: Str
+    c: The
+  - t: Space
+  - t: Str
+    c: sum
+  - t: Space
+  - t: Str
+    c: of
+  - t: Space
+  - t: Str
+    c: two
+  - t: Space
+  - t: Str
+    c: 'numbers:'
+  - t: Space
+  - t: Math
+    c:
+    - t: InlineMath
+    - a + b = c
+- t: Para
+  c:
+  - t: Str
+    c: The
+  - t: Space
+  - t: Strong
+    c:
+    - t: Str
+      c: product
+  - t: Space
+  - t: Str
+    c: of
+  - t: Space
+  - t: Str
+    c: two
+  - t: Space
+  - t: Str
+    c: 'numbers:'
+  - t: Space
+  - t: Math
+    c:
+    - t: InlineMath
+    - a \times b = c
+- t: Header
+  c:
+  - 2
+  - - area-formulas
+    - []
+    - []
+  - - t: Str
+      c: Area
+    - t: Space
+    - t: Str
+      c: Formulas
+- t: Para
+  c:
+  - t: Emph
+    c:
+    - t: Str
+      c: Rectangle
+  - t: Space
+  - t: Str
+    c: 'area:'
+  - t: Space
+  - t: Math
+    c:
+    - t: InlineMath
+    - A = L \times W
+- t: Para
+  c:
+  - t: Emph
+    c:
+    - t: Str
+      c: Circle
+  - t: Space
+  - t: Str
+    c: 'area:'
+  - t: Space
+  - t: Math
+    c:
+    - t: InlineMath
+    - A = \pi r^2
+- t: Header
+  c:
+  - 2
+  - - linear-equations
+    - []
+    - []
+  - - t: Str
+      c: Linear
+    - t: Space
+    - t: Str
+      c: Equations
+- t: Para
+  c:
+  - t: Str
+    c: Standard
+  - t: Space
+  - t: Str
+    c: 'form:'
+  - t: Space
+  - t: Math
+    c:
+    - t: InlineMath
+    - ax + b = c
+- t: Para
+  c:
+  - t: Str
+    c: Slope-intercept
+  - t: Space
+  - t: Str
+    c: 'form:'
+  - t: Space
+  - t: Math
+    c:
+    - t: InlineMath
+    - y = mx + b
+- t: Header
+  c:
+  - 2
+  - - simple-calculus
+    - []
+    - []
+  - - t: Str
+      c: Simple
+    - t: Space
+    - t: Str
+      c: Calculus
+- t: Para
+  c:
+  - t: Str
+    c: Derivative
+  - t: Space
+  - t: Str
+    c: 'notation:'
+  - t: Space
+  - t: Math
+    c:
+    - t: InlineMath
+    - \frac{dy}{dx}
+- t: Para
+  c:
+  - t: Str
+    c: Basic
+  - t: Space
+  - t: Str
+    c: 'integral:'
+  - t: Space
+  - t: Math
+    c:
+    - t: InlineMath
+    - \int f(x) dx
+metadata:
+  source_file: markdown.md
+  format: yaml

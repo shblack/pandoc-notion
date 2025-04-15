@@ -1,0 +1,180 @@
+{
+  "children": [
+    {
+      "object": "block",
+      "type": "heading_1",
+      "heading_1": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Code Examples"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Code Examples"
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Basic Python Function"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Basic Python Function"
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "type": "code",
+      "code": {
+        "caption": [],
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "def calculate_total(items):\n  \"\"\"Calculate the sum of all items in the list.\"\"\"\n  return sum(items)\n\n# Example usage\nprices = [10.99, 5.50, 3.25]\ntotal = calculate_total(prices)\nprint(f\"Total: ${total:.2f}\")  # Output: Total: $19.74"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "def calculate_total(items):\n  \"\"\"Calculate the sum of all items in the list.\"\"\"\n  return sum(items)\n\n# Example usage\nprices = [10.99, 5.50, 3.25]\ntotal = calculate_total(prices)\nprint(f\"Total: ${total:.2f}\")  # Output: Total: $19.74"
+          }
+        ],
+        "language": "python"
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Inline code like "
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Inline code like "
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "variable_name"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "variable_name"
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " can be included in regular text."
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " can be included in regular text."
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "HTML Snippet"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "HTML Snippet"
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "type": "code",
+      "code": {
+        "caption": [],
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "<div class=\"container\">\n  <h1>Welcome to our site</h1>\n  <p>This is a <strong>responsive</strong> layout.</p>\n</div>"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "<div class=\"container\">\n  <h1>Welcome to our site</h1>\n  <p>This is a <strong>responsive</strong> layout.</p>\n</div>"
+          }
+        ],
+        "language": "html"
+      }
+    }
+  ]
+}

@@ -1,0 +1,511 @@
+object: page
+id: 0526d823-c09b-456a-8370-696ea58609a8
+created_time: '2025-04-11T11:32:00.000Z'
+last_edited_time: '2025-04-11T11:32:00.000Z'
+created_by:
+  object: user
+  id: 1859a913-3c06-48a0-be9b-01966f93043c
+last_edited_by:
+  object: user
+  id: 1859a913-3c06-48a0-be9b-01966f93043c
+cover: null
+icon: null
+parent:
+  type: page_id
+  page_id: 1d2ecda2-e122-805e-b820-e23dba9e47f5
+archived: false
+in_trash: false
+properties:
+  title:
+    id: title
+    type: title
+    title:
+    - type: text
+      text:
+        content: 11_combined_formatting
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 11_combined_formatting
+      href: null
+url: https://www.notion.so/11_combined_formatting-0526d823c09b456a8370696ea58609a8
+public_url: null
+request_id: 7c134286-ecbd-4f51-bad8-db1d0e859884
+blocks:
+- object: block
+  id: 1d2ecda2-e122-814e-addb-e392354ca8bf
+  parent:
+    type: page_id
+    page_id: 0526d823-c09b-456a-8370-696ea58609a8
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: heading_1
+  heading_1:
+    rich_text:
+    - type: text
+      text:
+        content: Communication Guidelines
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Communication Guidelines
+      href: null
+    is_toggleable: false
+    color: default
+- object: block
+  id: 1d2ecda2-e122-8120-a69a-e48a2da6bd1f
+  parent:
+    type: page_id
+    page_id: 0526d823-c09b-456a-8370-696ea58609a8
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: heading_2
+  heading_2:
+    rich_text:
+    - type: text
+      text:
+        content: Email Etiquette
+        link: null
+      annotations:
+        bold: true
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Email Etiquette
+      href: null
+    is_toggleable: false
+    color: default
+- object: block
+  id: 1d2ecda2-e122-81d2-9dc4-f1e716226704
+  parent:
+    type: page_id
+    page_id: 0526d823-c09b-456a-8370-696ea58609a8
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: paragraph
+  paragraph:
+    rich_text:
+    - type: text
+      text:
+        content: 'Always use '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'Always use '
+      href: null
+    - type: text
+      text:
+        content: descriptive
+        link: null
+      annotations:
+        bold: false
+        italic: true
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: descriptive
+      href: null
+    - type: text
+      text:
+        content: ' subject lines for emails. When requesting action, mark emails as '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' subject lines for emails. When requesting action, mark emails
+        as '
+      href: null
+    - type: text
+      text:
+        content: urgent
+        link: null
+      annotations:
+        bold: true
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: urgent
+      href: null
+    - type: text
+      text:
+        content: ' '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' '
+      href: null
+    - type: text
+      text:
+        content: only when necessary
+        link: null
+      annotations:
+        bold: false
+        italic: true
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: only when necessary
+      href: null
+    - type: text
+      text:
+        content: .
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: .
+      href: null
+    color: default
+- object: block
+  id: 1d2ecda2-e122-81d1-b870-cb578f38fb72
+  parent:
+    type: page_id
+    page_id: 0526d823-c09b-456a-8370-696ea58609a8
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: paragraph
+  paragraph:
+    rich_text:
+    - type: text
+      text:
+        content: 'For complex instructions, use numbered steps:'
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'For complex instructions, use numbered steps:'
+      href: null
+    color: default
+- object: block
+  id: 1d2ecda2-e122-8163-a3c1-e5126afdeaf0
+  parent:
+    type: page_id
+    page_id: 0526d823-c09b-456a-8370-696ea58609a8
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: numbered_list_item
+  numbered_list_item:
+    rich_text:
+    - type: text
+      text:
+        content: Introduce
+        link: null
+      annotations:
+        bold: true
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Introduce
+      href: null
+    - type: text
+      text:
+        content: ' the topic clearly'
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' the topic clearly'
+      href: null
+    color: default
+- object: block
+  id: 1d2ecda2-e122-81a9-919e-d1003cce0e39
+  parent:
+    type: page_id
+    page_id: 0526d823-c09b-456a-8370-696ea58609a8
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: numbered_list_item
+  numbered_list_item:
+    rich_text:
+    - type: text
+      text:
+        content: 'Provide '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'Provide '
+      href: null
+    - type: text
+      text:
+        content: detailed
+        link: null
+      annotations:
+        bold: false
+        italic: true
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: detailed
+      href: null
+    - type: text
+      text:
+        content: ' explanation'
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' explanation'
+      href: null
+    color: default
+- object: block
+  id: 1d2ecda2-e122-812d-ae72-d3e38d5621c9
+  parent:
+    type: page_id
+    page_id: 0526d823-c09b-456a-8370-696ea58609a8
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: numbered_list_item
+  numbered_list_item:
+    rich_text:
+    - type: text
+      text:
+        content: 'End with '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'End with '
+      href: null
+    - type: text
+      text:
+        content: concrete action items
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: true
+        color: default
+      plain_text: concrete action items
+      href: null
+    color: default
+- object: block
+  id: 1d2ecda2-e122-8153-801f-d210e13b80d7
+  parent:
+    type: page_id
+    page_id: 0526d823-c09b-456a-8370-696ea58609a8
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: quote
+  quote:
+    rich_text:
+    - type: text
+      text:
+        content: 'Remember: Clear communication prevents misunderstandings and saves
+          everyone time.'
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'Remember: Clear communication prevents misunderstandings and saves
+        everyone time.'
+      href: null
+    color: default
+- object: block
+  id: 1d2ecda2-e122-81b1-a824-de6b3ead5688
+  parent:
+    type: page_id
+    page_id: 0526d823-c09b-456a-8370-696ea58609a8
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: paragraph
+  paragraph:
+    rich_text:
+    - type: text
+      text:
+        content: 'When sharing code solutions, format them properly:'
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'When sharing code solutions, format them properly:'
+      href: null
+    color: default
+- object: block
+  id: 1d2ecda2-e122-8178-944f-da831ef3e9e6
+  parent:
+    type: page_id
+    page_id: 0526d823-c09b-456a-8370-696ea58609a8
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: code
+  code:
+    caption: []
+    rich_text:
+    - type: text
+      text:
+        content: |-
+          def send_notification(user, message):
+              """Send an important notification to the user."""    if user.preferences['notifications'] == 'enabled':
+                  return messaging_service.send(user.email, message)
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: |-
+        def send_notification(user, message):
+            """Send an important notification to the user."""    if user.preferences['notifications'] == 'enabled':
+                return messaging_service.send(user.email, message)
+      href: null
+    language: python

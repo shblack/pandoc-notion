@@ -1,0 +1,233 @@
+ast:
+- t: Header
+  c:
+  - 1
+  - - project-implementation-steps
+    - []
+    - []
+  - - t: Str
+      c: Project
+    - t: Space
+    - t: Str
+      c: Implementation
+    - t: Space
+    - t: Str
+      c: Steps
+- t: OrderedList
+  c:
+  - - 1
+    - t: Decimal
+    - t: Period
+  - - - t: Plain
+        c:
+        - t: Strong
+          c:
+          - t: Str
+            c: Set
+          - t: Space
+          - t: Str
+            c: up
+          - t: Space
+          - t: Str
+            c: development
+          - t: Space
+          - t: Str
+            c: environment
+      - t: OrderedList
+        c:
+        - - 1
+          - t: Decimal
+          - t: Period
+        - - - t: Plain
+              c:
+              - t: Str
+                c: Install
+              - t: Space
+              - t: Str
+                c: required
+              - t: Space
+              - t: Str
+                c: software
+          - - t: Plain
+              c:
+              - t: Str
+                c: Configure
+              - t: Space
+              - t: Str
+                c: IDE
+              - t: Space
+              - t: Str
+                c: settings
+          - - t: Plain
+              c:
+              - t: Str
+                c: Set
+              - t: Space
+              - t: Str
+                c: up
+              - t: Space
+              - t: Str
+                c: version
+              - t: Space
+              - t: Str
+                c: control
+    - - t: Plain
+        c:
+        - t: Strong
+          c:
+          - t: Str
+            c: Design
+          - t: Space
+          - t: Str
+            c: system
+          - t: Space
+          - t: Str
+            c: architecture
+      - t: OrderedList
+        c:
+        - - 1
+          - t: Decimal
+          - t: Period
+        - - - t: Plain
+              c:
+              - t: Str
+                c: Define
+              - t: Space
+              - t: Str
+                c: components
+            - t: OrderedList
+              c:
+              - - 1
+                - t: Decimal
+                - t: Period
+              - - - t: Plain
+                    c:
+                    - t: Str
+                      c: Frontend
+                    - t: Space
+                    - t: Str
+                      c: modules
+                - - t: Plain
+                    c:
+                    - t: Str
+                      c: Backend
+                    - t: Space
+                    - t: Str
+                      c: services
+                - - t: Plain
+                    c:
+                    - t: Str
+                      c: Database
+                    - t: Space
+                    - t: Str
+                      c: schema
+          - - t: Plain
+              c:
+              - t: Str
+                c: Create
+              - t: Space
+              - t: Str
+                c: technical
+              - t: Space
+              - t: Str
+                c: diagrams
+    - - t: Plain
+        c:
+        - t: Strong
+          c:
+          - t: Str
+            c: Implement
+          - t: Space
+          - t: Str
+            c: core
+          - t: Space
+          - t: Str
+            c: features
+      - t: OrderedList
+        c:
+        - - 1
+          - t: Decimal
+          - t: Period
+        - - - t: Plain
+              c:
+              - t: Str
+                c: User
+              - t: Space
+              - t: Str
+                c: authentication
+              - t: Space
+              - t: Str
+                c: system
+          - - t: Plain
+              c:
+              - t: Str
+                c: Data
+              - t: Space
+              - t: Str
+                c: processing
+              - t: Space
+              - t: Str
+                c: pipeline
+          - - t: Plain
+              c:
+              - t: Str
+                c: Reporting
+              - t: Space
+              - t: Str
+                c: functionality
+    - - t: Plain
+        c:
+        - t: Strong
+          c:
+          - t: Str
+            c: Testing
+          - t: Space
+          - t: Str
+            c: and
+          - t: Space
+          - t: Str
+            c: quality
+          - t: Space
+          - t: Str
+            c: assurance
+      - t: OrderedList
+        c:
+        - - 1
+          - t: Decimal
+          - t: Period
+        - - - t: Plain
+              c:
+              - t: Str
+                c: Write
+              - t: Space
+              - t: Str
+                c: unit
+              - t: Space
+              - t: Str
+                c: tests
+          - - t: Plain
+              c:
+              - t: Str
+                c: Perform
+              - t: Space
+              - t: Str
+                c: integration
+              - t: Space
+              - t: Str
+                c: testing
+          - - t: Plain
+              c:
+              - t: Str
+                c: Conduct
+              - t: Space
+              - t: Str
+                c: user
+              - t: Space
+              - t: Str
+                c: acceptance
+              - t: Space
+              - t: Str
+                c: testing
+metadata:
+  source_file: markdown.md
+  format: yaml

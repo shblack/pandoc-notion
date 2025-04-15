@@ -1,0 +1,1057 @@
+{
+  "object": "page",
+  "id": "7d74787d-32aa-4341-82f0-7513da7a51f3",
+  "created_time": "2025-04-11T11:32:00.000Z",
+  "last_edited_time": "2025-04-11T11:32:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+  },
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "page_id",
+    "page_id": "1d2ecda2-e122-805e-b820-e23dba9e47f5"
+  },
+  "archived": false,
+  "in_trash": false,
+  "properties": {
+    "title": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "04_bulleted_lists",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "04_bulleted_lists",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://www.notion.so/04_bulleted_lists-7d74787d32aa434182f07513da7a51f3",
+  "public_url": null,
+  "request_id": "39b02458-9a9e-48d0-a0ec-1f94db72c055",
+  "blocks": [
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8110-a19f-ebaffc2fdbe0",
+      "parent": {
+        "type": "page_id",
+        "page_id": "7d74787d-32aa-4341-82f0-7513da7a51f3"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_1",
+      "heading_1": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Project Components",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Project Components",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81b8-b112-eb75a620a119",
+      "parent": {
+        "type": "page_id",
+        "page_id": "7d74787d-32aa-4341-82f0-7513da7a51f3"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Frontend Technologies",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Frontend Technologies",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81d8-b6a2-fd82318c099e",
+      "parent": {
+        "type": "page_id",
+        "page_id": "7d74787d-32aa-4341-82f0-7513da7a51f3"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "React.js",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "React.js",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " - ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " - ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "UI component library",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "UI component library",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8134-b8ea-e61029a93d42",
+      "parent": {
+        "type": "page_id",
+        "page_id": "7d74787d-32aa-4341-82f0-7513da7a51f3"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": true,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Redux",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Redux",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " - State management solution",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " - State management solution",
+            "href": null
+          }
+        ],
+        "color": "default"
+      },
+      "children": [
+        {
+          "object": "block",
+          "id": "1d2ecda2-e122-8147-abc2-e1f18cb96317",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1d2ecda2-e122-8134-b8ea-e61029a93d42"
+          },
+          "created_time": "2025-04-11T11:32:00.000Z",
+          "last_edited_time": "2025-04-11T11:32:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Store configuration",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Store configuration",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "object": "block",
+          "id": "1d2ecda2-e122-8111-b217-f8d88b53bc2f",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1d2ecda2-e122-8134-b8ea-e61029a93d42"
+          },
+          "created_time": "2025-04-11T11:32:00.000Z",
+          "last_edited_time": "2025-04-11T11:32:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Action creators",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Action creators",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "object": "block",
+          "id": "1d2ecda2-e122-810c-9cf9-f28ff85ebe10",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1d2ecda2-e122-8134-b8ea-e61029a93d42"
+          },
+          "created_time": "2025-04-11T11:32:00.000Z",
+          "last_edited_time": "2025-04-11T11:32:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Reducers",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Reducers",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81c5-80b1-c235343a149c",
+      "parent": {
+        "type": "page_id",
+        "page_id": "7d74787d-32aa-4341-82f0-7513da7a51f3"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": true,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Styled Components",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Styled Components",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " - ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " - ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "CSS-in-JS styling",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "CSS-in-JS styling",
+            "href": null
+          }
+        ],
+        "color": "default"
+      },
+      "children": [
+        {
+          "object": "block",
+          "id": "1d2ecda2-e122-81fd-bfb4-d3a03c1b2afc",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1d2ecda2-e122-81c5-80b1-c235343a149c"
+          },
+          "created_time": "2025-04-11T11:32:00.000Z",
+          "last_edited_time": "2025-04-11T11:32:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Theme provider",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Theme provider",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "object": "block",
+          "id": "1d2ecda2-e122-818f-b689-cf783f3adafa",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1d2ecda2-e122-81c5-80b1-c235343a149c"
+          },
+          "created_time": "2025-04-11T11:32:00.000Z",
+          "last_edited_time": "2025-04-11T11:32:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Global styles",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Global styles",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81c8-b2d2-fe809edc830c",
+      "parent": {
+        "type": "page_id",
+        "page_id": "7d74787d-32aa-4341-82f0-7513da7a51f3"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "React Router",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "React Router",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " - Navigation handling",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " - Navigation handling",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8140-9cf3-cc1aed8ac8b5",
+      "parent": {
+        "type": "page_id",
+        "page_id": "7d74787d-32aa-4341-82f0-7513da7a51f3"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Backend Technologies",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Backend Technologies",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8199-8c94-e16102722a32",
+      "parent": {
+        "type": "page_id",
+        "page_id": "7d74787d-32aa-4341-82f0-7513da7a51f3"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Node.js",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Node.js",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " - Server runtime",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " - Server runtime",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8194-b068-d4bb3f5f7746",
+      "parent": {
+        "type": "page_id",
+        "page_id": "7d74787d-32aa-4341-82f0-7513da7a51f3"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Express",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Express",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " - ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " - ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "Web framework",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Web framework",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8125-8458-d77b430f53e0",
+      "parent": {
+        "type": "page_id",
+        "page_id": "7d74787d-32aa-4341-82f0-7513da7a51f3"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": true,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "MongoDB",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "MongoDB",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " - Database system",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " - Database system",
+            "href": null
+          }
+        ],
+        "color": "default"
+      },
+      "children": [
+        {
+          "object": "block",
+          "id": "1d2ecda2-e122-817d-b975-ebc98f1a415e",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1d2ecda2-e122-8125-8458-d77b430f53e0"
+          },
+          "created_time": "2025-04-11T11:32:00.000Z",
+          "last_edited_time": "2025-04-11T11:32:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Schema design",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Schema design",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "object": "block",
+          "id": "1d2ecda2-e122-81c5-996c-d15eeffc4854",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1d2ecda2-e122-8125-8458-d77b430f53e0"
+          },
+          "created_time": "2025-04-11T11:32:00.000Z",
+          "last_edited_time": "2025-04-11T11:32:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "bulleted_list_item",
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Indexing strategy",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Indexing strategy",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-810d-815d-e6da3a92b776",
+      "parent": {
+        "type": "page_id",
+        "page_id": "7d74787d-32aa-4341-82f0-7513da7a51f3"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "JWT",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "JWT",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " - ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " - ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "Authentication mechanism",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Authentication mechanism",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    }
+  ]
+}

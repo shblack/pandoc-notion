@@ -1,0 +1,280 @@
+object: page
+id: 387d7a5e-06ad-4612-a493-0ac32bba6794
+created_time: '2025-04-11T11:32:00.000Z'
+last_edited_time: '2025-04-11T11:32:00.000Z'
+created_by:
+  object: user
+  id: 1859a913-3c06-48a0-be9b-01966f93043c
+last_edited_by:
+  object: user
+  id: 1859a913-3c06-48a0-be9b-01966f93043c
+cover: null
+icon: null
+parent:
+  type: page_id
+  page_id: 1d2ecda2-e122-805e-b820-e23dba9e47f5
+archived: false
+in_trash: false
+properties:
+  title:
+    id: title
+    type: title
+    title:
+    - type: text
+      text:
+        content: 08_code_examples
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 08_code_examples
+      href: null
+url: https://www.notion.so/08_code_examples-387d7a5e06ad4612a4930ac32bba6794
+public_url: null
+request_id: ed4f6944-c260-47bc-aaf4-50f5d1675299
+blocks:
+- object: block
+  id: 1d2ecda2-e122-8156-8ef7-f50741b4476e
+  parent:
+    type: page_id
+    page_id: 387d7a5e-06ad-4612-a493-0ac32bba6794
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: heading_1
+  heading_1:
+    rich_text:
+    - type: text
+      text:
+        content: Code Examples
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Code Examples
+      href: null
+    is_toggleable: false
+    color: default
+- object: block
+  id: 1d2ecda2-e122-819a-9823-eaa3d0dfda1e
+  parent:
+    type: page_id
+    page_id: 387d7a5e-06ad-4612-a493-0ac32bba6794
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: heading_2
+  heading_2:
+    rich_text:
+    - type: text
+      text:
+        content: Basic Python Function
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Basic Python Function
+      href: null
+    is_toggleable: false
+    color: default
+- object: block
+  id: 1d2ecda2-e122-81b4-ad36-d62b1912931f
+  parent:
+    type: page_id
+    page_id: 387d7a5e-06ad-4612-a493-0ac32bba6794
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: code
+  code:
+    caption: []
+    rich_text:
+    - type: text
+      text:
+        content: |-
+          def calculate_total(items):
+              """Calculate the sum of all items in the list."""    return sum(items)
+          # Example usageprices = [10.99, 5.50, 3.25]
+          total = calculate_total(prices)
+          print(f"Total: ${total:.2f}")  # Output: Total: $19.74
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: |-
+        def calculate_total(items):
+            """Calculate the sum of all items in the list."""    return sum(items)
+        # Example usageprices = [10.99, 5.50, 3.25]
+        total = calculate_total(prices)
+        print(f"Total: ${total:.2f}")  # Output: Total: $19.74
+      href: null
+    language: python
+- object: block
+  id: 1d2ecda2-e122-815c-932f-cdb0f8ab8557
+  parent:
+    type: page_id
+    page_id: 387d7a5e-06ad-4612-a493-0ac32bba6794
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: paragraph
+  paragraph:
+    rich_text:
+    - type: text
+      text:
+        content: 'Inline code like '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'Inline code like '
+      href: null
+    - type: text
+      text:
+        content: variable_name
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: true
+        color: default
+      plain_text: variable_name
+      href: null
+    - type: text
+      text:
+        content: ' can be included in regular text.'
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' can be included in regular text.'
+      href: null
+    color: default
+- object: block
+  id: 1d2ecda2-e122-81de-ad43-da0f8bc8ffce
+  parent:
+    type: page_id
+    page_id: 387d7a5e-06ad-4612-a493-0ac32bba6794
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: heading_2
+  heading_2:
+    rich_text:
+    - type: text
+      text:
+        content: HTML Snippet
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: HTML Snippet
+      href: null
+    is_toggleable: false
+    color: default
+- object: block
+  id: 1d2ecda2-e122-816e-8c5d-e6db1e546c89
+  parent:
+    type: page_id
+    page_id: 387d7a5e-06ad-4612-a493-0ac32bba6794
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: code
+  code:
+    caption: []
+    rich_text:
+    - type: text
+      text:
+        content: <div class="container">  <h1>Welcome to our site</h1>  <p>This is
+          a <strong>responsive</strong> layout.</p></div>
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: <div class="container">  <h1>Welcome to our site</h1>  <p>This is
+        a <strong>responsive</strong> layout.</p></div>
+      href: null
+    language: html

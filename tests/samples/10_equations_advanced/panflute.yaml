@@ -1,0 +1,151 @@
+ast:
+- t: Header
+  c:
+  - 1
+  - - advanced-mathematical-equations
+    - []
+    - []
+  - - t: Str
+      c: Advanced
+    - t: Space
+    - t: Str
+      c: Mathematical
+    - t: Space
+    - t: Str
+      c: Equations
+- t: Header
+  c:
+  - 2
+  - - calculus-formulas
+    - []
+    - []
+  - - t: Str
+      c: Calculus
+    - t: Space
+    - t: Str
+      c: Formulas
+- t: Para
+  c:
+  - t: Str
+    c: The
+  - t: Space
+  - t: Strong
+    c:
+    - t: Str
+      c: power
+    - t: Space
+    - t: Str
+      c: rule
+  - t: Space
+  - t: Str
+    c: for
+  - t: Space
+  - t: Str
+    c: 'derivatives:'
+  - t: SoftBreak
+  - t: Math
+    c:
+    - t: InlineMath
+    - \frac{d}{dx}[x^n] = nx^{n-1}
+- t: Para
+  c:
+  - t: Emph
+    c:
+    - t: Str
+      c: Integration
+    - t: Space
+    - t: Str
+      c: by
+    - t: Space
+    - t: Str
+      c: parts
+  - t: Space
+  - t: Str
+    c: 'formula:'
+  - t: SoftBreak
+  - t: Math
+    c:
+    - t: InlineMath
+    - \int u(x)v'(x)dx = u(x)v(x) - \int v(x)u'(x)dx
+- t: Header
+  c:
+  - 2
+  - - statistics
+    - []
+    - []
+  - - t: Str
+      c: Statistics
+- t: Para
+  c:
+  - t: Str
+    c: The
+  - t: Space
+  - t: Strong
+    c:
+    - t: Str
+      c: normal
+    - t: Space
+    - t: Str
+      c: distribution
+  - t: Space
+  - t: Str
+    c: 'function:'
+  - t: SoftBreak
+  - t: Math
+    c:
+    - t: InlineMath
+    - f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}
+- t: Header
+  c:
+  - 2
+  - - physics-equations
+    - []
+    - []
+  - - t: Str
+      c: Physics
+    - t: Space
+    - t: Str
+      c: Equations
+- t: Para
+  c:
+  - t: Emph
+    c:
+    - t: Str
+      c: Einstein’s
+  - t: Space
+  - t: Str
+    c: famous
+  - t: Space
+  - t: Str
+    c: 'equation:'
+  - t: SoftBreak
+  - t: Math
+    c:
+    - t: InlineMath
+    - E = mc^2
+- t: Para
+  c:
+  - t: Strong
+    c:
+    - t: Str
+      c: Maxwell’s
+  - t: Space
+  - t: Str
+    c: equation
+  - t: Space
+  - t: Str
+    c: in
+  - t: Space
+  - t: Str
+    c: differential
+  - t: Space
+  - t: Str
+    c: 'form:'
+  - t: SoftBreak
+  - t: Math
+    c:
+    - t: InlineMath
+    - \nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}
+metadata:
+  source_file: markdown.md
+  format: yaml

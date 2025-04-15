@@ -1,0 +1,242 @@
+ast:
+- t: Header
+  c:
+  - 1
+  - - project-launch-checklist
+    - []
+    - []
+  - - t: Str
+      c: Project
+    - t: Space
+    - t: Str
+      c: Launch
+    - t: Space
+    - t: Str
+      c: Checklist
+- t: Header
+  c:
+  - 2
+  - - frontend-tasks
+    - []
+    - []
+  - - t: Str
+      c: Frontend
+    - t: Space
+    - t: Str
+      c: Tasks
+- t: BulletList
+  c:
+  - - t: Plain
+      c:
+      - t: Str
+        c: ☒
+      - t: Space
+      - t: Str
+        c: Complete
+      - t: Space
+      - t: Str
+        c: homepage
+      - t: Space
+      - t: Str
+        c: redesign
+  - - t: Plain
+      c:
+      - t: Str
+        c: ☒
+      - t: Space
+      - t: Str
+        c: Implement
+      - t: Space
+      - t: Str
+        c: responsive
+      - t: Space
+      - t: Str
+        c: layouts
+  - - t: Plain
+      c:
+      - t: Str
+        c: ☐
+      - t: Space
+      - t: Str
+        c: Fix
+      - t: Space
+      - t: Str
+        c: cross-browser
+      - t: Space
+      - t: Str
+        c: compatibility
+      - t: Space
+      - t: Str
+        c: issues
+    - t: BulletList
+      c:
+      - - t: Plain
+          c:
+          - t: Str
+            c: ☒
+          - t: Space
+          - t: Str
+            c: Chrome
+          - t: Space
+          - t: Str
+            c: and
+          - t: Space
+          - t: Str
+            c: Firefox
+      - - t: Plain
+          c:
+          - t: Str
+            c: ☐
+          - t: Space
+          - t: Str
+            c: Safari
+      - - t: Plain
+          c:
+          - t: Str
+            c: ☐
+          - t: Space
+          - t: Str
+            c: Edge
+  - - t: Plain
+      c:
+      - t: Str
+        c: ☐
+      - t: Space
+      - t: Strong
+        c:
+        - t: Str
+          c: Optimize
+      - t: Space
+      - t: Str
+        c: performance
+    - t: BulletList
+      c:
+      - - t: Plain
+          c:
+          - t: Str
+            c: ☒
+          - t: Space
+          - t: Str
+            c: Image
+          - t: Space
+          - t: Str
+            c: compression
+      - - t: Plain
+          c:
+          - t: Str
+            c: ☐
+          - t: Space
+          - t: Emph
+            c:
+            - t: Str
+              c: Code
+            - t: Space
+            - t: Str
+              c: splitting
+      - - t: Plain
+          c:
+          - t: Str
+            c: ☐
+          - t: Space
+          - t: Str
+            c: Bundle
+          - t: Space
+          - t: Str
+            c: size
+          - t: Space
+          - t: Str
+            c: reduction
+- t: Header
+  c:
+  - 2
+  - - backend-tasks
+    - []
+    - []
+  - - t: Str
+      c: Backend
+    - t: Space
+    - t: Str
+      c: Tasks
+- t: BulletList
+  c:
+  - - t: Plain
+      c:
+      - t: Str
+        c: ☒
+      - t: Space
+      - t: Str
+        c: Set
+      - t: Space
+      - t: Str
+        c: up
+      - t: Space
+      - t: Str
+        c: cloud
+      - t: Space
+      - t: Str
+        c: infrastructure
+  - - t: Plain
+      c:
+      - t: Str
+        c: ☒
+      - t: Space
+      - t: Str
+        c: Configure
+      - t: Space
+      - t: Str
+        c: database
+      - t: Space
+      - t: Str
+        c: backups
+  - - t: Plain
+      c:
+      - t: Str
+        c: ☐
+      - t: Space
+      - t: Str
+        c: Complete
+      - t: Space
+      - t: Str
+        c: API
+      - t: Space
+      - t: Str
+        c: documentation
+  - - t: Plain
+      c:
+      - t: Str
+        c: ☐
+      - t: Space
+      - t: Strong
+        c:
+        - t: Str
+          c: Security
+      - t: Space
+      - t: Str
+        c: audit
+    - t: BulletList
+      c:
+      - - t: Plain
+          c:
+          - t: Str
+            c: ☒
+          - t: Space
+          - t: Emph
+            c:
+            - t: Str
+              c: Authentication
+            - t: Space
+            - t: Str
+              c: review
+      - - t: Plain
+          c:
+          - t: Str
+            c: ☐
+          - t: Space
+          - t: Str
+            c: Penetration
+          - t: Space
+          - t: Str
+            c: testing
+metadata:
+  source_file: markdown.md
+  format: yaml

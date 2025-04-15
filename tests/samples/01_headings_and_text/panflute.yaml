@@ -1,0 +1,259 @@
+ast:
+- t: Header
+  c:
+  - 1
+  - - project-documentation-guide
+    - []
+    - []
+  - - t: Str
+      c: Project
+    - t: Space
+    - t: Str
+      c: Documentation
+    - t: Space
+    - t: Str
+      c: Guide
+- t: Header
+  c:
+  - 2
+  - - introduction-to-markdown-formatting
+    - []
+    - []
+  - - t: Str
+      c: Introduction
+    - t: Space
+    - t: Str
+      c: to
+    - t: Space
+    - t: Strong
+      c:
+      - t: Str
+        c: Markdown
+    - t: Space
+    - t: Str
+      c: Formatting
+- t: Para
+  c:
+  - t: Str
+    c: This
+  - t: Space
+  - t: Str
+    c: guide
+  - t: Space
+  - t: Str
+    c: explains
+  - t: Space
+  - t: Emph
+    c:
+    - t: Str
+      c: basic
+    - t: Space
+    - t: Str
+      c: formatting
+  - t: Space
+  - t: Str
+    c: for
+  - t: Space
+  - t: Str
+    c: project
+  - t: Space
+  - t: Str
+    c: documentation.
+- t: Header
+  c:
+  - 3
+  - - using-bold-and-italic-text
+    - []
+    - []
+  - - t: Str
+      c: Using
+    - t: Space
+    - t: Strong
+      c:
+      - t: Str
+        c: Bold
+    - t: Space
+    - t: Str
+      c: and
+    - t: Space
+    - t: Emph
+      c:
+      - t: Str
+        c: Italic
+    - t: Space
+    - t: Str
+      c: Text
+- t: Para
+  c:
+  - t: Str
+    c: Combine
+  - t: Space
+  - t: Strong
+    c:
+    - t: Str
+      c: bold
+  - t: Space
+  - t: Str
+    c: and
+  - t: Space
+  - t: Emph
+    c:
+    - t: Str
+      c: italic
+  - t: Space
+  - t: Str
+    c: formatting
+  - t: Space
+  - t: Str
+    c: for
+  - t: Space
+  - t: Str
+    c: better
+  - t: Space
+  - t: Str
+    c: emphasis.
+- t: Header
+  c:
+  - 4
+  - - code-references-in-headings
+    - []
+    - []
+  - - t: Str
+      c: Code
+    - t: Space
+    - t: Str
+      c: References
+    - t: Space
+    - t: Str
+      c: in
+    - t: Space
+    - t: Str
+      c: Headings
+- t: Para
+  c:
+  - t: Str
+    c: When
+  - t: Space
+  - t: Str
+    c: referring
+  - t: Space
+  - t: Str
+    c: to
+  - t: Space
+  - t: Code
+    c:
+    - - ''
+      - []
+      - []
+    - function_names()
+  - t: Space
+  - t: Str
+    c: in
+  - t: Space
+  - t: Str
+    c: headings,
+  - t: Space
+  - t: Str
+    c: use
+  - t: Space
+  - t: Str
+    c: backticks.
+- t: Header
+  c:
+  - 5
+  - - special-notes-section
+    - []
+    - []
+  - - t: Emph
+      c:
+      - t: Str
+        c: Special
+      - t: Space
+      - t: Str
+        c: Notes
+    - t: Space
+    - t: Str
+      c: Section
+- t: Para
+  c:
+  - t: Str
+    c: Use
+  - t: Space
+  - t: Str
+    c: italic
+  - t: Space
+  - t: Str
+    c: headings
+  - t: Space
+  - t: Str
+    c: to
+  - t: Space
+  - t: Str
+    c: highlight
+  - t: Space
+  - t: Str
+    c: special
+  - t: Space
+  - t: Str
+    c: sections.
+- t: Header
+  c:
+  - 6
+  - - small-print-disclaimer
+    - []
+    - []
+  - - t: Str
+      c: Small
+    - t: Space
+    - t: Str
+      c: Print
+    - t: Space
+    - t: Strong
+      c:
+      - t: Str
+        c: Disclaimer
+- t: Para
+  c:
+  - t: Str
+    c: For
+  - t: Space
+  - t: Str
+    c: fine
+  - t: Space
+  - t: Str
+    c: print
+  - t: Space
+  - t: Str
+    c: and
+  - t: Space
+  - t: Str
+    c: legal
+  - t: Space
+  - t: Str
+    c: details,
+  - t: Space
+  - t: Str
+    c: use
+  - t: Space
+  - t: Str
+    c: level
+  - t: Space
+  - t: Str
+    c: '6'
+  - t: Space
+  - t: Str
+    c: headings
+  - t: Space
+  - t: Str
+    c: with
+  - t: Space
+  - t: Strong
+    c:
+    - t: Str
+      c: bold
+  - t: Space
+  - t: Str
+    c: terms.
+metadata:
+  source_file: markdown.md
+  format: yaml

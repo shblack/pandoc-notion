@@ -1,0 +1,219 @@
+ast:
+- t: Header
+  c:
+  - 1
+  - - communication-guidelines
+    - []
+    - []
+  - - t: Str
+      c: Communication
+    - t: Space
+    - t: Str
+      c: Guidelines
+- t: Header
+  c:
+  - 2
+  - - email-etiquette
+    - []
+    - []
+  - - t: Strong
+      c:
+      - t: Str
+        c: Email
+      - t: Space
+      - t: Str
+        c: Etiquette
+- t: Para
+  c:
+  - t: Str
+    c: Always
+  - t: Space
+  - t: Str
+    c: use
+  - t: Space
+  - t: Emph
+    c:
+    - t: Str
+      c: descriptive
+  - t: Space
+  - t: Str
+    c: subject
+  - t: Space
+  - t: Str
+    c: lines
+  - t: Space
+  - t: Str
+    c: for
+  - t: Space
+  - t: Str
+    c: emails.
+  - t: Space
+  - t: Str
+    c: When
+  - t: Space
+  - t: Str
+    c: requesting
+  - t: Space
+  - t: Str
+    c: action,
+  - t: Space
+  - t: Str
+    c: mark
+  - t: Space
+  - t: Str
+    c: emails
+  - t: Space
+  - t: Str
+    c: as
+  - t: Space
+  - t: Strong
+    c:
+    - t: Str
+      c: urgent
+  - t: Space
+  - t: Emph
+    c:
+    - t: Str
+      c: only
+    - t: Space
+    - t: Str
+      c: when
+    - t: Space
+    - t: Str
+      c: necessary
+  - t: Str
+    c: .
+- t: Para
+  c:
+  - t: Str
+    c: For
+  - t: Space
+  - t: Str
+    c: complex
+  - t: Space
+  - t: Str
+    c: instructions,
+  - t: Space
+  - t: Str
+    c: use
+  - t: Space
+  - t: Str
+    c: numbered
+  - t: Space
+  - t: Str
+    c: 'steps:'
+- t: OrderedList
+  c:
+  - - 1
+    - t: Decimal
+    - t: Period
+  - - - t: Plain
+        c:
+        - t: Strong
+          c:
+          - t: Str
+            c: Introduce
+        - t: Space
+        - t: Str
+          c: the
+        - t: Space
+        - t: Str
+          c: topic
+        - t: Space
+        - t: Str
+          c: clearly
+    - - t: Plain
+        c:
+        - t: Str
+          c: Provide
+        - t: Space
+        - t: Emph
+          c:
+          - t: Str
+            c: detailed
+        - t: Space
+        - t: Str
+          c: explanation
+    - - t: Plain
+        c:
+        - t: Str
+          c: End
+        - t: Space
+        - t: Str
+          c: with
+        - t: Space
+        - t: Code
+          c:
+          - - ''
+            - []
+            - []
+          - concrete action items
+- t: BlockQuote
+  c:
+  - t: Para
+    c:
+    - t: Str
+      c: 'Remember:'
+    - t: Space
+    - t: Strong
+      c:
+      - t: Str
+        c: Clear
+      - t: Space
+      - t: Str
+        c: communication
+    - t: Space
+    - t: Str
+      c: prevents
+    - t: Space
+    - t: Emph
+      c:
+      - t: Str
+        c: misunderstandings
+    - t: Space
+    - t: Str
+      c: and
+    - t: Space
+    - t: Str
+      c: saves
+    - t: Space
+    - t: Str
+      c: everyone
+    - t: Space
+    - t: Str
+      c: time.
+- t: Para
+  c:
+  - t: Str
+    c: When
+  - t: Space
+  - t: Str
+    c: sharing
+  - t: Space
+  - t: Str
+    c: code
+  - t: Space
+  - t: Str
+    c: solutions,
+  - t: Space
+  - t: Str
+    c: format
+  - t: Space
+  - t: Str
+    c: them
+  - t: Space
+  - t: Str
+    c: 'properly:'
+- t: CodeBlock
+  c:
+  - - ''
+    - - python
+    - []
+  - |-
+    def send_notification(user, message):
+        """Send an important notification to the user."""
+        if user.preferences['notifications'] == 'enabled':
+            return messaging_service.send(user.email, message)
+metadata:
+  source_file: markdown.md
+  format: yaml

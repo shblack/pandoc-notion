@@ -1,0 +1,672 @@
+{
+  "object": "page",
+  "id": "c9dea259-3782-4aa8-be0a-f541209b9b82",
+  "created_time": "2025-04-11T11:32:00.000Z",
+  "last_edited_time": "2025-04-11T11:32:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+  },
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "page_id",
+    "page_id": "1d2ecda2-e122-805e-b820-e23dba9e47f5"
+  },
+  "archived": false,
+  "in_trash": false,
+  "properties": {
+    "title": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "03_links_and_images",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "03_links_and_images",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://www.notion.so/03_links_and_images-c9dea25937824aa8be0af541209b9b82",
+  "public_url": null,
+  "request_id": "11f5ff89-4e79-4849-99a9-c72bd60eed55",
+  "blocks": [
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8192-b33f-c42b769f5a32",
+      "parent": {
+        "type": "page_id",
+        "page_id": "c9dea259-3782-4aa8-be0a-f541209b9b82"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_1",
+      "heading_1": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Website Resources",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Website Resources",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8155-9391-dfa3747071b5",
+      "parent": {
+        "type": "page_id",
+        "page_id": "c9dea259-3782-4aa8-be0a-f541209b9b82"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Useful Links for Development",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Useful Links for Development",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8199-8c80-d261a23534f2",
+      "parent": {
+        "type": "page_id",
+        "page_id": "c9dea259-3782-4aa8-be0a-f541209b9b82"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Visit ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Visit ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "GitHub",
+              "link": {
+                "url": "https://github.com/"
+              }
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "GitHub",
+            "href": "https://github.com/"
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " for version control or check our ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " for version control or check our ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "project repository",
+              "link": {
+                "url": "https://github.com/example/project"
+              }
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "project repository",
+            "href": "https://github.com/example/project"
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": ".",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": ".",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-817d-baa4-e966fcac63e7",
+      "parent": {
+        "type": "page_id",
+        "page_id": "c9dea259-3782-4aa8-be0a-f541209b9b82"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Need help? Read the ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Need help? Read the ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "official documentation",
+              "link": {
+                "url": "https://docs.example.com/"
+              }
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "official documentation",
+            "href": "https://docs.example.com/"
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " for detailed guidance.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " for detailed guidance.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8145-bcfc-f182b6ace903",
+      "parent": {
+        "type": "page_id",
+        "page_id": "c9dea259-3782-4aa8-be0a-f541209b9b82"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Visual References",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Visual References",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8103-8c07-f4a48bfb6f85",
+      "parent": {
+        "type": "page_id",
+        "page_id": "c9dea259-3782-4aa8-be0a-f541209b9b82"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "image",
+      "image": {
+        "caption": [],
+        "type": "external",
+        "external": {
+          "url": "https://example.com/logo.png"
+        }
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81fe-8311-d4e40985b929",
+      "parent": {
+        "type": "page_id",
+        "page_id": "c9dea259-3782-4aa8-be0a-f541209b9b82"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Logo",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Logo",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8178-a54e-ff55aa6f4a1f",
+      "parent": {
+        "type": "page_id",
+        "page_id": "c9dea259-3782-4aa8-be0a-f541209b9b82"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Screenshot of the interface:",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Screenshot of the interface:",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81cd-8f51-fa11d7252b48",
+      "parent": {
+        "type": "page_id",
+        "page_id": "c9dea259-3782-4aa8-be0a-f541209b9b82"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "image",
+      "image": {
+        "caption": [],
+        "type": "external",
+        "external": {
+          "url": "https://example.com/dashboard.jpg"
+        }
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8128-9bc8-dc545a04274d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "c9dea259-3782-4aa8-be0a-f541209b9b82"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Download PDF Guide",
+              "link": {
+                "url": "https://example.com/guide.pdf"
+              }
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Download PDF Guide",
+            "href": "https://example.com/guide.pdf"
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " for offline reading.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " for offline reading.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8117-af9b-ec4d601b305f",
+      "parent": {
+        "type": "page_id",
+        "page_id": "c9dea259-3782-4aa8-be0a-f541209b9b82"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Problems with links? Contact ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Problems with links? Contact ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "support@example.com",
+              "link": {
+                "url": "mailto:support@example.com"
+              }
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "support@example.com",
+            "href": "mailto:support@example.com"
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": ".",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": ".",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    }
+  ]
+}

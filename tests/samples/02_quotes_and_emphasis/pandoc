@@ -1,0 +1,148 @@
+[ Header
+    1
+    ( "design-principles" , [] , [] )
+    [ Str "Design" , Space , Str "Principles" ]
+, Header
+    2
+    ( "consistency-matters" , [] , [] )
+    [ Str "Consistency" , Space , Str "Matters" ]
+, BlockQuote
+    [ Para
+        [ Strong
+            [ Str "Design"
+            , Space
+            , Str "is"
+            , Space
+            , Str "not"
+            , Space
+            , Str "just"
+            , Space
+            , Str "what"
+            , Space
+            , Str "it"
+            , Space
+            , Str "looks"
+            , Space
+            , Str "like"
+            , Space
+            , Str "and"
+            , Space
+            , Str "feels"
+            , Space
+            , Str "like."
+            , Space
+            , Str "Design"
+            , Space
+            , Str "is"
+            , Space
+            , Str "how"
+            , Space
+            , Str "it"
+            , Space
+            , Str "works."
+            ]
+        ]
+    , Para
+        [ Emph
+            [ Str "\8212" , Space , Str "Steve" , Space , Str "Jobs" ]
+        ]
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "principle"
+    , Space
+    , Str "reminds"
+    , Space
+    , Str "us"
+    , Space
+    , Str "that:"
+    ]
+, BlockQuote
+    [ Para
+        [ Str "Aesthetic"
+        , Space
+        , Str "appeal"
+        , Space
+        , Str "must"
+        , Space
+        , Str "be"
+        , Space
+        , Str "balanced"
+        , Space
+        , Str "with"
+        , Space
+        , Strong [ Str "functional" , Space , Str "excellence" ]
+        , Str "."
+        , SoftBreak
+        , Str "Users"
+        , Space
+        , Str "appreciate"
+        , Space
+        , Emph [ Str "intuitive" , Space , Str "interfaces" ]
+        , Space
+        , Str "over"
+        , Space
+        , Str "flashy"
+        , Space
+        , Str "gimmicks."
+        ]
+    ]
+, Header
+    2
+    ( "user-centered-approach" , [] , [] )
+    [ Str "User-Centered" , Space , Str "Approach" ]
+, Para
+    [ Str "As"
+    , Space
+    , Str "we"
+    , Space
+    , Str "often"
+    , Space
+    , Str "repeat"
+    , Space
+    , Str "in"
+    , Space
+    , Str "our"
+    , Space
+    , Str "team:"
+    ]
+, BlockQuote
+    [ Para
+        [ Str "Start"
+        , Space
+        , Str "with"
+        , Space
+        , Str "the"
+        , Space
+        , Strong [ Str "user" , Space , Str "experience" ]
+        , Space
+        , Str "and"
+        , Space
+        , Str "work"
+        , Space
+        , Str "backward"
+        , Space
+        , Str "toward"
+        , Space
+        , Str "the"
+        , Space
+        , Str "technology."
+        ]
+    , Para
+        [ Str "Remember"
+        , Space
+        , Str "that"
+        , Space
+        , Emph [ Str "simplicity" ]
+        , Space
+        , Str "is"
+        , Space
+        , Str "the"
+        , Space
+        , Str "ultimate"
+        , Space
+        , Str "sophistication."
+        ]
+    ]
+]

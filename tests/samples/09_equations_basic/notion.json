@@ -1,0 +1,851 @@
+{
+  "object": "page",
+  "id": "041354f4-ea1d-453f-8556-27b9e131cab5",
+  "created_time": "2025-04-11T11:32:00.000Z",
+  "last_edited_time": "2025-04-11T11:43:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+  },
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "page_id",
+    "page_id": "1d2ecda2-e122-805e-b820-e23dba9e47f5"
+  },
+  "archived": false,
+  "in_trash": false,
+  "properties": {
+    "title": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "09_equations_basic",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "09_equations_basic",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://www.notion.so/09_equations_basic-041354f4ea1d453f855627b9e131cab5",
+  "public_url": null,
+  "request_id": "b5fa642a-d2fc-4467-bff7-e4de3f2019dd",
+  "blocks": [
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81bd-9534-faa876373b87",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_1",
+      "heading_1": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Basic Mathematical Equations",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Basic Mathematical Equations",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8134-8749-fd452ab5fd57",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Simple Arithmetic",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Simple Arithmetic",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8175-9aa2-d03a1615f317",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:42:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "The sum of two numbers: ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "The sum of two numbers: ",
+            "href": null
+          },
+          {
+            "type": "equation",
+            "equation": {
+              "expression": "a + b = c"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "a + b = c",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-817d-a80a-cfc2b7a3b14c",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:42:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "The ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "The ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "product",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "product",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " of two numbers: ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " of two numbers: ",
+            "href": null
+          },
+          {
+            "type": "equation",
+            "equation": {
+              "expression": "a × b = c"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "a × b = c",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8178-8dad-e7de7e9ba6ea",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Area Formulas",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Area Formulas",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-817f-9f4f-e8065853d0da",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:42:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Rectangle",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Rectangle",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " area: ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " area: ",
+            "href": null
+          },
+          {
+            "type": "equation",
+            "equation": {
+              "expression": "A = L × W"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "A = L × W",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-812f-8678-fadf59e2bfd6",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:43:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Circle",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Circle",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " area: ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " area: ",
+            "href": null
+          },
+          {
+            "type": "equation",
+            "equation": {
+              "expression": "A = πr^2"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "A = πr^2",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-819b-9e49-e54124354a3a",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Linear Equations",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Linear Equations",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81d7-8c19-d5654a46bdc2",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:43:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Standard form: ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Standard form: ",
+            "href": null
+          },
+          {
+            "type": "equation",
+            "equation": {
+              "expression": "ax + b = c"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "ax + b = c",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8132-a20d-e9f7568d00d6",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:43:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Slope-intercept form: ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Slope-intercept form: ",
+            "href": null
+          },
+          {
+            "type": "equation",
+            "equation": {
+              "expression": "y = mx + b"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "y = mx + b",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8130-9a1b-f5b63d694fb2",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Simple Calculus",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Simple Calculus",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-817e-b846-fd32e40f498b",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:43:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Derivative notation: ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Derivative notation: ",
+            "href": null
+          },
+          {
+            "type": "equation",
+            "equation": {
+              "expression": "\\frac{dy}{dx}"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "\\frac{dy}{dx}",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81c4-b8ba-c264d17a3169",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:43:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Basic integral: ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Basic integral: ",
+            "href": null
+          },
+          {
+            "type": "equation",
+            "equation": {
+              "expression": "∫f(x)dx"
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "∫f(x)dx",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8095-8f89-fc634f4abadd",
+      "parent": {
+        "type": "page_id",
+        "page_id": "041354f4-ea1d-453f-8556-27b9e131cab5"
+      },
+      "created_time": "2025-04-11T11:37:00.000Z",
+      "last_edited_time": "2025-04-11T11:37:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    }
+  ]
+}

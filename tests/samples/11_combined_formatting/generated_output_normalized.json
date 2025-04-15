@@ -1,0 +1,420 @@
+[
+  {
+    "object": "block",
+    "type": "heading_1",
+    "heading_1": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Communication Guidelines"
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "Communication Guidelines"
+        }
+      ]
+    }
+  },
+  {
+    "object": "block",
+    "type": "heading_2",
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Email Etiquette"
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "Email Etiquette"
+        }
+      ]
+    }
+  },
+  {
+    "object": "block",
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Always use "
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "Always use "
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "descriptive"
+          },
+          "annotations": {
+            "bold": false,
+            "italic": true,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "descriptive"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " subject lines for emails. When requesting action, mark emails as "
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": " subject lines for emails. When requesting action, mark emails as "
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "urgent"
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "urgent"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " "
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": " "
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "only when necessary"
+          },
+          "annotations": {
+            "bold": false,
+            "italic": true,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "only when necessary"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "."
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "."
+        }
+      ]
+    }
+  },
+  {
+    "object": "block",
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "For complex instructions, use numbered steps:"
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "For complex instructions, use numbered steps:"
+        }
+      ]
+    }
+  },
+  {
+    "object": "block",
+    "type": "numbered_list_item",
+    "numbered_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Introduce"
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "Introduce"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " the topic clearly"
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": " the topic clearly"
+        }
+      ]
+    }
+  },
+  {
+    "object": "block",
+    "type": "numbered_list_item",
+    "numbered_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Provide "
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "Provide "
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "detailed"
+          },
+          "annotations": {
+            "bold": false,
+            "italic": true,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "detailed"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " explanation"
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": " explanation"
+        }
+      ]
+    }
+  },
+  {
+    "object": "block",
+    "type": "numbered_list_item",
+    "numbered_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "End with "
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "End with "
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "concrete action items"
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": true
+          },
+          "plain_text": "concrete action items"
+        }
+      ]
+    }
+  },
+  {
+    "object": "block",
+    "type": "quote",
+    "quote": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Remember: "
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "Remember: "
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "Clear communication"
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "Clear communication"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " prevents "
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": " prevents "
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "misunderstandings"
+          },
+          "annotations": {
+            "bold": false,
+            "italic": true,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "misunderstandings"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " and saves everyone time."
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": " and saves everyone time."
+        }
+      ]
+    }
+  },
+  {
+    "object": "block",
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "When sharing code solutions, format them properly:"
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "When sharing code solutions, format them properly:"
+        }
+      ]
+    }
+  },
+  {
+    "object": "block",
+    "type": "code",
+    "code": {
+      "caption": [],
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "def send_notification(user, message):\n    \"\"\"Send an important notification to the user.\"\"\"\n    if user.preferences['notifications'] == 'enabled':\n        return messaging_service.send(user.email, message)"
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false
+          },
+          "plain_text": "def send_notification(user, message):\n    \"\"\"Send an important notification to the user.\"\"\"\n    if user.preferences['notifications'] == 'enabled':\n        return messaging_service.send(user.email, message)"
+        }
+      ],
+      "language": "python"
+    }
+  }
+]

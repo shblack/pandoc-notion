@@ -1,0 +1,662 @@
+object: page
+id: eca6a3f3-98fd-4b73-bfec-aec2f45cf848
+created_time: '2025-04-11T11:32:00.000Z'
+last_edited_time: '2025-04-11T11:33:00.000Z'
+created_by:
+  object: user
+  id: 1859a913-3c06-48a0-be9b-01966f93043c
+last_edited_by:
+  object: user
+  id: 1859a913-3c06-48a0-be9b-01966f93043c
+cover: null
+icon: null
+parent:
+  type: page_id
+  page_id: 1d2ecda2-e122-805e-b820-e23dba9e47f5
+archived: false
+in_trash: false
+properties:
+  title:
+    id: title
+    type: title
+    title:
+    - type: text
+      text:
+        content: 01_headings_and_text
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 01_headings_and_text
+      href: null
+url: https://www.notion.so/01_headings_and_text-eca6a3f398fd4b73bfecaec2f45cf848
+public_url: null
+request_id: a08f7421-a74f-46b7-8aef-d85873516293
+blocks:
+- object: block
+  id: 1d2ecda2-e122-818f-a120-fd66a3362178
+  parent:
+    type: page_id
+    page_id: eca6a3f3-98fd-4b73-bfec-aec2f45cf848
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: heading_1
+  heading_1:
+    rich_text:
+    - type: text
+      text:
+        content: Project Documentation Guide
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Project Documentation Guide
+      href: null
+    is_toggleable: false
+    color: default
+- object: block
+  id: 1d2ecda2-e122-81d0-84bf-c9341ef6c199
+  parent:
+    type: page_id
+    page_id: eca6a3f3-98fd-4b73-bfec-aec2f45cf848
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: heading_2
+  heading_2:
+    rich_text:
+    - type: text
+      text:
+        content: 'Introduction to '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'Introduction to '
+      href: null
+    - type: text
+      text:
+        content: Markdown
+        link: null
+      annotations:
+        bold: true
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Markdown
+      href: null
+    - type: text
+      text:
+        content: ' Formatting'
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' Formatting'
+      href: null
+    is_toggleable: false
+    color: default
+- object: block
+  id: 1d2ecda2-e122-8110-8ff0-ede5ef15db79
+  parent:
+    type: page_id
+    page_id: eca6a3f3-98fd-4b73-bfec-aec2f45cf848
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: paragraph
+  paragraph:
+    rich_text:
+    - type: text
+      text:
+        content: 'This guide explains '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'This guide explains '
+      href: null
+    - type: text
+      text:
+        content: basic formatting
+        link: null
+      annotations:
+        bold: false
+        italic: true
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: basic formatting
+      href: null
+    - type: text
+      text:
+        content: ' for project documentation.'
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' for project documentation.'
+      href: null
+    color: default
+- object: block
+  id: 1d2ecda2-e122-81df-a7c8-e773a879f52c
+  parent:
+    type: page_id
+    page_id: eca6a3f3-98fd-4b73-bfec-aec2f45cf848
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: heading_3
+  heading_3:
+    rich_text:
+    - type: text
+      text:
+        content: 'Using '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'Using '
+      href: null
+    - type: text
+      text:
+        content: Bold
+        link: null
+      annotations:
+        bold: true
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Bold
+      href: null
+    - type: text
+      text:
+        content: ' and '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' and '
+      href: null
+    - type: text
+      text:
+        content: Italic
+        link: null
+      annotations:
+        bold: false
+        italic: true
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Italic
+      href: null
+    - type: text
+      text:
+        content: ' Text'
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' Text'
+      href: null
+    is_toggleable: false
+    color: default
+- object: block
+  id: 1d2ecda2-e122-81cc-8a0c-f7c3a55f9618
+  parent:
+    type: page_id
+    page_id: eca6a3f3-98fd-4b73-bfec-aec2f45cf848
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: paragraph
+  paragraph:
+    rich_text:
+    - type: text
+      text:
+        content: 'Combine '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'Combine '
+      href: null
+    - type: text
+      text:
+        content: bold
+        link: null
+      annotations:
+        bold: true
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: bold
+      href: null
+    - type: text
+      text:
+        content: ' and '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' and '
+      href: null
+    - type: text
+      text:
+        content: italic
+        link: null
+      annotations:
+        bold: false
+        italic: true
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: italic
+      href: null
+    - type: text
+      text:
+        content: ' formatting for better emphasis.'
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' formatting for better emphasis.'
+      href: null
+    color: default
+- object: block
+  id: 1d2ecda2-e122-81ed-ad0b-f84a181aba32
+  parent:
+    type: page_id
+    page_id: eca6a3f3-98fd-4b73-bfec-aec2f45cf848
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: heading_3
+  heading_3:
+    rich_text:
+    - type: text
+      text:
+        content: Code References in Headings
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Code References in Headings
+      href: null
+    is_toggleable: false
+    color: default
+- object: block
+  id: 1d2ecda2-e122-81b4-ba99-ea35c23122e3
+  parent:
+    type: page_id
+    page_id: eca6a3f3-98fd-4b73-bfec-aec2f45cf848
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: paragraph
+  paragraph:
+    rich_text:
+    - type: text
+      text:
+        content: 'When referring to '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'When referring to '
+      href: null
+    - type: text
+      text:
+        content: function_names()
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: true
+        color: default
+      plain_text: function_names()
+      href: null
+    - type: text
+      text:
+        content: ' in headings, use backticks.'
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' in headings, use backticks.'
+      href: null
+    color: default
+- object: block
+  id: 1d2ecda2-e122-8101-96bc-d96f1168a96b
+  parent:
+    type: page_id
+    page_id: eca6a3f3-98fd-4b73-bfec-aec2f45cf848
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: heading_3
+  heading_3:
+    rich_text:
+    - type: text
+      text:
+        content: Special Notes
+        link: null
+      annotations:
+        bold: false
+        italic: true
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Special Notes
+      href: null
+    - type: text
+      text:
+        content: ' Section'
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' Section'
+      href: null
+    is_toggleable: false
+    color: default
+- object: block
+  id: 1d2ecda2-e122-81ee-ac56-f833015b4494
+  parent:
+    type: page_id
+    page_id: eca6a3f3-98fd-4b73-bfec-aec2f45cf848
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: paragraph
+  paragraph:
+    rich_text:
+    - type: text
+      text:
+        content: Use italic headings to highlight special sections.
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Use italic headings to highlight special sections.
+      href: null
+    color: default
+- object: block
+  id: 1d2ecda2-e122-81ae-a981-e4173a8216b2
+  parent:
+    type: page_id
+    page_id: eca6a3f3-98fd-4b73-bfec-aec2f45cf848
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:33:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: heading_3
+  heading_3:
+    rich_text:
+    - type: text
+      text:
+        content: 'Small Print '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'Small Print '
+      href: null
+    - type: text
+      text:
+        content: Disclaimer
+        link: null
+      annotations:
+        bold: true
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Disclaimer
+      href: null
+    is_toggleable: false
+    color: default
+- object: block
+  id: 1d2ecda2-e122-8135-a394-ffe8cf37befa
+  parent:
+    type: page_id
+    page_id: eca6a3f3-98fd-4b73-bfec-aec2f45cf848
+  created_time: '2025-04-11T11:32:00.000Z'
+  last_edited_time: '2025-04-11T11:32:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: paragraph
+  paragraph:
+    rich_text:
+    - type: text
+      text:
+        content: 'For fine print and legal details, use level 6 headings with '
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: 'For fine print and legal details, use level 6 headings with '
+      href: null
+    - type: text
+      text:
+        content: bold
+        link: null
+      annotations:
+        bold: true
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: bold
+      href: null
+    - type: text
+      text:
+        content: ' terms.'
+        link: null
+      annotations:
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: ' terms.'
+      href: null
+    color: default
+- object: block
+  id: 1d2ecda2-e122-80c4-b1ef-f6ae7e6ce0bb
+  parent:
+    type: page_id
+    page_id: eca6a3f3-98fd-4b73-bfec-aec2f45cf848
+  created_time: '2025-04-11T11:33:00.000Z'
+  last_edited_time: '2025-04-11T11:33:00.000Z'
+  created_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  last_edited_by:
+    object: user
+    id: 1859a913-3c06-48a0-be9b-01966f93043c
+  has_children: false
+  archived: false
+  in_trash: false
+  type: paragraph
+  paragraph:
+    rich_text: []
+    color: default

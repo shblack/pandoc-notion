@@ -1,0 +1,94 @@
+ast:
+- t: Header
+  c:
+  - 1
+  - - code-examples
+    - []
+    - []
+  - - t: Str
+      c: Code
+    - t: Space
+    - t: Str
+      c: Examples
+- t: Header
+  c:
+  - 2
+  - - basic-python-function
+    - []
+    - []
+  - - t: Str
+      c: Basic
+    - t: Space
+    - t: Str
+      c: Python
+    - t: Space
+    - t: Str
+      c: Function
+- t: CodeBlock
+  c:
+  - - ''
+    - - python
+    - []
+  - "def calculate_total(items):\n    \"\"\"Calculate the sum of all items in the\
+    \ list.\"\"\"\n    return sum(items)\n    \n# Example usage\nprices = [10.99,\
+    \ 5.50, 3.25]\ntotal = calculate_total(prices)\nprint(f\"Total: ${total:.2f}\"\
+    )  # Output: Total: $19.74"
+- t: Para
+  c:
+  - t: Str
+    c: Inline
+  - t: Space
+  - t: Str
+    c: code
+  - t: Space
+  - t: Str
+    c: like
+  - t: Space
+  - t: Code
+    c:
+    - - ''
+      - []
+      - []
+    - variable_name
+  - t: Space
+  - t: Str
+    c: can
+  - t: Space
+  - t: Str
+    c: be
+  - t: Space
+  - t: Str
+    c: included
+  - t: Space
+  - t: Str
+    c: in
+  - t: Space
+  - t: Str
+    c: regular
+  - t: Space
+  - t: Str
+    c: text.
+- t: Header
+  c:
+  - 2
+  - - html-snippet
+    - []
+    - []
+  - - t: Str
+      c: HTML
+    - t: Space
+    - t: Str
+      c: Snippet
+- t: CodeBlock
+  c:
+  - - ''
+    - - html
+    - []
+  - |-
+    <div class="container">
+      <h1>Welcome to our site</h1>
+      <p>This is a <strong>responsive</strong> layout.</p>
+    </div>
+metadata:
+  source_file: markdown.md
+  format: yaml

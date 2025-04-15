@@ -1,0 +1,635 @@
+{
+  "object": "page",
+  "id": "9141ed45-3839-4bfb-a5b3-b595b116adf6",
+  "created_time": "2025-04-11T11:32:00.000Z",
+  "last_edited_time": "2025-04-11T17:46:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+  },
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "page_id",
+    "page_id": "1d2ecda2-e122-805e-b820-e23dba9e47f5"
+  },
+  "archived": false,
+  "in_trash": false,
+  "properties": {
+    "title": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "02_quotes_and_emphasis",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "02_quotes_and_emphasis",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://www.notion.so/02_quotes_and_emphasis-9141ed4538394bfba5b3b595b116adf6",
+  "public_url": null,
+  "request_id": "18af360d-2400-44ff-8a07-14168b077e69",
+  "blocks": [
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81b7-9cc8-d1db193a33a6",
+      "parent": {
+        "type": "page_id",
+        "page_id": "9141ed45-3839-4bfb-a5b3-b595b116adf6"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_1",
+      "heading_1": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Design Principles",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Design Principles",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81cd-b228-f9579d2722d7",
+      "parent": {
+        "type": "page_id",
+        "page_id": "9141ed45-3839-4bfb-a5b3-b595b116adf6"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Consistency Matters",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Consistency Matters",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-811e-aaba-ec07c5575fc9",
+      "parent": {
+        "type": "page_id",
+        "page_id": "9141ed45-3839-4bfb-a5b3-b595b116adf6"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T17:36:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": true,
+      "archived": false,
+      "in_trash": false,
+      "type": "quote",
+      "quote": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Design is not just what it looks like and feels like. Design is how it works.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Design is not just what it looks like and feels like. Design is how it works.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      },
+      "children": [
+        {
+          "object": "block",
+          "id": "1d2ecda2-e122-8171-9033-d204121ed3a5",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1d2ecda2-e122-811e-aaba-ec07c5575fc9"
+          },
+          "created_time": "2025-04-11T11:32:00.000Z",
+          "last_edited_time": "2025-04-11T11:32:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "paragraph",
+          "paragraph": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "— Steve Jobs",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "— Steve Jobs",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-812a-9a03-f024780601a6",
+      "parent": {
+        "type": "page_id",
+        "page_id": "9141ed45-3839-4bfb-a5b3-b595b116adf6"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "This principle reminds us that:",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "This principle reminds us that:",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-8198-838d-d7b2abea5c85",
+      "parent": {
+        "type": "page_id",
+        "page_id": "9141ed45-3839-4bfb-a5b3-b595b116adf6"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T17:41:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "quote",
+      "quote": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Aesthetic appeal must be balanced with ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Aesthetic appeal must be balanced with ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "functional excellence",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "functional excellence",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": ".\nUsers appreciate ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": ".\nUsers appreciate ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "intuitive interfaces",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "intuitive interfaces",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " over flashy gimmicks.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " over flashy gimmicks.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81ef-83f1-de8c5b8e3f78",
+      "parent": {
+        "type": "page_id",
+        "page_id": "9141ed45-3839-4bfb-a5b3-b595b116adf6"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "User-Centered Approach",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "User-Centered Approach",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81a1-9d85-c448edfc4af0",
+      "parent": {
+        "type": "page_id",
+        "page_id": "9141ed45-3839-4bfb-a5b3-b595b116adf6"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T11:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "As we often repeat in our team:",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "As we often repeat in our team:",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d2ecda2-e122-81d4-842d-ceebb6c37681",
+      "parent": {
+        "type": "page_id",
+        "page_id": "9141ed45-3839-4bfb-a5b3-b595b116adf6"
+      },
+      "created_time": "2025-04-11T11:32:00.000Z",
+      "last_edited_time": "2025-04-11T17:42:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+      },
+      "has_children": true,
+      "archived": false,
+      "in_trash": false,
+      "type": "quote",
+      "quote": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Start with the ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Start with the ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "user experience",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "user experience",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " and work backward toward the technology.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " and work backward toward the technology.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      },
+      "children": [
+        {
+          "object": "block",
+          "id": "1d2ecda2-e122-81c1-892f-ddd953f86e2b",
+          "parent": {
+            "type": "block_id",
+            "block_id": "1d2ecda2-e122-81d4-842d-ceebb6c37681"
+          },
+          "created_time": "2025-04-11T11:32:00.000Z",
+          "last_edited_time": "2025-04-11T11:32:00.000Z",
+          "created_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "last_edited_by": {
+            "object": "user",
+            "id": "1859a913-3c06-48a0-be9b-01966f93043c"
+          },
+          "has_children": false,
+          "archived": false,
+          "in_trash": false,
+          "type": "paragraph",
+          "paragraph": {
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Remember that ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Remember that ",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": "simplicity",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "simplicity",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": " is the ultimate sophistication.",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": " is the ultimate sophistication.",
+                "href": null
+              }
+            ],
+            "color": "default"
+          }
+        }
+      ]
+    }
+  ]
+}

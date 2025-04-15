@@ -1,0 +1,229 @@
+ast:
+- t: Header
+  c:
+  - 1
+  - - website-resources
+    - []
+    - []
+  - - t: Str
+      c: Website
+    - t: Space
+    - t: Str
+      c: Resources
+- t: Header
+  c:
+  - 2
+  - - useful-links-for-development
+    - []
+    - []
+  - - t: Str
+      c: Useful
+    - t: Space
+    - t: Str
+      c: Links
+    - t: Space
+    - t: Str
+      c: for
+    - t: Space
+    - t: Str
+      c: Development
+- t: Para
+  c:
+  - t: Str
+    c: Visit
+  - t: Space
+  - t: Link
+    c:
+    - - ''
+      - []
+      - []
+    - - t: Str
+        c: GitHub
+    - - https://github.com/
+      - ''
+  - t: Space
+  - t: Str
+    c: for
+  - t: Space
+  - t: Str
+    c: version
+  - t: Space
+  - t: Str
+    c: control
+  - t: Space
+  - t: Str
+    c: or
+  - t: Space
+  - t: Str
+    c: check
+  - t: Space
+  - t: Str
+    c: our
+  - t: Space
+  - t: Link
+    c:
+    - - ''
+      - []
+      - []
+    - - t: Str
+        c: project
+      - t: Space
+      - t: Str
+        c: repository
+    - - https://github.com/example/project
+      - ''
+  - t: Str
+    c: .
+- t: Para
+  c:
+  - t: Str
+    c: Need
+  - t: Space
+  - t: Str
+    c: help?
+  - t: Space
+  - t: Str
+    c: Read
+  - t: Space
+  - t: Str
+    c: the
+  - t: Space
+  - t: Link
+    c:
+    - - ''
+      - []
+      - []
+    - - t: Strong
+        c:
+        - t: Str
+          c: official
+        - t: Space
+        - t: Str
+          c: documentation
+    - - https://docs.example.com
+      - ''
+  - t: Space
+  - t: Str
+    c: for
+  - t: Space
+  - t: Str
+    c: detailed
+  - t: Space
+  - t: Str
+    c: guidance.
+- t: Header
+  c:
+  - 2
+  - - visual-references
+    - []
+    - []
+  - - t: Str
+      c: Visual
+    - t: Space
+    - t: Str
+      c: References
+- t: Figure
+  c:
+  - - ''
+    - []
+    - []
+  - - null
+    - - t: Plain
+        c:
+        - t: Str
+          c: Logo
+  - - t: Plain
+      c:
+      - t: Image
+        c:
+        - - ''
+          - []
+          - []
+        - - t: Str
+            c: Logo
+        - - https://example.com/logo.png
+          - Our Project Logo
+- t: Para
+  c:
+  - t: Str
+    c: Screenshot
+  - t: Space
+  - t: Str
+    c: of
+  - t: Space
+  - t: Str
+    c: the
+  - t: Space
+  - t: Str
+    c: 'interface:'
+  - t: SoftBreak
+  - t: Image
+    c:
+    - - ''
+      - []
+      - []
+    - - t: Str
+        c: Dashboard
+      - t: Space
+      - t: Str
+        c: Interface
+    - - https://example.com/dashboard.jpg
+      - The main dashboard with annotations
+- t: Para
+  c:
+  - t: Link
+    c:
+    - - ''
+      - []
+      - []
+    - - t: Strong
+        c:
+        - t: Str
+          c: Download
+        - t: Space
+        - t: Str
+          c: PDF
+        - t: Space
+        - t: Str
+          c: Guide
+    - - https://example.com/guide.pdf
+      - ''
+  - t: Space
+  - t: Str
+    c: for
+  - t: Space
+  - t: Str
+    c: offline
+  - t: Space
+  - t: Str
+    c: reading.
+- t: Para
+  c:
+  - t: Emph
+    c:
+    - t: Str
+      c: Problems
+    - t: Space
+    - t: Str
+      c: with
+    - t: Space
+    - t: Str
+      c: links?
+    - t: Space
+    - t: Str
+      c: Contact
+    - t: Space
+    - t: Link
+      c:
+      - - ''
+        - []
+        - []
+      - - t: Str
+          c: support@example.com
+      - - mailto:support@example.com
+        - ''
+    - t: Str
+      c: .
+metadata:
+  source_file: markdown.md
+  format: yaml

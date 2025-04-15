@@ -1,0 +1,226 @@
+ast:
+- t: Header
+  c:
+  - 1
+  - - development-workflow
+    - []
+    - []
+  - - t: Str
+      c: Development
+    - t: Space
+    - t: Str
+      c: Workflow
+- t: Header
+  c:
+  - 2
+  - - sprint-planning-process
+    - []
+    - []
+  - - t: Str
+      c: Sprint
+    - t: Space
+    - t: Str
+      c: Planning
+    - t: Space
+    - t: Str
+      c: Process
+- t: OrderedList
+  c:
+  - - 1
+    - t: Decimal
+    - t: Period
+  - - - t: Plain
+        c:
+        - t: Strong
+          c:
+          - t: Str
+            c: Backlog
+          - t: Space
+          - t: Str
+            c: refinement
+      - t: BulletList
+        c:
+        - - t: Plain
+            c:
+            - t: Str
+              c: Review
+            - t: Space
+            - t: Str
+              c: existing
+            - t: Space
+            - t: Str
+              c: tickets
+        - - t: Plain
+            c:
+            - t: Str
+              c: Estimate
+            - t: Space
+            - t: Str
+              c: complexity
+        - - t: Plain
+            c:
+            - t: Str
+              c: Clarify
+            - t: Space
+            - t: Str
+              c: requirements
+    - - t: Plain
+        c:
+        - t: Strong
+          c:
+          - t: Str
+            c: Sprint
+          - t: Space
+          - t: Str
+            c: goal
+          - t: Space
+          - t: Str
+            c: definition
+      - t: BulletList
+        c:
+        - - t: Plain
+            c:
+            - t: Str
+              c: Align
+            - t: Space
+            - t: Str
+              c: 'on'
+            - t: Space
+            - t: Str
+              c: priorities
+        - - t: Plain
+            c:
+            - t: Str
+              c: Define
+            - t: Space
+            - t: Str
+              c: success
+            - t: Space
+            - t: Str
+              c: metrics
+    - - t: Plain
+        c:
+        - t: Strong
+          c:
+          - t: Str
+            c: Task
+          - t: Space
+          - t: Str
+            c: allocation
+      - t: BulletList
+        c:
+        - - t: Plain
+            c:
+            - t: Str
+              c: Based
+            - t: Space
+            - t: Str
+              c: 'on'
+            - t: Space
+            - t: Str
+              c: team
+            - t: Space
+            - t: Str
+              c: capacity
+        - - t: Plain
+            c:
+            - t: Str
+              c: Consider
+            - t: Space
+            - t: Str
+              c: skill
+            - t: Space
+            - t: Str
+              c: alignment
+- t: Header
+  c:
+  - 2
+  - - implementation-checklist
+    - []
+    - []
+  - - t: Str
+      c: Implementation
+    - t: Space
+    - t: Str
+      c: Checklist
+- t: BulletList
+  c:
+  - - t: Plain
+      c:
+      - t: Strong
+        c:
+        - t: Str
+          c: Code
+        - t: Space
+        - t: Str
+          c: development
+    - t: OrderedList
+      c:
+      - - 1
+        - t: Decimal
+        - t: Period
+      - - - t: Plain
+            c:
+            - t: Str
+              c: Write
+            - t: Space
+            - t: Str
+              c: tests
+            - t: Space
+            - t: Str
+              c: first
+        - - t: Plain
+            c:
+            - t: Str
+              c: Implement
+            - t: Space
+            - t: Str
+              c: features
+        - - t: Plain
+            c:
+            - t: Str
+              c: Refactor
+            - t: Space
+            - t: Str
+              c: as
+            - t: Space
+            - t: Str
+              c: needed
+  - - t: Plain
+      c:
+      - t: Strong
+        c:
+        - t: Str
+          c: Review
+        - t: Space
+        - t: Str
+          c: process
+    - t: OrderedList
+      c:
+      - - 1
+        - t: Decimal
+        - t: Period
+      - - - t: Plain
+            c:
+            - t: Str
+              c: Self-review
+        - - t: Plain
+            c:
+            - t: Str
+              c: Peer
+            - t: Space
+            - t: Str
+              c: code
+            - t: Space
+            - t: Str
+              c: review
+        - - t: Plain
+            c:
+            - t: Str
+              c: QA
+            - t: Space
+            - t: Str
+              c: verification
+metadata:
+  source_file: markdown.md
+  format: yaml

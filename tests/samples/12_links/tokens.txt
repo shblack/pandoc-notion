@@ -1,0 +1,35 @@
+Para
+  Link
+    Str(Simple)
+    Space
+    Str(Link)
+Para
+  Link
+    Str(Multiple)
+    Space
+    Str(Words)
+    Space
+    Str(In)
+    Space
+    Str(Link)
+Para
+  Link
+    Strong
+      Str(Bold)
+    Space
+    Str(Text)
+    Space
+    Str(In)
+    Space
+    Str(Link)
+Para
+  Link
+    Emph
+      Str(Italic)
+    Space
+    Str(and)
+    Space
+    Strong
+      Str(Bold)
+    Space
+    Str(Mixed)

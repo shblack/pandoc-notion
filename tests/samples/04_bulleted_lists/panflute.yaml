@@ -1,0 +1,233 @@
+ast:
+- t: Header
+  c:
+  - 1
+  - - project-components
+    - []
+    - []
+  - - t: Str
+      c: Project
+    - t: Space
+    - t: Str
+      c: Components
+- t: Header
+  c:
+  - 2
+  - - frontend-technologies
+    - []
+    - []
+  - - t: Str
+      c: Frontend
+    - t: Space
+    - t: Str
+      c: Technologies
+- t: BulletList
+  c:
+  - - t: Plain
+      c:
+      - t: Strong
+        c:
+        - t: Str
+          c: React.js
+      - t: Space
+      - t: Str
+        c: '-'
+      - t: Space
+      - t: Emph
+        c:
+        - t: Str
+          c: UI
+        - t: Space
+        - t: Str
+          c: component
+        - t: Space
+        - t: Str
+          c: library
+  - - t: Plain
+      c:
+      - t: Strong
+        c:
+        - t: Str
+          c: Redux
+      - t: Space
+      - t: Str
+        c: '-'
+      - t: Space
+      - t: Str
+        c: State
+      - t: Space
+      - t: Str
+        c: management
+      - t: Space
+      - t: Str
+        c: solution
+    - t: BulletList
+      c:
+      - - t: Plain
+          c:
+          - t: Str
+            c: Store
+          - t: Space
+          - t: Str
+            c: configuration
+      - - t: Plain
+          c:
+          - t: Str
+            c: Action
+          - t: Space
+          - t: Str
+            c: creators
+      - - t: Plain
+          c:
+          - t: Str
+            c: Reducers
+  - - t: Plain
+      c:
+      - t: Strong
+        c:
+        - t: Str
+          c: Styled
+        - t: Space
+        - t: Str
+          c: Components
+      - t: Space
+      - t: Str
+        c: '-'
+      - t: Space
+      - t: Emph
+        c:
+        - t: Str
+          c: CSS-in-JS
+        - t: Space
+        - t: Str
+          c: styling
+    - t: BulletList
+      c:
+      - - t: Plain
+          c:
+          - t: Str
+            c: Theme
+          - t: Space
+          - t: Str
+            c: provider
+      - - t: Plain
+          c:
+          - t: Str
+            c: Global
+          - t: Space
+          - t: Str
+            c: styles
+  - - t: Plain
+      c:
+      - t: Strong
+        c:
+        - t: Str
+          c: React
+        - t: Space
+        - t: Str
+          c: Router
+      - t: Space
+      - t: Str
+        c: '-'
+      - t: Space
+      - t: Str
+        c: Navigation
+      - t: Space
+      - t: Str
+        c: handling
+- t: Header
+  c:
+  - 2
+  - - backend-technologies
+    - []
+    - []
+  - - t: Str
+      c: Backend
+    - t: Space
+    - t: Str
+      c: Technologies
+- t: BulletList
+  c:
+  - - t: Plain
+      c:
+      - t: Strong
+        c:
+        - t: Str
+          c: Node.js
+      - t: Space
+      - t: Str
+        c: '-'
+      - t: Space
+      - t: Str
+        c: Server
+      - t: Space
+      - t: Str
+        c: runtime
+  - - t: Plain
+      c:
+      - t: Strong
+        c:
+        - t: Str
+          c: Express
+      - t: Space
+      - t: Str
+        c: '-'
+      - t: Space
+      - t: Emph
+        c:
+        - t: Str
+          c: Web
+        - t: Space
+        - t: Str
+          c: framework
+  - - t: Plain
+      c:
+      - t: Strong
+        c:
+        - t: Str
+          c: MongoDB
+      - t: Space
+      - t: Str
+        c: '-'
+      - t: Space
+      - t: Str
+        c: Database
+      - t: Space
+      - t: Str
+        c: system
+    - t: BulletList
+      c:
+      - - t: Plain
+          c:
+          - t: Str
+            c: Schema
+          - t: Space
+          - t: Str
+            c: design
+      - - t: Plain
+          c:
+          - t: Str
+            c: Indexing
+          - t: Space
+          - t: Str
+            c: strategy
+  - - t: Plain
+      c:
+      - t: Strong
+        c:
+        - t: Str
+          c: JWT
+      - t: Space
+      - t: Str
+        c: '-'
+      - t: Space
+      - t: Emph
+        c:
+        - t: Str
+          c: Authentication
+        - t: Space
+        - t: Str
+          c: mechanism
+metadata:
+  source_file: markdown.md
+  format: yaml
