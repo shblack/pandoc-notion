@@ -134,6 +134,9 @@ class Filter:
         """
         Convert a panflute Doc to a list of Notion blocks.
         
+        This method handles special cases like lists, ensuring they're
+        properly structured for consumption by the block hierarchy builder.
+        
         Args:
             doc: The panflute Doc to convert
             
@@ -141,9 +144,49 @@ class Filter:
             List of Notion block dictionaries
         """
         logger.debug("Converting Doc to Notion blocks")
-        blocks = self.registry.convert_elements_to_dicts(list(doc.content))
-        logger.debug(f"Successfully converted {len(blocks)} blocks")
-        return blocks
+        raw_blocks = self.registry.convert_elements_to_dicts(list(doc.content))
+        logger.debug(f"Initial conversion resulted in {len(raw_blocks)} blocks")
+        
+        # Process the blocks to handle list structures properly
+        processed_blocks = []
+        i = 0
+        
+        while i < len(raw_blocks):
+            current = raw_blocks[i]
+            
+            # Check if we're looking at a list item (bulleted or numbered)
+            if isinstance(current, dict) and current.get('type') in ['bulleted_list_item', 'numbered_list_item']:
+                # We found a list item, now let's collect all consecutive items of the same type
+                list_type = current.get('type')
+                items = [current]
+                j = i + 1
+                
+                # Collect subsequent items of the same type
+                while j < len(raw_blocks) and isinstance(raw_blocks[j], dict) and raw_blocks[j].get('type') == list_type:
+                    items.append(raw_blocks[j])
+                    j += 1
+                
+                logger.debug(f"Found {len(items)} {list_type} items in sequence")
+                
+                # Create a container block for the list items
+                container = {
+                    'object': 'block',
+                    'type': 'list_container',  # This is an internal type for our processing
+                    'list_container': {
+                        'list_type': list_type,
+                        'items': items
+                    }
+                }
+                
+                processed_blocks.append(container)
+                i = j  # Skip past the items we've processed
+            else:
+                # Regular block, add it as-is
+                processed_blocks.append(current)
+                i += 1
+        
+        logger.debug(f"Successfully processed into {len(processed_blocks)} blocks")
+        return processed_blocks
 
 
 @debug_trace()
@@ -229,4 +272,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
