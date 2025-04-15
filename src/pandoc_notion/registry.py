@@ -128,6 +128,49 @@ class ManagerRegistry:
                 logging.error(f"Error converting element {type(elem).__name__}: {str(e)}")
         
         return result
+        
+    def convert_elements_to_dicts(self, elements: List[pf.Element]) -> List[Dict[str, Any]]:
+        """
+        Convert a list of elements to Notion block dictionaries.
+        
+        This method:
+        1. Converts elements to Notion model objects using appropriate managers
+        2. Converts model objects to dictionaries
+        3. Returns a list of JSON-serializable dictionaries
+        
+        Args:
+            elements: A list of panflute elements
+            
+        Returns:
+            A list of Notion block dictionaries
+        """
+        blocks = []
+        
+        for elem in elements:
+            try:
+                manager = self.find_manager(elem)
+                if manager:
+                    # Convert to model object(s)
+                    converted = manager.convert(elem)
+                    
+                    # Handle both single objects and lists
+                    models = converted if isinstance(converted, list) else [converted]
+                    
+                    # Convert each model to dictionary
+                    for model in models:
+                        if hasattr(model, 'to_dict'):
+                            blocks.append(model.to_dict())
+                        elif isinstance(model, dict):
+                            blocks.append(model)
+                        else:
+                            import logging
+                            logging.warning(f"Could not convert {type(model)} to dictionary")
+                            
+            except Exception as e:
+                import logging
+                logging.error(f"Error converting element {type(elem).__name__}: {str(e)}")
+        
+        return blocks
     
     def dump_managers(self) -> List[str]:
         """
