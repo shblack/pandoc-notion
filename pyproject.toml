@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pandoc-notion"
+version = "0.1.0"
+description = "Convert between Markdown and Notion blocks with proper hierarchical structure handling"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Samuel Black"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "notion-client",
+    "panflute",
+    "pypandoc",
+    "python-debug>=0.1.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/pandoc-notion"
+"Bug Tracker" = "https://github.com/yourusername/pandoc-notion/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+pandoc-notion = "pandoc_notion.filter:main"
+

@@ -9,14 +9,7 @@ from pandoc_notion.managers.text_manager import TextManager
 from pandoc_notion.managers.paragraph_manager import ParagraphManager
 
 # Import debug_trace for detailed diagnostics
-try:
-    from debug import debug_trace
-except ImportError:
-    # Fallback decorator that does nothing if debug module not found
-    def debug_trace(*args, **kwargs):
-        def decorator(func):
-            return func
-        return decorator if kwargs or not args else decorator(args[0])
+from python_debug import debug_trace
 
 
 class ListManager(Manager):

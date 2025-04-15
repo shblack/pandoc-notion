@@ -17,14 +17,7 @@ from pandoc_notion.managers.registry_mixin import RegistryMixin
 from pandoc_notion.managers.text_manager import TextManager
 
 # Import debug_trace for detailed diagnostics
-try:
-    from debug import debug_trace
-except ImportError:
-    # Fallback decorator that does nothing if debug module not found
-    def debug_trace(*args, **kwargs):
-        def decorator(func):
-            return func
-        return decorator if kwargs or not args else decorator(args[0])
+from python_debug import debug_trace
 
 
 class QuoteManager(Manager, RegistryMixin):
