@@ -17,7 +17,7 @@ from typing import Dict, List, Any, Optional, Union
 
 import panflute as pf
 import pypandoc
-from debug import debug_trace
+from pandoc_notion.debug.debug_trace import debug_trace
 
 from pandoc_notion.registry import ManagerRegistry
 

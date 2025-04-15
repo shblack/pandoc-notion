@@ -14,12 +14,12 @@ import warnings
 import panflute as pf
 
 from pandoc_notion.registry import ManagerRegistry
-from pandoc_notion.filter import NotionFilter, NotionConfig
+from notion_pandoc.filter import NotionFilter, NotionConfig
 from pandoc_notion.models.base import Block
 
 # Import debug_trace for detailed diagnostics
 try:
-    from pandoc_notion.debug import debug_trace
+    from pandoc_notion.debug.debug_trace import debug_trace
 except ImportError:
     # Fallback decorator that does nothing if debug module not found
     def debug_trace(*args, **kwargs):

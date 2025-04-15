@@ -16,3 +16,19 @@ except ImportError:
     def get_log_level(): pass
     __all__ = []
 
+# Import MarkdownConverter and related functions from tools.markdown_converter
+from .tools.markdown_converter import (
+    MarkdownConverter,
+    markdown_to_notion,
+    markdown_file_to_notion,
+    markdown_to_notion_api
+)
+
+# Update __all__ to include the new exports
+__all__ += [
+    "MarkdownConverter",
+    "markdown_to_notion",
+    "markdown_file_to_notion",
+    "markdown_to_notion_api"
+]
+
