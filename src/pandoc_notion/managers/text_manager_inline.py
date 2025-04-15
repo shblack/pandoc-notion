@@ -111,7 +111,8 @@ def merge_consecutive_texts(elements: List[NotionInlineElement]) -> List[NotionI
         return []
     
     result = []
-    
+    current = None  # Initialize current to handle cases where the first element isn't Text
+
     for element in elements:
         if not isinstance(element, Text):
             if current:
